@@ -41,6 +41,7 @@
 .eqv  GREEN_GROUND  0x00ad31 
 .eqv  BLUE_SKY  0x8cdfe5 
 .eqv  BROWN_GROUND  0xd69a5f
+.eqv  BROWN_PLATFORM  0x994a31
 .eqv  WHITE  0xffffff
 .eqv  BLACK  0x000000
 
@@ -61,9 +62,13 @@
 .eqv  GOOM1  0x6a3917
 .eqv  GOOM2  0xc08d66
 
+####### RESERVED REGISTERS #######
+# $t0 stores the BASE_ADDRESS
+# $t2 stores player position at all times (has a beginning position
+#################################
+
 .text 
 .globl main
-
 main:
  	li $t0, BASE_ADDRESS 	# $t0 stores the base address for display 
  	la $t2, 14096($t0)	# Player beginning position
@@ -107,6 +112,34 @@ LOOP3: 	bge $t6, $t5, ELOOP3
 	j LOOP3
 ELOOP3:
 
+
+#### PLATFORM CREATE ####
+
+ 	li $t1, BROWN_PLATFORM  # $t1 stores the green colour code 
+# create platform 1
+	li $t5, 16
+	add $t6, $zero, $zero
+	la, $t7, 7836($t0)
+	
+LOOP5: 	bge $t6, $t5, ELOOP5
+	sw $t1, 0($t7)
+	addi $t7, $t7, 4
+	addi $t6, $t6, 1
+	j LOOP5
+ELOOP5:
+	li $t5, 16
+	add $t6, $zero, $zero
+	la, $t7, 7836($t0)
+	addi, $t7, $t7, 256
+	
+LOOP4: 	bge $t6, $t5, ELOOP4
+	sw $t1, 0($t7)
+	addi $t7, $t7, 4
+	addi $t6, $t6, 1
+	j LOOP4
+ELOOP4:
+
+#### PAINTING CHARACTERS ####
 	
 # paint princess
 	li $t1, PEACH4
@@ -229,6 +262,9 @@ ELOOP3:
 	sw $t1, 508($t3)
 	sw $t1, 512($t3)
 	sw $t1, 516($t3)
+	
+	
+	
 
 END:	# End program
 	li $v0, 10

@@ -136,6 +136,35 @@ ELOOP3:
 	sw $t1, -1024($t2)
 	sw $t1, -1020($t2)
 	
+	la $t3, 14144($t0)	# mario beginning position
+# paint mario
+	li $t1, MARIO3
+	sw $t1, 0($t3)
+	sw $t1, 4($t3)
+	sw $t1, 8($t3)
+	sw $t1, -260($t3)
+	sw $t1, -252($t3)
+	sw $t1, -248($t3)
+	sw $t1, -244($t3)
+	li $t1, MARIO1
+	sw $t1, -512($t3)
+	sw $t1, -516($t3)
+	sw $t1, -508($t3)
+	sw $t1, -504($t3)
+	sw $t1, 248($t3)
+	sw $t1, 252($t3)
+	sw $t1, 260($t3)
+	sw $t1, 264($t3)
+	li $t1, MARIO2
+	sw $t1, -256($t3)
+	li $t1, MARIO4
+	sw $t1, 256($t3)
+	sw $t1, 508($t3)
+	sw $t1, 512($t3)
+	sw $t1, 516($t3)
+	sw $t1, 764($t3)
+	sw $t1, 772($t3)
+
 END:	# End program
 	li $v0, 10
 	syscall

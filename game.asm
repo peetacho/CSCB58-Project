@@ -41,7 +41,8 @@
 .eqv  GREEN_GROUND  0x00ad31 
 .eqv  BLUE_SKY  0x8cdfe5 
 .eqv  BROWN_GROUND  0xd69a5f
-.eqv  WHITE  0xd69a5f
+.eqv  WHITE  0xffffff
+.eqv  BLACK  0x000000
 
 # Princess peach colours
 .eqv  PEACH1  0xe5994c
@@ -49,6 +50,16 @@
 .eqv  PEACH3  0xffe8b0
 .eqv  PEACH4  0xff73a1
 .eqv  PEACH5  0xf0366f
+
+# mario colours
+.eqv  MARIO1  0xfa3838
+.eqv  MARIO2  0x704b41
+.eqv  MARIO3  0xffc57d
+.eqv  MARIO4  0x1d46f6
+
+# goomba colours
+.eqv  GOOM1  0x6a3917
+.eqv  GOOM2  0xc08d66
 
 .text 
 .globl main
@@ -164,6 +175,60 @@ ELOOP3:
 	sw $t1, 516($t3)
 	sw $t1, 764($t3)
 	sw $t1, 772($t3)
+	
+	la $t3, 14192($t0)	# mario beginning position
+# paint goomba
+	li $t1, GOOM1
+	sw $t1, -1028($t3)
+	sw $t1, -1024($t3)
+	sw $t1, -1020($t3)
+	sw $t1, -772($t3)
+	sw $t1, -768($t3)
+	sw $t1, -764($t3)
+	sw $t1, -524($t3)
+	sw $t1, -520($t3)
+	sw $t1, -512($t3)
+	sw $t1, -504($t3)
+	sw $t1, -500($t3)
+	sw $t1, -268($t3)
+	sw $t1, -256($t3)
+	sw $t1, -244($t3)
+	sw $t1, -16($t3)
+	sw $t1, -12($t3)
+	sw $t1, 0($t3)
+	sw $t1, 12($t3)
+	sw $t1, 16($t3)
+	sw $t1, 240($t3)
+	sw $t1, 244($t3)
+	sw $t1, 268($t3)
+	sw $t1, 272($t3)
+	li $t1, BLACK
+	sw $t1, -776($t3)
+	sw $t1, -760($t3)
+	sw $t1, -516($t3)
+	sw $t1, -508($t3)
+	sw $t1, -4($t3)
+	sw $t1, 4($t3)
+	sw $t1, 760($t3)
+	sw $t1, 764($t3)
+	sw $t1, 772($t3)
+	sw $t1, 776($t3)
+	li $t1, WHITE
+	sw $t1, -264($t3)
+	sw $t1, -260($t3)
+	sw $t1, -252($t3)
+	sw $t1, -248($t3)
+	sw $t1, -8($t3)
+	sw $t1, 8($t3)
+	li $t1, GOOM2
+	sw $t1, 248($t3)
+	sw $t1, 252($t3)
+	sw $t1, 256($t3)
+	sw $t1, 260($t3)
+	sw $t1, 264($t3)
+	sw $t1, 508($t3)
+	sw $t1, 512($t3)
+	sw $t1, 516($t3)
 
 END:	# End program
 	li $v0, 10

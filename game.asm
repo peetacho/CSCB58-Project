@@ -36,6 +36,7 @@
 
 .data
 player: .space 8
+nel:  .asciiz "\n"
 
 .eqv  BASE_ADDRESS  0x10008000
 .eqv  KEY_ADDRESS  0xffff0000
@@ -367,6 +368,26 @@ w_clicked:
 
 ##### do code below if the 'a' key is clicked ##### 
 a_clicked: 
+
+	lw $t4, 4($t2) 	# retrives index of player
+	
+	addi $t4, $t4, -3	# current index of player -3 (most left pixel of player -1 to the left)
+	addi $t8, $t4, -1	# gets the index -1 to the left of $t4 (so basically current index of player -4)
+
+	
+	addi $t3, $zero, 64
+	div $t4, $t3		# calculate $t4/64
+	mfhi $t4		# set $t4 = $t4 mod 64
+	div $t8, $t3		# calculate $t8/64
+	mfhi $t8		# set $t8 = $t8 mod 64
+	
+	addi $t4, $t4, -1	# subtracts one from $t4 since $t4 should be one more than $t8
+	
+	bne $t4, $t8, key_no_clicked # jumps if $t4 mod 64 != $t8 mod 64
+	lw $t4, 4($t2) 	# retrives index of player
+	addi $t4, $t4, -1
+	sw $t4, 4($t2)
+
 	jal clear_player
 	lw $t4, 0($t2) 	# retrives position address of player
 	addi $t4, $t4, -4
@@ -400,6 +421,40 @@ s_clicked:
 
 ##### do code below if the 'd' key is clicked ##### 
 d_clicked: 
+
+	lw $t4, 4($t2) 	# retrives index of player
+	
+	addi $t4, $t4, 3	# current index of player 3 (most left pixel of player 1 to the left)
+	addi $t8, $t4, 1	# gets the index 1 to the left of $t4 (so basically current index of player 4)
+	
+	addi $t3, $zero, 64
+	div $t4, $t3		# calculate $t4/64
+	mfhi $t4		# set $t4 = $t4 mod 64
+	div $t8, $t3		# calculate $t8/64
+	mfhi $t8		# set $t8 = $t8 mod 64
+	
+	addi $t4, $t4, 1	# adds one to $t4 since $t4 should be one less than $t8
+	
+	##### DEBUG ##### 
+	li $v0, 1
+	move $a0, $t4
+	syscall
+	
+	# Print "\n"
+	li $v0, 4
+	la $a0, nel
+	syscall
+	
+	li $v0, 1
+	move $a0, $t8
+	syscall
+	##### DEBUG ##### 
+	
+	bne $t4, $t8, key_no_clicked # jumps if $t4 mod 64 != $t8 mod 64
+	lw $t4, 4($t2) 	# retrives index of player
+	addi $t4, $t4, 1
+	sw $t4, 4($t2)
+
 	jal clear_player
 	lw $t4, 0($t2) 	# retrives position address of player
 	addi $t4, $t4, 4

@@ -40,7 +40,7 @@ test: .asciiz "hi"
 .eqv  BASE_ADDRESS  0x10008000
 .eqv  KEY_ADDRESS  0xffff0000
 
-.eqv  REFRESH_RATE  1000
+.eqv  REFRESH_RATE  40
 
 # Colours
 .eqv  GREEN_GROUND  0x00ad31 
@@ -159,7 +159,7 @@ clear_player:
 
 main:
  	li $t0, BASE_ADDRESS 	# $t0 stores the base address for display 
- 	la $t2, 14096($t0)	# Player beginning position
+ 	la $t2, 13840($t0)	# Player beginning position
 
    	li $t1, BLUE_SKY   	# $t1 stores the blue colour code 
 # paints sky blue
@@ -231,7 +231,7 @@ ELOOP4:
 
 	jal draw_player
 	
-	la $t3, 14144($t0)	# mario beginning position
+	la $t3, 13888($t0)	# mario beginning position
 # paint mario
 	li $t1, MARIO3
 	sw $t1, 0($t3)
@@ -260,7 +260,7 @@ ELOOP4:
 	sw $t1, 764($t3)
 	sw $t1, 772($t3)
 	
-	la $t3, 14192($t0)	# goomba beginning position
+	la $t3, 13936($t0)	# goomba beginning position
 # paint goomba
 	li $t1, GOOM1
 	sw $t1, -1028($t3)
@@ -338,7 +338,7 @@ key_clicked:
 	##### do code below if the 'w' key is clicked ##### 
 w_clicked: 
 	jal clear_player
-	addi $t2, $t2, -512
+	addi $t2, $t2, -2304
 	jal draw_player
 	j key_no_clicked
 
@@ -351,6 +351,16 @@ a_clicked:
 	
 	##### do code below if the 's' key is clicked ##### 
 s_clicked: 
+
+	##### checks if ground is below the player #####
+	lw $t3, 1024($t2) # $t3 is the color of the pixel 4 units below the center 
+	# (if we check this pixel and if it is the colour of the ground, this means that
+	# the player is on the ground
+	li $t1, GREEN_GROUND
+	
+	# cannot press 's' if player is currently on the ground.
+	beq $t1, $t3, key_no_clicked
+
 	jal clear_player
 	addi $t2, $t2, 256
 	jal draw_player
@@ -366,21 +376,39 @@ d_clicked:
 	##### do code below if no key is clicked ##### 
 key_no_clicked:
 
+	##### checks if ground is below the player #####
+	lw $t3, 1024($t2) # $t3 is the color of the pixel 4 units below the center 
+	# (if we check this pixel and if it is the colour of the ground, this means that
+	# the player is on the ground
+	li $t1, GREEN_GROUND
+	
+	beq $t1, $t3, end_iteration
 	
 	##### simulates gravity ##### 
 gravity:
+	# the 2 is a timing thing. The higher the value, the slower the player falls
+	bgt $t5, 2, do_grav
+	j end_iteration
+	
+do_grav:
 	jal clear_player
 	addi $t2, $t2, 256
-	jal draw_player	
+	jal draw_player
+	addi $t5, $zero, 1
 	
+	
+	##### this loop is finished, call sleep and jump to MAIN_L #####
+end_iteration:	
 	# sleep
 	li $v0, 32 
 	li $a0, REFRESH_RATE
 	syscall
 	
+	# while loop counter
+	addi $t5,$t5, 1
 	j MAIN_L
 	
-
-END:	# End program
+	##### End program #####
+END:	
 	li $v0, 10
 	syscall

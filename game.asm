@@ -35,7 +35,7 @@
 ##################################################################### 
 
 .data
-test: .asciiz "hi"
+player: .space 8
 
 .eqv  BASE_ADDRESS  0x10008000
 .eqv  KEY_ADDRESS  0xffff0000
@@ -71,6 +71,8 @@ test: .asciiz "hi"
 # $t0 stores the BASE_ADDRESS
 # $t1 is ocassionally used to store color
 # $t2 stores player position at all times (has a beginning position)
+# $t5, $t6, $t7, $t9 is used inside the main loop
+# $t4, $t3, $t8 can be used for other stuff
 #################################
 
 .text 
@@ -79,90 +81,103 @@ test: .asciiz "hi"
 ###### DRAW_PLAYER ######
 # paint princess
 draw_player:
+	lw $t3, 0($t2)
+
 	li $t1, PEACH4
-	sw $t1, 0($t2)
-	sw $t1, -4($t2)
-	sw $t1, 4($t2)
-	sw $t1, 8($t2)
-	sw $t1, 512($t2)
-	sw $t1, 516($t2)
+	sw $t1, 0($t3)
+	sw $t1, -4($t3)
+	sw $t1, 4($t3)
+	sw $t1, 8($t3)
+	sw $t1, 512($t3)
+	sw $t1, 516($t3)
 	li $t1, PEACH5
-	sw $t1, 256($t2)
-	sw $t1, 260($t2)
-	sw $t1, 508($t2)
-	sw $t1, 520($t2)
-	sw $t1, 776($t2)
-	sw $t1, 772($t2)
-	sw $t1, 768($t2)
-	sw $t1, 764($t2)
-	sw $t1, 760($t2)
+	sw $t1, 256($t3)
+	sw $t1, 260($t3)
+	sw $t1, 508($t3)
+	sw $t1, 520($t3)
+	sw $t1, 776($t3)
+	sw $t1, 772($t3)
+	sw $t1, 768($t3)
+	sw $t1, 764($t3)
+	sw $t1, 760($t3)
 	li $t1, WHITE
-	sw $t1, 252($t2)
-	sw $t1, 264($t2)
+	sw $t1, 252($t3)
+	sw $t1, 264($t3)
 	li $t1, PEACH2
-	sw $t1, -8($t2)
-	sw $t1, -260($t2)
-	sw $t1, -516($t2)
-	sw $t1, -520($t2)
-	sw $t1, -772($t2)
-	sw $t1, -768($t2)
-	sw $t1, -764($t2)
-	sw $t1, -504($t2)
+	sw $t1, -8($t3)
+	sw $t1, -260($t3)
+	sw $t1, -516($t3)
+	sw $t1, -520($t3)
+	sw $t1, -772($t3)
+	sw $t1, -768($t3)
+	sw $t1, -764($t3)
+	sw $t1, -504($t3)
 	li $t1, PEACH3
-	sw $t1, -256($t2)
-	sw $t1, -252($t2)
-	sw $t1, -512($t2)
-	sw $t1, -508($t2)
+	sw $t1, -256($t3)
+	sw $t1, -252($t3)
+	sw $t1, -512($t3)
+	sw $t1, -508($t3)
 	li $t1, PEACH1
-	sw $t1, -1024($t2)
-	sw $t1, -1020($t2)
+	sw $t1, -1024($t3)
+	sw $t1, -1020($t3)
 	
 	jr $ra
 
 ###### CLEAR_PLAYER ######
 # this function removes the player
 clear_player:
+	lw $t3, 0($t2)
+
 	li $t1, BLUE_SKY
-	sw $t1, 0($t2)
-	sw $t1, -4($t2)
-	sw $t1, 4($t2)
-	sw $t1, 8($t2)
-	sw $t1, 512($t2)
-	sw $t1, 516($t2)
-	sw $t1, 256($t2)
-	sw $t1, 260($t2)
-	sw $t1, 508($t2)
-	sw $t1, 520($t2)
-	sw $t1, 776($t2)
-	sw $t1, 772($t2)
-	sw $t1, 768($t2)
-	sw $t1, 764($t2)
-	sw $t1, 760($t2)
-	sw $t1, 252($t2)
-	sw $t1, 264($t2)
-	sw $t1, -8($t2)
-	sw $t1, -260($t2)
-	sw $t1, -516($t2)
-	sw $t1, -520($t2)
-	sw $t1, -772($t2)
-	sw $t1, -768($t2)
-	sw $t1, -764($t2)
-	sw $t1, -504($t2)
-	sw $t1, -256($t2)
-	sw $t1, -252($t2)
-	sw $t1, -512($t2)
-	sw $t1, -508($t2)
-	sw $t1, -1024($t2)
-	sw $t1, -1020($t2)
+	sw $t1, 0($t3)
+	sw $t1, -4($t3)
+	sw $t1, 4($t3)
+	sw $t1, 8($t3)
+	sw $t1, 512($t3)
+	sw $t1, 516($t3)
+	sw $t1, 256($t3)
+	sw $t1, 260($t3)
+	sw $t1, 508($t3)
+	sw $t1, 520($t3)
+	sw $t1, 776($t3)
+	sw $t1, 772($t3)
+	sw $t1, 768($t3)
+	sw $t1, 764($t3)
+	sw $t1, 760($t3)
+	sw $t1, 252($t3)
+	sw $t1, 264($t3)
+	sw $t1, -8($t3)
+	sw $t1, -260($t3)
+	sw $t1, -516($t3)
+	sw $t1, -520($t3)
+	sw $t1, -772($t3)
+	sw $t1, -768($t3)
+	sw $t1, -764($t3)
+	sw $t1, -504($t3)
+	sw $t1, -256($t3)
+	sw $t1, -252($t3)
+	sw $t1, -512($t3)
+	sw $t1, -508($t3)
+	sw $t1, -1024($t3)
+	sw $t1, -1020($t3)
 	
 	jr $ra
 
 main:
  	li $t0, BASE_ADDRESS 	# $t0 stores the base address for display 
- 	la $t2, 13840($t0)	# Player beginning position
 
+##### INITIALZIE PLAYER #####
+	la $t2, player
+
+ 	la $t3, 13840($t0)	# Player beginning position
+	sw $t3, 0($t2)		# stores position address into player struct
+	addi $t3, $zero, 3460
+	sw $t3, 4($t2)
+	addi $t3, $zero, 2
+	sw $t3, 8($t2)
+
+###### paints sky blue #####
    	li $t1, BLUE_SKY   	# $t1 stores the blue colour code 
-# paints sky blue
 	li $t5, 3712
 	add $t6, $zero, $zero
 	la, $t7, ($t0)
@@ -174,8 +189,8 @@ LOOP: 	bge $t6, $t5, ELOOP
 	j LOOP
 ELOOP:
 
+##### paints ground green #####
  	li $t1, GREEN_GROUND   	# $t1 stores the green colour code 
-# paints ground green
 	li $t5, 3840
 	addi $t6, $zero, 3712
 	la, $t7, 14848($t0)
@@ -187,8 +202,8 @@ LOOP2: 	bge $t6, $t5, ELOOP2
 	j LOOP2
 ELOOP2:
 
+##### paints below ground brown #####
  	li $t1, BROWN_GROUND  	# $t1 stores the brown colour code 
-# paints below ground brown
 	li $t5, 4096
 	addi $t6, $zero, 3840
 	la, $t7, 15360($t0)
@@ -204,7 +219,6 @@ ELOOP3:
 #### PLATFORM CREATE ####
 
  	li $t1, BROWN_PLATFORM  # $t1 stores the green colour code 
-# create platform 1
 	li $t5, 16
 	add $t6, $zero, $zero
 	la, $t7, 7836($t0)
@@ -314,18 +328,19 @@ ELOOP4:
 	sw $t1, 512($t3)
 	sw $t1, 516($t3)
 	
-	##### MAIN LOOP #####
+##### MAIN LOOP #####
 	
 	addi $t5,$zero, 1
 	li $t9, KEY_ADDRESS
 MAIN_L:	beq $t5, $zero, END
 	lw $t7, 0($t9)	# 1 if there is a new keypress
 	lw $t6, 4($t9)	# value of the key press
+
 	
 if_key:	
 	bne $t7, 1, key_no_clicked
 	
-	##### do code below if a key is clicked ##### 
+##### do code below if a key is clicked ##### 
 key_clicked:
 	
 	beq $t6, 0x77, w_clicked	# w clicked
@@ -335,69 +350,95 @@ key_clicked:
 	beq $t6, 0x70, main		# p clicked
 	j key_no_clicked
 	
-	##### do code below if the 'w' key is clicked ##### 
+##### do code below if the 'w' key is clicked ##### 
 w_clicked: 
+	lw $t4, 4($t2) 	# retrives index of player
+	
+	addi $t4, $t4, -576
+	ble $t4, 320, key_no_clicked # jumps if index is less than 320
+	sw $t4, 4($t2)
+	
 	jal clear_player
-	addi $t2, $t2, -2304
+	lw $t4, 0($t2) 	# retrives position address of player
+	addi $t4, $t4, -2304
+	sw $t4, 0($t2)
 	jal draw_player
 	j key_no_clicked
 
-	##### do code below if the 'a' key is clicked ##### 
+##### do code below if the 'a' key is clicked ##### 
 a_clicked: 
 	jal clear_player
-	addi $t2, $t2, -4
+	lw $t4, 0($t2) 	# retrives position address of player
+	addi $t4, $t4, -4
+	sw $t4, 0($t2)
 	jal draw_player
 	j key_no_clicked
 	
-	##### do code below if the 's' key is clicked ##### 
+##### do code below if the 's' key is clicked ##### 
 s_clicked: 
 
-	##### checks if ground is below the player #####
-	lw $t3, 1024($t2) # $t3 is the color of the pixel 4 units below the center 
+##### checks if ground is below the player #####
+	lw $t4, 0($t2) 	# retrives position address of player
+	lw $t3, 1024($t4) # $t3 is the color of the pixel 4 units below the center 
 	# (if we check this pixel and if it is the colour of the ground, this means that
 	# the player is on the ground
 	li $t1, GREEN_GROUND
 	
 	# cannot press 's' if player is currently on the ground.
 	beq $t1, $t3, key_no_clicked
+	
+	lw $t4, 4($t2) 	# retrives index of player
+	addi $t4, $t4, 64
+	sw $t4, 4($t2)
 
 	jal clear_player
-	addi $t2, $t2, 256
+	lw $t4, 0($t2) 	# retrives position address of player
+	addi $t4, $t4, 256
+	sw $t4, 0($t2)
 	jal draw_player
 	j key_no_clicked
 
-	##### do code below if the 'd' key is clicked ##### 
+##### do code below if the 'd' key is clicked ##### 
 d_clicked: 
 	jal clear_player
-	addi $t2, $t2, 4
+	lw $t4, 0($t2) 	# retrives position address of player
+	addi $t4, $t4, 4
+	sw $t4, 0($t2)
 	jal draw_player
 	j key_no_clicked
 	
-	##### do code below if no key is clicked ##### 
+##### do code below if no key is clicked ##### 
 key_no_clicked:
 
-	##### checks if ground is below the player #####
-	lw $t3, 1024($t2) # $t3 is the color of the pixel 4 units below the center 
+##### checks if ground is below the player #####
+	lw $t4, 0($t2) 	# retrives position address of player
+	lw $t3, 1024($t4) # $t3 is the color of the pixel 4 units below the center 
 	# (if we check this pixel and if it is the colour of the ground, this means that
 	# the player is on the ground
 	li $t1, GREEN_GROUND
 	
 	beq $t1, $t3, end_iteration
 	
-	##### simulates gravity ##### 
+##### simulates gravity ##### 
 gravity:
 	# the 2 is a timing thing. The higher the value, the slower the player falls
 	bgt $t5, 2, do_grav
 	j end_iteration
 	
 do_grav:
+
+	lw $t4, 4($t2) 	# retrives index of player
+	addi $t4, $t4, 64
+	sw $t4, 4($t2)
+
 	jal clear_player
-	addi $t2, $t2, 256
+	lw $t4, 0($t2) 	# retrives position address of player
+	addi $t4, $t4, 256
+	sw $t4, 0($t2)
 	jal draw_player
 	addi $t5, $zero, 1
 	
-	
-	##### this loop is finished, call sleep and jump to MAIN_L #####
+##### this loop is finished, call sleep and jump to MAIN_L #####
 end_iteration:	
 	# sleep
 	li $v0, 32 
@@ -408,7 +449,7 @@ end_iteration:
 	addi $t5,$t5, 1
 	j MAIN_L
 	
-	##### End program #####
+##### End program #####
 END:	
 	li $v0, 10
 	syscall

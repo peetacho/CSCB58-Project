@@ -397,6 +397,20 @@ a_clicked:
 	
 ##### do code below if the 's' key is clicked ##### 
 s_clicked: 
+	addi $t8, $zero, 64
+
+##### checks if platform is below the player #####
+	li $t1, BROWN_PLATFORM
+	
+	beq $t1, $t3, s_if1
+	lw $t3, 1032($t4)
+	beq $t1, $t3, s_if1
+	lw $t3, 1016($t4)
+	bne $t1, $t3, key_no_clicked
+
+	# if below platform is the player, the fall will be harder
+s_if1:	sll $t8, $t8, 2
+	j s_fall
 
 ##### checks if ground is below the player #####
 	lw $t4, 0($t2) 	# retrives position address of player
@@ -407,14 +421,16 @@ s_clicked:
 	
 	# cannot press 's' if player is currently on the ground.
 	beq $t1, $t3, key_no_clicked
-	
-	lw $t4, 4($t2) 	# retrives index of player
-	addi $t4, $t4, 64
-	sw $t4, 4($t2)
 
+##### falls only after the checks above #####
+s_fall:	lw $t4, 4($t2) 	# retrives index of player
+	add $t4, $t4, $t8
+	sw $t4, 4($t2)
+	
+	sll $t8, $t8, 2
 	jal clear_player
 	lw $t4, 0($t2) 	# retrives position address of player
-	addi $t4, $t4, 256
+	add $t4, $t4, $t8
 	sw $t4, 0($t2)
 	jal draw_player
 	j key_no_clicked
@@ -434,21 +450,6 @@ d_clicked:
 	mfhi $t8		# set $t8 = $t8 mod 64
 	
 	addi $t4, $t4, 1	# adds one to $t4 since $t4 should be one less than $t8
-	
-	##### DEBUG ##### 
-	li $v0, 1
-	move $a0, $t4
-	syscall
-	
-	# Print "\n"
-	li $v0, 4
-	la $a0, nel
-	syscall
-	
-	li $v0, 1
-	move $a0, $t8
-	syscall
-	##### DEBUG ##### 
 	
 	bne $t4, $t8, key_no_clicked # jumps if $t4 mod 64 != $t8 mod 64
 	lw $t4, 4($t2) 	# retrives index of player
@@ -471,9 +472,20 @@ key_no_clicked:
 	# (if we check this pixel and if it is the colour of the ground, this means that
 	# the player is on the ground
 	li $t1, GREEN_GROUND
-	
 	beq $t1, $t3, end_iteration
 	
+##### checks if platform is below the player #####
+	li $t1, BROWN_PLATFORM
+	
+	beq $t1, $t3, IF1
+	lw $t3, 1032($t4)
+	beq $t1, $t3, IF1
+	lw $t3, 1016($t4)
+	bne $t1, $t3, gravity
+
+IF1:	j end_iteration
+
+
 ##### simulates gravity ##### 
 gravity:
 	# the 2 is a timing thing. The higher the value, the slower the player falls

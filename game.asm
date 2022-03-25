@@ -35,7 +35,12 @@
 ##################################################################### 
 
 .data
-.eqv  BASE_ADDRESS  0x10008000 
+test: .asciiz "hi"
+
+.eqv  BASE_ADDRESS  0x10008000
+.eqv  KEY_ADDRESS  0xffff0000
+
+.eqv  REFRESH_RATE  1000
 
 # Colours
 .eqv  GREEN_GROUND  0x00ad31 
@@ -64,11 +69,94 @@
 
 ####### RESERVED REGISTERS #######
 # $t0 stores the BASE_ADDRESS
-# $t2 stores player position at all times (has a beginning position
+# $t1 is ocassionally used to store color
+# $t2 stores player position at all times (has a beginning position)
 #################################
 
 .text 
 .globl main
+
+###### DRAW_PLAYER ######
+# paint princess
+draw_player:
+	li $t1, PEACH4
+	sw $t1, 0($t2)
+	sw $t1, -4($t2)
+	sw $t1, 4($t2)
+	sw $t1, 8($t2)
+	sw $t1, 512($t2)
+	sw $t1, 516($t2)
+	li $t1, PEACH5
+	sw $t1, 256($t2)
+	sw $t1, 260($t2)
+	sw $t1, 508($t2)
+	sw $t1, 520($t2)
+	sw $t1, 776($t2)
+	sw $t1, 772($t2)
+	sw $t1, 768($t2)
+	sw $t1, 764($t2)
+	sw $t1, 760($t2)
+	li $t1, WHITE
+	sw $t1, 252($t2)
+	sw $t1, 264($t2)
+	li $t1, PEACH2
+	sw $t1, -8($t2)
+	sw $t1, -260($t2)
+	sw $t1, -516($t2)
+	sw $t1, -520($t2)
+	sw $t1, -772($t2)
+	sw $t1, -768($t2)
+	sw $t1, -764($t2)
+	sw $t1, -504($t2)
+	li $t1, PEACH3
+	sw $t1, -256($t2)
+	sw $t1, -252($t2)
+	sw $t1, -512($t2)
+	sw $t1, -508($t2)
+	li $t1, PEACH1
+	sw $t1, -1024($t2)
+	sw $t1, -1020($t2)
+	
+	jr $ra
+
+###### CLEAR_PLAYER ######
+# this function removes the player
+clear_player:
+	li $t1, BLUE_SKY
+	sw $t1, 0($t2)
+	sw $t1, -4($t2)
+	sw $t1, 4($t2)
+	sw $t1, 8($t2)
+	sw $t1, 512($t2)
+	sw $t1, 516($t2)
+	sw $t1, 256($t2)
+	sw $t1, 260($t2)
+	sw $t1, 508($t2)
+	sw $t1, 520($t2)
+	sw $t1, 776($t2)
+	sw $t1, 772($t2)
+	sw $t1, 768($t2)
+	sw $t1, 764($t2)
+	sw $t1, 760($t2)
+	sw $t1, 252($t2)
+	sw $t1, 264($t2)
+	sw $t1, -8($t2)
+	sw $t1, -260($t2)
+	sw $t1, -516($t2)
+	sw $t1, -520($t2)
+	sw $t1, -772($t2)
+	sw $t1, -768($t2)
+	sw $t1, -764($t2)
+	sw $t1, -504($t2)
+	sw $t1, -256($t2)
+	sw $t1, -252($t2)
+	sw $t1, -512($t2)
+	sw $t1, -508($t2)
+	sw $t1, -1024($t2)
+	sw $t1, -1020($t2)
+	
+	jr $ra
+
 main:
  	li $t0, BASE_ADDRESS 	# $t0 stores the base address for display 
  	la $t2, 14096($t0)	# Player beginning position
@@ -140,45 +228,8 @@ LOOP4: 	bge $t6, $t5, ELOOP4
 ELOOP4:
 
 #### PAINTING CHARACTERS ####
-	
-# paint princess
-	li $t1, PEACH4
-	sw $t1, 0($t2)
-	sw $t1, -4($t2)
-	sw $t1, 4($t2)
-	sw $t1, 8($t2)
-	sw $t1, 512($t2)
-	sw $t1, 516($t2)
-	li $t1, PEACH5
-	sw $t1, 256($t2)
-	sw $t1, 260($t2)
-	sw $t1, 508($t2)
-	sw $t1, 520($t2)
-	sw $t1, 776($t2)
-	sw $t1, 772($t2)
-	sw $t1, 768($t2)
-	sw $t1, 764($t2)
-	sw $t1, 760($t2)
-	li $t1, WHITE
-	sw $t1, 252($t2)
-	sw $t1, 264($t2)
-	li $t1, PEACH2
-	sw $t1, -8($t2)
-	sw $t1, -260($t2)
-	sw $t1, -516($t2)
-	sw $t1, -520($t2)
-	sw $t1, -772($t2)
-	sw $t1, -768($t2)
-	sw $t1, -764($t2)
-	sw $t1, -504($t2)
-	li $t1, PEACH3
-	sw $t1, -256($t2)
-	sw $t1, -252($t2)
-	sw $t1, -512($t2)
-	sw $t1, -508($t2)
-	li $t1, PEACH1
-	sw $t1, -1024($t2)
-	sw $t1, -1020($t2)
+
+	jal draw_player
 	
 	la $t3, 14144($t0)	# mario beginning position
 # paint mario
@@ -209,7 +260,7 @@ ELOOP4:
 	sw $t1, 764($t3)
 	sw $t1, 772($t3)
 	
-	la $t3, 14192($t0)	# mario beginning position
+	la $t3, 14192($t0)	# goomba beginning position
 # paint goomba
 	li $t1, GOOM1
 	sw $t1, -1028($t3)
@@ -263,7 +314,71 @@ ELOOP4:
 	sw $t1, 512($t3)
 	sw $t1, 516($t3)
 	
+	##### MAIN LOOP #####
 	
+	addi $t5,$zero, 1
+	li $t9, KEY_ADDRESS
+MAIN_L:	beq $t5, $zero, END
+	lw $t7, 0($t9)	# 1 if there is a new keypress
+	lw $t6, 4($t9)	# value of the key press
+	
+if_key:	
+	bne $t7, 1, key_no_clicked
+	
+	##### do code below if a key is clicked ##### 
+key_clicked:
+	
+	beq $t6, 0x77, w_clicked	# w clicked
+	beq $t6, 0x61, a_clicked	# a clicked
+	beq $t6, 0x73, s_clicked	# s clicked
+	beq $t6, 0x64, d_clicked	# d clicked
+	beq $t6, 0x70, main		# p clicked
+	j key_no_clicked
+	
+	##### do code below if the 'w' key is clicked ##### 
+w_clicked: 
+	jal clear_player
+	addi $t2, $t2, -512
+	jal draw_player
+	j key_no_clicked
+
+	##### do code below if the 'a' key is clicked ##### 
+a_clicked: 
+	jal clear_player
+	addi $t2, $t2, -4
+	jal draw_player
+	j key_no_clicked
+	
+	##### do code below if the 's' key is clicked ##### 
+s_clicked: 
+	jal clear_player
+	addi $t2, $t2, 256
+	jal draw_player
+	j key_no_clicked
+
+	##### do code below if the 'd' key is clicked ##### 
+d_clicked: 
+	jal clear_player
+	addi $t2, $t2, 4
+	jal draw_player
+	j key_no_clicked
+	
+	##### do code below if no key is clicked ##### 
+key_no_clicked:
+
+	
+	##### simulates gravity ##### 
+gravity:
+	jal clear_player
+	addi $t2, $t2, 256
+	jal draw_player	
+	
+	# sleep
+	li $v0, 32 
+	li $a0, REFRESH_RATE
+	syscall
+	
+	j MAIN_L
 	
 
 END:	# End program

@@ -276,7 +276,7 @@ main:
 ##### INITIALZIE PLAYER #####
 	la $t2, player
 
- 	la $t3, 13840($t0)	# Player beginning position
+ 	la $t3, 13836($t0)	# Player beginning position
 	sw $t3, 0($t2)		# stores position address into player struct
 	addi $t3, $zero, 3460
 	sw $t3, 4($t2)
@@ -424,8 +424,7 @@ a_clicked:
 	lw $t4, 4($t2) 	# retrives index of player
 	
 	addi $t4, $t4, -3	# current index of player -3 (most left pixel of player -1 to the left)
-	addi $t8, $t4, -1	# gets the index -1 to the left of $t4 (so basically current index of player -4)
-
+	addi $t8, $t4, -2	# gets the index -2 to the left of $t4 (so basically current index of player -5)
 	
 	addi $t3, $zero, 64
 	div $t4, $t3		# calculate $t4/64
@@ -433,16 +432,14 @@ a_clicked:
 	div $t8, $t3		# calculate $t8/64
 	mfhi $t8		# set $t8 = $t8 mod 64
 	
-	addi $t4, $t4, -1	# subtracts one from $t4 since $t4 should be one more than $t8
-	
-	bne $t4, $t8, key_no_clicked # jumps if $t4 mod 64 != $t8 mod 64
+	blt $t4, $t8, key_no_clicked # jumps if $t4 mod 64 < $t8 mod 64
 	lw $t4, 4($t2) 	# retrives index of player
-	addi $t4, $t4, -1
+	addi $t4, $t4, -2
 	sw $t4, 4($t2)
 
 	jal clear_player
 	lw $t4, 0($t2) 	# retrives position address of player
-	addi $t4, $t4, -4
+	addi $t4, $t4, -8
 	sw $t4, 0($t2)
 	jal draw_player
 	j key_no_clicked
@@ -496,7 +493,7 @@ d_clicked:
 	lw $t4, 4($t2) 	# retrives index of player
 	
 	addi $t4, $t4, 3	# current index of player 3 (most left pixel of player 1 to the left)
-	addi $t8, $t4, 1	# gets the index 1 to the left of $t4 (so basically current index of player 4)
+	addi $t8, $t4, 2	# gets the index 2 to the left of $t4 (so basically current index of player +5)
 	
 	addi $t3, $zero, 64
 	div $t4, $t3		# calculate $t4/64
@@ -504,16 +501,14 @@ d_clicked:
 	div $t8, $t3		# calculate $t8/64
 	mfhi $t8		# set $t8 = $t8 mod 64
 	
-	addi $t4, $t4, 1	# adds one to $t4 since $t4 should be one less than $t8
-	
-	bne $t4, $t8, key_no_clicked # jumps if $t4 mod 64 != $t8 mod 64
+	bgt $t4, $t8, key_no_clicked # jumps if $t4 mod 64 != $t8 mod 64
 	lw $t4, 4($t2) 	# retrives index of player
-	addi $t4, $t4, 1
+	addi $t4, $t4, 2
 	sw $t4, 4($t2)
 
 	jal clear_player
 	lw $t4, 0($t2) 	# retrives position address of player
-	addi $t4, $t4, 4
+	addi $t4, $t4, 8
 	sw $t4, 0($t2)
 	jal draw_player
 	j key_no_clicked

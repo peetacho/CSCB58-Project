@@ -78,8 +78,89 @@ player: .space 8
 .text 
 .globl main
 
+###### DRAW_GOOMBA ######
+# function draw_player(int a):
+# a is the starting offset of the goomba
+# this function draws a goomba at a given offset
+draw_goomba_a:
+
+	lw $t4, 0($sp)		# pop a
+	add $t3, $t0, $t4	#la $t3, a($t0)
+	li $t1, GOOM1
+	sw $t1, -516($t3)
+	sw $t1, -512($t3)
+	sw $t1, -264($t3)
+	sw $t1, -256($t3)
+	sw $t1, -12($t3)
+	sw $t1, -8($t3)
+	sw $t1, 0($t3)
+	sw $t1, 8($t3)
+	sw $t1, 244($t3)
+	sw $t1, 248($t3)
+	sw $t1, 252($t3)
+	sw $t1, 256($t3)
+	sw $t1, 260($t3)
+	sw $t1, 264($t3)
+	li $t1, BLACK
+	sw $t1, -520($t3)
+	sw $t1, -504($t3)
+	sw $t1, -260($t3)
+	sw $t1, -252($t3)
+	sw $t1, 764($t3)
+	sw $t1, 772($t3)
+	li $t1, WHITE
+	sw $t1, -4($t3)
+	sw $t1, 4($t3)
+	li $t1, GOOM2
+	sw $t1, 508($t3)
+	sw $t1, 512($t3)
+	sw $t1, 768($t3)
+	
+	addi $sp, $sp, 4
+	jr $ra
+
+###### DRAW_MARIO ######
+# function draw_mario(int a):
+# a is the starting offset of mario
+# this function draws a mario at a given offset
+draw_mario_a:
+
+	lw $t4, 0($sp)		# pop a
+	add $t3, $t0, $t4	#la $t3, a($t0)
+	li $t1, MARIO3
+	sw $t1, 0($t3)
+	sw $t1, 4($t3)
+	sw $t1, 8($t3)
+	sw $t1, -260($t3)
+	sw $t1, -252($t3)
+	sw $t1, -248($t3)
+	sw $t1, -244($t3)
+	li $t1, MARIO1
+	sw $t1, -512($t3)
+	sw $t1, -516($t3)
+	sw $t1, -508($t3)
+	sw $t1, -504($t3)
+	sw $t1, 248($t3)
+	sw $t1, 252($t3)
+	sw $t1, 260($t3)
+	sw $t1, 264($t3)
+	li $t1, MARIO2
+	sw $t1, -256($t3)
+	li $t1, MARIO4
+	sw $t1, 256($t3)
+	sw $t1, 508($t3)
+	sw $t1, 512($t3)
+	sw $t1, 516($t3)
+	sw $t1, 764($t3)
+	sw $t1, 772($t3)
+	
+	addi $sp, $sp, 4
+	jr $ra
+
 ###### DRAW_PLAYER ######
-# paint princess
+# function draw_player():
+# no parameters, no return
+# this function draws a player
 draw_player:
 	lw $t3, 0($t2)
 
@@ -124,6 +205,8 @@ draw_player:
 	jr $ra
 
 ###### CLEAR_PLAYER ######
+# function clear_player():
+# no parameters, no return
 # this function removes the player
 clear_player:
 	lw $t3, 0($t2)
@@ -241,90 +324,26 @@ ELOOP3:
 
 #### PAINTING CHARACTERS ####
 
+	# paint goomba 1
+	addi $t8, $zero, 13936
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	jal draw_goomba_a
+	
+	# paint goomba 2
+	addi $t8, $zero, 13968
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	jal draw_goomba_a
+
+	# paint player
 	jal draw_player
-	
-	la $t3, 13888($t0)	# mario beginning position
-# paint mario
-	li $t1, MARIO3
-	sw $t1, 0($t3)
-	sw $t1, 4($t3)
-	sw $t1, 8($t3)
-	sw $t1, -260($t3)
-	sw $t1, -252($t3)
-	sw $t1, -248($t3)
-	sw $t1, -244($t3)
-	li $t1, MARIO1
-	sw $t1, -512($t3)
-	sw $t1, -516($t3)
-	sw $t1, -508($t3)
-	sw $t1, -504($t3)
-	sw $t1, 248($t3)
-	sw $t1, 252($t3)
-	sw $t1, 260($t3)
-	sw $t1, 264($t3)
-	li $t1, MARIO2
-	sw $t1, -256($t3)
-	li $t1, MARIO4
-	sw $t1, 256($t3)
-	sw $t1, 508($t3)
-	sw $t1, 512($t3)
-	sw $t1, 516($t3)
-	sw $t1, 764($t3)
-	sw $t1, 772($t3)
-	
-	la $t3, 13936($t0)	# goomba beginning position
-# paint goomba
-	li $t1, GOOM1
-	sw $t1, -1028($t3)
-	sw $t1, -1024($t3)
-	sw $t1, -1020($t3)
-	sw $t1, -772($t3)
-	sw $t1, -768($t3)
-	sw $t1, -764($t3)
-	sw $t1, -524($t3)
-	sw $t1, -520($t3)
-	sw $t1, -512($t3)
-	sw $t1, -504($t3)
-	sw $t1, -500($t3)
-	sw $t1, -268($t3)
-	sw $t1, -256($t3)
-	sw $t1, -244($t3)
-	sw $t1, -16($t3)
-	sw $t1, -12($t3)
-	sw $t1, 0($t3)
-	sw $t1, 12($t3)
-	sw $t1, 16($t3)
-	sw $t1, 240($t3)
-	sw $t1, 244($t3)
-	sw $t1, 268($t3)
-	sw $t1, 272($t3)
-	li $t1, BLACK
-	sw $t1, -776($t3)
-	sw $t1, -760($t3)
-	sw $t1, -516($t3)
-	sw $t1, -508($t3)
-	sw $t1, -4($t3)
-	sw $t1, 4($t3)
-	sw $t1, 760($t3)
-	sw $t1, 764($t3)
-	sw $t1, 772($t3)
-	sw $t1, 776($t3)
-	li $t1, WHITE
-	sw $t1, -264($t3)
-	sw $t1, -260($t3)
-	sw $t1, -252($t3)
-	sw $t1, -248($t3)
-	sw $t1, -8($t3)
-	sw $t1, 8($t3)
-	li $t1, GOOM2
-	sw $t1, 248($t3)
-	sw $t1, 252($t3)
-	sw $t1, 256($t3)
-	sw $t1, 260($t3)
-	sw $t1, 264($t3)
-	sw $t1, 508($t3)
-	sw $t1, 512($t3)
-	sw $t1, 516($t3)
+
+	# paint mario
+	addi $t8, $zero, 13888
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	jal draw_mario_a
 	
 ##### MAIN LOOP #####
 	

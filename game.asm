@@ -165,9 +165,9 @@ draw_mario_a:
 # this function draws a player
 draw_player:
 	lw $t3, 0($t2)		# retrieves position of player
-	lw $t8, 8($t2)		# retrieves direction of player
+	lw $t4, 8($t2)		# retrieves direction of player
 	
-	beq $t8, 1, paint_left		# dir = 1 means player is facing left
+	beq $t4, 1, paint_left		# dir = 1 means player is facing left
 
 paint_right:
 	li $t1, PEACH1
@@ -265,10 +265,10 @@ paint_left:
 # this function removes the player
 clear_player:
 	lw $t3, 0($t2)		# retrieves position of player
-	lw $t8, 8($t2)		# retrieves direction of player
+	lw $t4, 8($t2)		# retrieves direction of player
 	li $t1, BLUE_SKY	
 	
-	beq $t8, 1, clear_left		# dir = 1 means player is facing left
+	beq $t4, 1, clear_left		# dir = 1 means player is facing left
 
 clear_right:
 	sw $t1, -1028($t3)
@@ -378,7 +378,7 @@ main:
 	sw $t3, 0($t2)		# stores position address into player struct
 	addi $t3, $zero, 3460
 	sw $t3, 4($t2)
-	addi $t3, $zero, 1
+	addi $t3, $zero, 2
 	sw $t3, 8($t2)
 
 ###### paints sky blue #####
@@ -420,10 +420,17 @@ LOOP3: 	bge $t6, $t5, ELOOP3
 	j LOOP3
 ELOOP3:
 
+	
+##### MAIN LOOP #####
+	
+	addi $t5,$zero, 1
+	li $t9, KEY_ADDRESS
+MAIN_L:	beq $t5, $zero, END
+
 #### PAINTING CHARACTERS ####
 
 	# paint goomba 1
-	addi $t8, $zero, 13936
+	addi $t8, $zero, 8296
 	addi $sp, $sp, -4
 	sw $t8, 0($sp)
 	jal draw_goomba_a
@@ -434,20 +441,14 @@ ELOOP3:
 	sw $t8, 0($sp)
 	jal draw_goomba_a
 
-	# paint player
-	jal draw_player
-
 	# paint mario
-	addi $t8, $zero, 13888
+	addi $t8, $zero, 3376
 	addi $sp, $sp, -4
 	sw $t8, 0($sp)
 	jal draw_mario_a
 	
-##### MAIN LOOP #####
-	
-	addi $t5,$zero, 1
-	li $t9, KEY_ADDRESS
-MAIN_L:	beq $t5, $zero, END
+	# paint player
+	jal draw_player
 
 #### PLATFORM CREATE ####
 
@@ -504,13 +505,6 @@ key_clicked:
 ##### do code below if the 'w' key is clicked ##### 
 w_clicked: 
 
-	##### DEBUG #####
-	lw $t1, 8($t2)
-	li $v0, 1
-	move $a0, $t1
-	syscall
-	##### DEBUG #####
-	
 	# consider if double jump
 	la $t3, jump_count
  	lw $t8, 0($t3)		# $t8 = value of jump_count
@@ -522,15 +516,16 @@ w_clicked:
 
  	# do jump 	
 can_jump:
+
 	lw $t4, 4($t2) 	# retrieves index of player
 	
-	addi $t4, $t4, -768
+	addi $t4, $t4, -640
 	ble $t4, 320, key_no_clicked # jumps if index is less than 320
 	sw $t4, 4($t2)
 	
 	jal clear_player
 	lw $t4, 0($t2) 	# retrieves position address of player
-	addi $t4, $t4, -3072
+	addi $t4, $t4, -2560
 	sw $t4, 0($t2)
 	jal draw_player
 	j key_no_clicked
@@ -538,13 +533,38 @@ can_jump:
 ##### do code below if the 'a' key is clicked ##### 
 a_clicked: 
 
+##### checks collisions #####
+check_object_collision_a:
+	lw $t4, 0($t2) 	# retrives address of player
+	li $t1, GOOM1	# checks if moving left will collide with goomba
+	
+	lw $t3, -16($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, -20($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, -528($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, -532($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, 496($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, 492($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, 1008($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, 1004($t4)
+	bne $t1, $t3, a_if1
+a_if1:	
+
+##### makes the player face left #####
 	addi $t8, $zero, 1
 	sw $t8, 8($t2)		# look left
 	jal clear_player
 	jal draw_player
 
-	lw $t4, 4($t2) 	# retrives index of player
-	
+##### checks if player is on the left side of the screen #####
+check_wall_collision_a:
+	lw $t4, 4($t2) 		# retrives index of player
 	addi $t4, $t4, -3	# current index of player -3 (most left pixel of player -1 to the left)
 	addi $t8, $t4, -2	# gets the index -2 to the left of $t4 (so basically current index of player -5)
 	
@@ -555,12 +575,12 @@ a_clicked:
 	mfhi $t8		# set $t8 = $t8 mod 64
 	
 	blt $t4, $t8, key_no_clicked # jumps if $t4 mod 64 < $t8 mod 64
-	lw $t4, 4($t2) 	# retrives index of player
+	lw $t4, 4($t2) 		# retrives index of player
 	addi $t4, $t4, -2
 	sw $t4, 4($t2)
 
 	jal clear_player
-	lw $t4, 0($t2) 	# retrives position address of player
+	lw $t4, 0($t2) 		# retrives position address of player
 	addi $t4, $t4, -8
 	sw $t4, 0($t2)
 	jal draw_player
@@ -612,13 +632,38 @@ s_fall:	lw $t4, 4($t2) 	# retrives index of player
 ##### do code below if the 'd' key is clicked ##### 
 d_clicked:
 
+##### checks collisions #####
+check_object_collision_d:
+	lw $t4, 0($t2) 	# retrives address of player
+	li $t1, GOOM1	# checks if moving right will collide with goomba
+	
+	lw $t3, 16($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, 20($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, 528($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, 532($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, -496($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, -492($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, 1040($t4)
+	beq $t1, $t3, key_no_clicked
+	lw $t3, 1044($t4)
+	bne $t1, $t3, d_if1
+d_if1:	
+	
+##### makes the player face right #####
 	addi $t8, $zero, 2
 	sw $t8, 8($t2)		# look right
 	jal clear_player
 	jal draw_player
-
-	lw $t4, 4($t2) 	# retrives index of player
 	
+##### checks if player is on the right side of the screen #####
+check_wall_collision_d:
+	lw $t4, 4($t2) 		# retrives index of player
 	addi $t4, $t4, 3	# current index of player 3 (most left pixel of player 1 to the left)
 	addi $t8, $t4, 2	# gets the index 2 to the left of $t4 (so basically current index of player +5)
 	
@@ -628,13 +673,13 @@ d_clicked:
 	div $t8, $t3		# calculate $t8/64
 	mfhi $t8		# set $t8 = $t8 mod 64
 	
-	bgt $t4, $t8, key_no_clicked # jumps if $t4 mod 64 != $t8 mod 64
-	lw $t4, 4($t2) 	# retrives index of player
+	bgt $t4, $t8, key_no_clicked # jumps if $t4 mod 64 > $t8 mod 64
+	lw $t4, 4($t2) 		# retrives index of player
 	addi $t4, $t4, 2
 	sw $t4, 4($t2)
 
 	jal clear_player
-	lw $t4, 0($t2) 	# retrives position address of player
+	lw $t4, 0($t2) 		# retrives position address of player
 	addi $t4, $t4, 8
 	sw $t4, 0($t2)
 	jal draw_player
@@ -651,9 +696,32 @@ key_no_clicked:
 	li $t1, GREEN_GROUND
 	beq $t1, $t3, grounded
 	
+##### checks collisions #####
+check_object_collision_no_key:
+	lw $t4, 0($t2) 	# retrives address of player
+	li $t1, GOOM1	# checks if moving up will collide with goomba
+	
+	lw $t3, 1020($t4)
+	beq $t1, $t3, grounded
+	lw $t3, 1028($t4)
+	beq $t1, $t3, grounded
+	lw $t3, 1036($t4)
+	beq $t1, $t3, grounded
+	lw $t3, 1012($t4)
+	beq $t1, $t3, grounded
+	lw $t3, 1268($t4)
+	beq $t1, $t3, grounded
+	lw $t3, 1276($t4)
+	beq $t1, $t3, grounded
+	lw $t3, 1284($t4)
+	beq $t1, $t3, grounded
+	lw $t3, 1292($t4)
+	bne $t1, $t3, no_key_if1
+no_key_if1:	
+	
 ##### checks if platform is below the player #####
 	li $t1, BROWN_PLATFORM
-	
+	lw $t3, 1020($t4)
 	beq $t1, $t3, IF1
 	lw $t3, 1028($t4)
 	beq $t1, $t3, IF1

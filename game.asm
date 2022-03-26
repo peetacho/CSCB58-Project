@@ -35,7 +35,7 @@
 ##################################################################### 
 
 .data
-player: .space 8
+player: .space 12
 jump_count: .word 0
 
 .eqv  BASE_ADDRESS  0x10008000
@@ -57,6 +57,7 @@ jump_count: .word 0
 .eqv  PEACH3  0xffe8b0
 .eqv  PEACH4  0xff73a1
 .eqv  PEACH5  0xf0366f
+.eqv  PEACH6  0x289ddb
 
 # mario colours
 .eqv  MARIO1  0xfa3838
@@ -163,8 +164,12 @@ draw_mario_a:
 # no parameters, no return
 # this function draws a player
 draw_player:
-	lw $t3, 0($t2)
+	lw $t3, 0($t2)		# retrieves position of player
+	lw $t8, 8($t2)		# retrieves direction of player
+	
+	beq $t8, 1, paint_left		# dir = 1 means player is facing left
 
+paint_right:
 	li $t1, PEACH1
 	sw $t1, -1028($t3)
 	sw $t1, -1024($t3)
@@ -185,7 +190,6 @@ draw_player:
 	li $t1, PEACH4
 	sw $t1, -8($t3)
 	sw $t1, -4($t3)
-	sw $t1, 0($t3)
 	sw $t1, 4($t3)
 	sw $t1, 508($t3)
 	sw $t1, 512($t3)
@@ -199,6 +203,8 @@ draw_player:
 	sw $t1, 764($t3)
 	sw $t1, 768($t3)
 	sw $t1, 772($t3)
+	li $t1, PEACH6
+	sw $t1, 0($t3)
 	li $t1, WHITE
 	sw $t1, 248($t3)
 	sw $t1, 264($t3)
@@ -207,15 +213,64 @@ draw_player:
 	sw $t1, 12($t3)
 	
 	jr $ra
+	
+paint_left:
+	li $t1, PEACH1
+	sw $t1, -1024($t3)
+	sw $t1, -1020($t3)
+	li $t1, PEACH2
+	sw $t1, -768($t3)
+	sw $t1, -764($t3)
+	sw $t1, -760($t3)
+	sw $t1, -516($t3)
+	sw $t1, -504($t3)
+	sw $t1, -500($t3)
+	sw $t1, -248($t3)
+	sw $t1, 12($t3)
+	li $t1, PEACH3
+	sw $t1, -512($t3)
+	sw $t1, -508($t3)
+	sw $t1, -256($t3)
+	sw $t1, -252($t3)
+	li $t1, PEACH4
+	sw $t1, -4($t3)
+	sw $t1, 4($t3)
+	sw $t1, 8($t3)
+	sw $t1, 512($t3)
+	sw $t1, 516($t3)
+	li $t1, PEACH5
+	sw $t1, 256($t3)
+	sw $t1, 260($t3)
+	sw $t1, 508($t3)
+	sw $t1, 520($t3)
+	sw $t1, 764($t3)
+	sw $t1, 768($t3)
+	sw $t1, 772($t3)
+	sw $t1, 776($t3)
+	sw $t1, 780($t3)
+	li $t1, PEACH6
+	sw $t1, 0($t3)
+	li $t1, WHITE
+	sw $t1, 248($t3)
+	sw $t1, 264($t3)
+	li $t1, BLACK
+	sw $t1, -12($t3)
+	sw $t1, -8($t3)
+	
+	jr $ra
 
 ###### CLEAR_PLAYER ######
 # function clear_player():
 # no parameters, no return
 # this function removes the player
 clear_player:
-	lw $t3, 0($t2)
+	lw $t3, 0($t2)		# retrieves position of player
+	lw $t8, 8($t2)		# retrieves direction of player
+	li $t1, BLUE_SKY	
+	
+	beq $t8, 1, clear_left		# dir = 1 means player is facing left
 
-	li $t1, BLUE_SKY
+clear_right:
 	sw $t1, -1028($t3)
 	sw $t1, -1024($t3)
 	sw $t1, -776($t3)
@@ -232,7 +287,6 @@ clear_player:
 	sw $t1, -256($t3)
 	sw $t1, -8($t3)
 	sw $t1, -4($t3)
-	sw $t1, 0($t3)
 	sw $t1, 4($t3)
 	sw $t1, 508($t3)
 	sw $t1, 512($t3)
@@ -245,10 +299,48 @@ clear_player:
 	sw $t1, 764($t3)
 	sw $t1, 768($t3)
 	sw $t1, 772($t3)
+	sw $t1, 0($t3)
 	sw $t1, 248($t3)
 	sw $t1, 264($t3)
 	sw $t1, 8($t3)
 	sw $t1, 12($t3)
+	
+	jr $ra
+	
+clear_left:
+	sw $t1, -1024($t3)
+	sw $t1, -1020($t3)
+	sw $t1, -768($t3)
+	sw $t1, -764($t3)
+	sw $t1, -760($t3)
+	sw $t1, -516($t3)
+	sw $t1, -504($t3)
+	sw $t1, -500($t3)
+	sw $t1, -248($t3)
+	sw $t1, 12($t3)
+	sw $t1, -512($t3)
+	sw $t1, -508($t3)
+	sw $t1, -256($t3)
+	sw $t1, -252($t3)
+	sw $t1, -4($t3)
+	sw $t1, 4($t3)
+	sw $t1, 8($t3)
+	sw $t1, 512($t3)
+	sw $t1, 516($t3)
+	sw $t1, 256($t3)
+	sw $t1, 260($t3)
+	sw $t1, 508($t3)
+	sw $t1, 520($t3)
+	sw $t1, 764($t3)
+	sw $t1, 768($t3)
+	sw $t1, 772($t3)
+	sw $t1, 776($t3)
+	sw $t1, 780($t3)
+	sw $t1, 0($t3)
+	sw $t1, 248($t3)
+	sw $t1, 264($t3)
+	sw $t1, -12($t3)
+	sw $t1, -8($t3)
 	
 	jr $ra
 
@@ -282,11 +374,11 @@ main:
 ##### INITIALZIE PLAYER #####
 	la $t2, player
 
- 	la $t3, 13836($t0)	# Player beginning position
+ 	la $t3, 13840($t0)	# Player beginning position
 	sw $t3, 0($t2)		# stores position address into player struct
 	addi $t3, $zero, 3460
 	sw $t3, 4($t2)
-	addi $t3, $zero, 2
+	addi $t3, $zero, 1
 	sw $t3, 8($t2)
 
 ###### paints sky blue #####
@@ -411,6 +503,13 @@ key_clicked:
 	
 ##### do code below if the 'w' key is clicked ##### 
 w_clicked: 
+
+	##### DEBUG #####
+	lw $t1, 8($t2)
+	li $v0, 1
+	move $a0, $t1
+	syscall
+	##### DEBUG #####
 	
 	# consider if double jump
 	la $t3, jump_count
@@ -423,14 +522,14 @@ w_clicked:
 
  	# do jump 	
 can_jump:
-	lw $t4, 4($t2) 	# retrives index of player
+	lw $t4, 4($t2) 	# retrieves index of player
 	
 	addi $t4, $t4, -768
 	ble $t4, 320, key_no_clicked # jumps if index is less than 320
 	sw $t4, 4($t2)
 	
 	jal clear_player
-	lw $t4, 0($t2) 	# retrives position address of player
+	lw $t4, 0($t2) 	# retrieves position address of player
 	addi $t4, $t4, -3072
 	sw $t4, 0($t2)
 	jal draw_player
@@ -438,6 +537,11 @@ can_jump:
 
 ##### do code below if the 'a' key is clicked ##### 
 a_clicked: 
+
+	addi $t8, $zero, 1
+	sw $t8, 8($t2)		# look left
+	jal clear_player
+	jal draw_player
 
 	lw $t4, 4($t2) 	# retrives index of player
 	
@@ -506,7 +610,12 @@ s_fall:	lw $t4, 4($t2) 	# retrives index of player
 	j key_no_clicked
 
 ##### do code below if the 'd' key is clicked ##### 
-d_clicked: 
+d_clicked:
+
+	addi $t8, $zero, 2
+	sw $t8, 8($t2)		# look right
+	jal clear_player
+	jal draw_player
 
 	lw $t4, 4($t2) 	# retrives index of player
 	
@@ -575,15 +684,9 @@ do_grav:
 	j end_iteration
 	
 grounded:
+	# resets jump count when player is grounded
 	la $t3, jump_count
 	lw $t8, 0($t3)
-	 	
-	##### DEBUG #####
-	# Print result
-	li $v0, 1
-	move $a0, $t8
-	syscall
-	##### DEBUG #####
 	
  	sw $zero, 0($t3)
 	

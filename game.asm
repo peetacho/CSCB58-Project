@@ -36,6 +36,7 @@
 
 .data
 player: .space 8
+jump_count: .word 0
 
 .eqv  BASE_ADDRESS  0x10008000
 .eqv  KEY_ADDRESS  0xffff0000
@@ -164,43 +165,46 @@ draw_mario_a:
 draw_player:
 	lw $t3, 0($t2)
 
-	li $t1, PEACH4
-	sw $t1, 0($t3)
-	sw $t1, -4($t3)
-	sw $t1, 4($t3)
-	sw $t1, 8($t3)
-	sw $t1, 512($t3)
-	sw $t1, 516($t3)
-	li $t1, PEACH5
-	sw $t1, 256($t3)
-	sw $t1, 260($t3)
-	sw $t1, 508($t3)
-	sw $t1, 520($t3)
-	sw $t1, 776($t3)
-	sw $t1, 772($t3)
-	sw $t1, 768($t3)
-	sw $t1, 764($t3)
-	sw $t1, 760($t3)
-	li $t1, WHITE
-	sw $t1, 252($t3)
-	sw $t1, 264($t3)
+	li $t1, PEACH1
+	sw $t1, -1028($t3)
+	sw $t1, -1024($t3)
 	li $t1, PEACH2
-	sw $t1, -8($t3)
-	sw $t1, -260($t3)
-	sw $t1, -516($t3)
-	sw $t1, -520($t3)
+	sw $t1, -776($t3)
 	sw $t1, -772($t3)
 	sw $t1, -768($t3)
-	sw $t1, -764($t3)
-	sw $t1, -504($t3)
-	li $t1, PEACH3
-	sw $t1, -256($t3)
-	sw $t1, -252($t3)
-	sw $t1, -512($t3)
+	sw $t1, -524($t3)
+	sw $t1, -520($t3)
 	sw $t1, -508($t3)
-	li $t1, PEACH1
-	sw $t1, -1024($t3)
-	sw $t1, -1020($t3)
+	sw $t1, -264($t3)
+	sw $t1, -12($t3)
+	li $t1, PEACH3
+	sw $t1, -516($t3)
+	sw $t1, -512($t3)
+	sw $t1, -260($t3)
+	sw $t1, -256($t3)
+	li $t1, PEACH4
+	sw $t1, -8($t3)
+	sw $t1, -4($t3)
+	sw $t1, 0($t3)
+	sw $t1, 4($t3)
+	sw $t1, 508($t3)
+	sw $t1, 512($t3)
+	li $t1, PEACH5
+	sw $t1, 252($t3)
+	sw $t1, 256($t3)
+	sw $t1, 504($t3)
+	sw $t1, 516($t3)
+	sw $t1, 756($t3)
+	sw $t1, 760($t3)
+	sw $t1, 764($t3)
+	sw $t1, 768($t3)
+	sw $t1, 772($t3)
+	li $t1, WHITE
+	sw $t1, 248($t3)
+	sw $t1, 264($t3)
+	li $t1, BLACK
+	sw $t1, 8($t3)
+	sw $t1, 12($t3)
 	
 	jr $ra
 
@@ -212,37 +216,39 @@ clear_player:
 	lw $t3, 0($t2)
 
 	li $t1, BLUE_SKY
-	sw $t1, 0($t3)
-	sw $t1, -4($t3)
-	sw $t1, 4($t3)
-	sw $t1, 8($t3)
-	sw $t1, 512($t3)
-	sw $t1, 516($t3)
-	sw $t1, 256($t3)
-	sw $t1, 260($t3)
-	sw $t1, 508($t3)
-	sw $t1, 520($t3)
-	sw $t1, 776($t3)
-	sw $t1, 772($t3)
-	sw $t1, 768($t3)
-	sw $t1, 764($t3)
-	sw $t1, 760($t3)
-	sw $t1, 252($t3)
-	sw $t1, 264($t3)
-	sw $t1, -8($t3)
-	sw $t1, -260($t3)
-	sw $t1, -516($t3)
-	sw $t1, -520($t3)
+	sw $t1, -1028($t3)
+	sw $t1, -1024($t3)
+	sw $t1, -776($t3)
 	sw $t1, -772($t3)
 	sw $t1, -768($t3)
-	sw $t1, -764($t3)
-	sw $t1, -504($t3)
-	sw $t1, -256($t3)
-	sw $t1, -252($t3)
-	sw $t1, -512($t3)
+	sw $t1, -524($t3)
+	sw $t1, -520($t3)
 	sw $t1, -508($t3)
-	sw $t1, -1024($t3)
-	sw $t1, -1020($t3)
+	sw $t1, -264($t3)
+	sw $t1, -12($t3)
+	sw $t1, -516($t3)
+	sw $t1, -512($t3)
+	sw $t1, -260($t3)
+	sw $t1, -256($t3)
+	sw $t1, -8($t3)
+	sw $t1, -4($t3)
+	sw $t1, 0($t3)
+	sw $t1, 4($t3)
+	sw $t1, 508($t3)
+	sw $t1, 512($t3)
+	sw $t1, 252($t3)
+	sw $t1, 256($t3)
+	sw $t1, 504($t3)
+	sw $t1, 516($t3)
+	sw $t1, 756($t3)
+	sw $t1, 760($t3)
+	sw $t1, 764($t3)
+	sw $t1, 768($t3)
+	sw $t1, 772($t3)
+	sw $t1, 248($t3)
+	sw $t1, 264($t3)
+	sw $t1, 8($t3)
+	sw $t1, 12($t3)
 	
 	jr $ra
 
@@ -271,7 +277,7 @@ create_end:
 	jr $ra
 
 main:
- 	li $t0, BASE_ADDRESS 	# $t0 stores the base address for display 
+ 	li $t0, BASE_ADDRESS 	# $t0 stores the base address for display
 
 ##### INITIALZIE PLAYER #####
 	la $t2, player
@@ -405,6 +411,18 @@ key_clicked:
 	
 ##### do code below if the 'w' key is clicked ##### 
 w_clicked: 
+	
+	# consider if double jump
+	la $t3, jump_count
+ 	lw $t8, 0($t3)		# $t8 = value of jump_count
+	
+ 	bgt $t8, 1, key_no_clicked
+ 	
+ 	addi $t8, $t8, 1	# increment jump_count
+ 	sw $t8, 0($t3)
+
+ 	# do jump 	
+can_jump:
 	lw $t4, 4($t2) 	# retrives index of player
 	
 	addi $t4, $t4, -768
@@ -449,14 +467,14 @@ s_clicked:
 	addi $t8, $zero, 64
 	
 	lw $t4, 0($t2) 	# retrives index of player
-	lw $t3, 1024($t4) # $t3 is the color of the pixel 4 units below the center 
+	lw $t3, 1020($t4) # $t3 is the color of the pixel 4 units below the center 
 ##### checks if platform is below the player #####
 	li $t1, BROWN_PLATFORM
 	
 	beq $t1, $t3, s_if1
-	lw $t3, 1032($t4)
+	lw $t3, 1028($t4)
 	beq $t1, $t3, s_if1
-	lw $t3, 1016($t4)
+	lw $t3, 1012($t4)
 	bne $t1, $t3, key_no_clicked
 
 	# if below platform is the player, the fall will be harder
@@ -518,22 +536,22 @@ key_no_clicked:
 
 ##### checks if ground is below the player #####
 	lw $t4, 0($t2) 	# retrives position address of player
-	lw $t3, 1024($t4) # $t3 is the color of the pixel 4 units below the center 
+	lw $t3, 1020($t4) # $t3 is the color of the pixel 4 units below the center 
 	# (if we check this pixel and if it is the colour of the ground, this means that
 	# the player is on the ground
 	li $t1, GREEN_GROUND
-	beq $t1, $t3, end_iteration
+	beq $t1, $t3, grounded
 	
 ##### checks if platform is below the player #####
 	li $t1, BROWN_PLATFORM
 	
 	beq $t1, $t3, IF1
-	lw $t3, 1032($t4)
+	lw $t3, 1028($t4)
 	beq $t1, $t3, IF1
-	lw $t3, 1016($t4)
+	lw $t3, 1012($t4)
 	bne $t1, $t3, gravity
 
-IF1:	j end_iteration
+IF1:	j grounded
 
 
 ##### simulates gravity ##### 
@@ -554,6 +572,20 @@ do_grav:
 	sw $t4, 0($t2)
 	jal draw_player
 	addi $t5, $zero, 1
+	j end_iteration
+	
+grounded:
+	la $t3, jump_count
+	lw $t8, 0($t3)
+	 	
+	##### DEBUG #####
+	# Print result
+	li $v0, 1
+	move $a0, $t8
+	syscall
+	##### DEBUG #####
+	
+ 	sw $zero, 0($t3)
 	
 ##### this loop is finished, call sleep and jump to MAIN_L #####
 end_iteration:	

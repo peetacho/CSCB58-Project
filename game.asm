@@ -36,7 +36,6 @@
 
 .data
 player: .space 8
-nel:  .asciiz "\n"
 
 .eqv  BASE_ADDRESS  0x10008000
 .eqv  KEY_ADDRESS  0xffff0000
@@ -164,6 +163,30 @@ clear_player:
 	
 	jr $ra
 
+#### PLATFORM CREATE ####
+# function create_platform(int a, int b):
+# a is the starting index of the platform
+# b is the length of the platform
+create_platform_a_b:
+ 	li $t1, BROWN_PLATFORM
+ 	lw $t8, 0($sp)	# pop b
+ 	lw $t4, 4($sp)	# pop a
+ 	
+	add $t4, $t0, $t4
+	addi $t3, $zero, 0
+	
+create_loop1:
+	bgt $t3, $t8, create_end
+	addi $t4, $t4, 4
+	sw $t1, 0($t4)
+	sw $t1, 256($t4)
+	addi $t3, $t3, 1
+	j create_loop1
+
+create_end:
+	addi $sp, $sp, 8
+	jr $ra
+
 main:
  	li $t0, BASE_ADDRESS 	# $t0 stores the base address for display 
 
@@ -194,7 +217,7 @@ ELOOP:
  	li $t1, GREEN_GROUND   	# $t1 stores the green colour code 
 	li $t5, 3840
 	addi $t6, $zero, 3712
-	la, $t7, 14848($t0)
+	la $t7, 14848($t0)
 	
 LOOP2: 	bge $t6, $t5, ELOOP2
 	sw $t1, 0($t7)
@@ -207,7 +230,7 @@ ELOOP2:
  	li $t1, BROWN_GROUND  	# $t1 stores the brown colour code 
 	li $t5, 4096
 	addi $t6, $zero, 3840
-	la, $t7, 15360($t0)
+	la $t7, 15360($t0)
 	
 LOOP3: 	bge $t6, $t5, ELOOP3
 	sw $t1, 0($t7)
@@ -215,32 +238,6 @@ LOOP3: 	bge $t6, $t5, ELOOP3
 	addi $t6, $t6, 1
 	j LOOP3
 ELOOP3:
-
-
-#### PLATFORM CREATE ####
-
- 	li $t1, BROWN_PLATFORM  # $t1 stores the green colour code 
-	li $t5, 16
-	add $t6, $zero, $zero
-	la, $t7, 7836($t0)
-	
-LOOP5: 	bge $t6, $t5, ELOOP5
-	sw $t1, 0($t7)
-	addi $t7, $t7, 4
-	addi $t6, $t6, 1
-	j LOOP5
-ELOOP5:
-	li $t5, 16
-	add $t6, $zero, $zero
-	la, $t7, 7836($t0)
-	addi, $t7, $t7, 256
-	
-LOOP4: 	bge $t6, $t5, ELOOP4
-	sw $t1, 0($t7)
-	addi $t7, $t7, 4
-	addi $t6, $t6, 1
-	j LOOP4
-ELOOP4:
 
 #### PAINTING CHARACTERS ####
 
@@ -334,9 +331,45 @@ ELOOP4:
 	addi $t5,$zero, 1
 	li $t9, KEY_ADDRESS
 MAIN_L:	beq $t5, $zero, END
+
+#### PLATFORM CREATE ####
+
+	addi $t8, $zero, 11400
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	addi $t8, $zero, 24
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	jal create_platform_a_b
+
+	addi $t8, $zero, 9296
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	addi $t8, $zero, 8
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	jal create_platform_a_b
+	
+	addi $t8, $zero, 5500
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	addi $t8, $zero, 16
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	jal create_platform_a_b
+	
+	addi $t8, $zero, 4360
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	addi $t8, $zero, 16
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	jal create_platform_a_b
+	
+#### check key ####
+
 	lw $t7, 0($t9)	# 1 if there is a new keypress
 	lw $t6, 4($t9)	# value of the key press
-
 	
 if_key:	
 	bne $t7, 1, key_no_clicked
@@ -355,13 +388,13 @@ key_clicked:
 w_clicked: 
 	lw $t4, 4($t2) 	# retrives index of player
 	
-	addi $t4, $t4, -576
+	addi $t4, $t4, -768
 	ble $t4, 320, key_no_clicked # jumps if index is less than 320
 	sw $t4, 4($t2)
 	
 	jal clear_player
 	lw $t4, 0($t2) 	# retrives position address of player
-	addi $t4, $t4, -2304
+	addi $t4, $t4, -3072
 	sw $t4, 0($t2)
 	jal draw_player
 	j key_no_clicked
@@ -398,7 +431,9 @@ a_clicked:
 ##### do code below if the 's' key is clicked ##### 
 s_clicked: 
 	addi $t8, $zero, 64
-
+	
+	lw $t4, 0($t2) 	# retrives index of player
+	lw $t3, 1024($t4) # $t3 is the color of the pixel 4 units below the center 
 ##### checks if platform is below the player #####
 	li $t1, BROWN_PLATFORM
 	
@@ -411,6 +446,7 @@ s_clicked:
 	# if below platform is the player, the fall will be harder
 s_if1:	sll $t8, $t8, 2
 	j s_fall
+
 
 ##### checks if ground is below the player #####
 	lw $t4, 0($t2) 	# retrives position address of player

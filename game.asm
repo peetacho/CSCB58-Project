@@ -401,7 +401,34 @@ u_else1:
 	beq $s2, GOOM1, u_goom
 	beq $s2, GOOM2, u_goom
 	beq $s2, BROWN_PLATFORM, u_platform
+	
+	# check if bullet hits edges
+	lw $s2, 0($t3)		# load address of bullet
+	sub $s2, $s2, $t0	# gets index of bullet
+	li $s4, 4
+	div $s2, $s2, $s4
+	li $s4, 64
+	div $s2, $s4
+	mfhi $s2		# $s2 = $s2 mod 64
+	
+	beqz $s2, u_wall	# far left wall
+	beq $s2, 63, u_wall	# far right wall
+	
 	j u_cont
+	
+u_wall:	
+	# deletes it
+	li $t1, 1
+	sw $t1, 8($t3)		# change value of deleted in bullet to be 1
+	
+	# removes it from screen
+	li $t1, BLUE_SKY
+	lw $t4, 0($t3)		# load address of bullet
+	sw $t1, 0($t4)
+	
+	addi $t3, $t3, 12
+	addi $t8, $t8, 1
+	j u_l1
 	
 u_goom:	
 	# deletes it

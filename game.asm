@@ -37,6 +37,8 @@
 .data
 player: .space 12
 jump_count: .word 0
+num_player_bullets: .word 0
+player_bullet_array: .space 240 # each bullet has space of 12, so the array only allows 20 bullets
 
 .eqv  BASE_ADDRESS  0x10008000
 .eqv  KEY_ADDRESS  0xffff0000
@@ -58,6 +60,7 @@ jump_count: .word 0
 .eqv  PEACH4  0xff73a1
 .eqv  PEACH5  0xf0366f
 .eqv  PEACH6  0x289ddb
+.eqv  PEACH_BULLET 0xf5c635
 
 # mario colours
 .eqv  MARIO1  0xfa3838
@@ -368,6 +371,131 @@ create_end:
 	addi $sp, $sp, 8
 	jr $ra
 
+
+##### UPDATE PLAYER BULLETS #####
+# function update_player_bullets()
+# moves the player bullets
+update_player_bullets:
+	la $t3, player_bullet_array
+	la $s1, num_player_bullets
+	lw $s1, 0($s1)
+	
+	
+	add $t8, $zero, $zero
+u_l1:	bge $t8, $s1, u_el1
+	
+	lw $t4, 0($t3)		# load address of bullet
+	
+	lw $s0, 4($t3)		# load dir of bullet
+	beq $s0, 1, u_left1	# branch if direction is left
+	
+	# check color at address 
+u_right1:
+	lw $s2, 4($t4)		# load color into $t2 at the address + 4 in $t4 (checks the right pixel)
+	j u_else1
+u_left1: 
+	lw $s2, -4($t4)		# load color into $t2 at the address - 4 in $t4 (checks the left pixel)
+
+	# branch depending on the color
+u_else1:	
+	beq $s2, GOOM1, u_goom
+	beq $s2, GOOM2, u_goom
+	beq $s2, BROWN_PLATFORM, u_platform
+	j u_cont
+	
+u_goom:	
+	# deletes it
+	li $t1, 1
+	sw $t1, 8($t3)		# change value of deleted in bullet to be 1
+	
+	# removes it from screen
+	li $t1, BLUE_SKY
+	lw $t4, 0($t3)		# load address of bullet
+	sw $t1, 0($t4)
+	
+	addi $t3, $t3, 12
+	addi $t8, $t8, 1
+	j u_l1
+	
+u_platform:
+	# deletes it
+	li $t1, 1
+	sw $t1, 8($t3)		# change value of deleted in bullet to be 1
+	
+	# removes it from screen
+	li $t1, BLUE_SKY
+	lw $t4, 0($t3)		# load address of bullet
+	sw $t1, 0($t4)
+	
+	addi $t3, $t3, 12
+	addi $t8, $t8, 1
+	j u_l1
+	
+	# next pixel the bullet is going to is not special, thus bullet continues flying (i.e. no collisions)
+u_cont:	
+	li $t1, BLUE_SKY
+	sw $t1, 0($t4)
+	
+	lw $s0, 4($t3)		# load dir of bullet
+	beq $s0, 1, u_left	# branch if direction is left
+	addi $t4, $t4, 4
+	j u_else
+
+u_left:	addi $t4, $t4, -4
+	
+u_else:
+	sw $t4, 0($t3)		# store address of bullet
+	
+	li $t1, PEACH_BULLET
+	sw $t1, 0($t4)
+	
+	addi $t3, $t3, 12
+	addi $t8, $t8, 1
+	j u_l1
+	
+u_el1:	jr $ra
+
+##### DELETE PLAYER BULLETS #####
+# function delete_player_bullets()
+# deletes the player bullets that were deleted when update_player_bullets() was called.
+delete_player_bullets:
+	la $t3, player_bullet_array
+	la $s3, player_bullet_array	# $s3 is the address we put the non-deleted bullets into (it replaces the bullets)
+	la $s1, num_player_bullets
+	lw $s1, 0($s1)
+	
+	li $s0, 0		# $s0 counts the number of non-deleted bullets
+	
+	li $t8, 0
+dpb_l1:	bge $t8, $s1, dpb_end	# loops through the bullets in player_bullet_array
+	
+	lw $t4, 8($t3)		# load deleted value of bullet
+	
+	bnez $t4, if1_cont 
+if1_z:	
+	lw $s4, 0($t3)		# load address of bullet
+	lw $s5, 4($t3)		# load direction of bullet
+	lw $s6, 8($t3)		# load deleted value of bullet
+	
+	sw $s4, 0($s3)		# store address of bullet
+	sw $s5, 4($s3)		# store direction of bullet
+	sw $s6, 8($s3)		# store deleted value of bullet
+	
+	addi $s3, $s3, 12
+	addi $s0, $s0, 1	# increment $s0 count
+
+if1_cont:
+	addi $t3, $t3, 12
+	addi $t8, $t8, 1
+	j dpb_l1
+	
+dpb_end:
+	la $s1, num_player_bullets
+	sw $s0, 0($s1)
+	jr $ra
+
+##### MAIN #####
+
 main:
  	li $t0, BASE_ADDRESS 	# $t0 stores the base address for display
 
@@ -484,7 +612,12 @@ MAIN_L:	beq $t5, $zero, END
 	sw $t8, 0($sp)
 	jal create_platform_a_b
 	
-#### check key ####
+##### update bullets #####
+	
+	jal update_player_bullets
+	jal delete_player_bullets
+	
+##### check key #####
 
 	lw $t7, 0($t9)	# 1 if there is a new keypress
 	lw $t6, 4($t9)	# value of the key press
@@ -499,6 +632,7 @@ key_clicked:
 	beq $t6, 0x61, a_clicked	# a clicked
 	beq $t6, 0x73, s_clicked	# s clicked
 	beq $t6, 0x64, d_clicked	# d clicked
+	beq $t6, 0x6b, k_clicked	# k clicked
 	beq $t6, 0x70, main		# p clicked
 	j key_no_clicked
 	
@@ -684,6 +818,43 @@ check_wall_collision_d:
 	sw $t4, 0($t2)
 	jal draw_player
 	j key_no_clicked
+	
+##### do code below if the 'k' key is clicked ##### 
+k_clicked:
+	li $t1, PEACH_BULLET
+	lw $t4, 0($t2) 		# retrieves position address of player
+	lw $t3, 8($t2) 		# retrieves direction of player
+	
+	beq $t3, 1, k_left
+	addi $t4, $t4, 20
+	sw $t1, 0($t4)
+	j store_to_array
+	
+k_left:
+	addi $t4, $t4, -20
+	sw $t1, 0($t4)
+
+store_to_array:
+	la $t3, player_bullet_array
+	la $t1, num_player_bullets
+	lw $t1, 0($t1)
+	
+	add $t8, $zero, $zero
+k_l1:	bge $t8, $t1, k_el1
+	addi $t3, $t3, 12
+	addi $t8, $t8, 1
+	j k_l1
+	
+k_el1:
+	sw $t4, 0($t3)		# store address of bullet
+	lw $t4, 8($t2) 		# retrieves direction of player
+	sw $t4, 4($t3)		# store direction of bullet
+	sw $zero, 8($t3)	# store value of deleted to 0 of current bullet
+	
+	la $t1, num_player_bullets
+	lw $t4, 0($t1)
+	addi $t4, $t4, 1	# add 1 to total num_player_bullets
+	sw $t4, 0($t1)
 	
 ##### do code below if no key is clicked ##### 
 key_no_clicked:

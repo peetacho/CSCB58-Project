@@ -758,7 +758,7 @@ draw_goom_l_end:
 	addi $t8, $zero, 4360
 	addi $sp, $sp, -4
 	sw $t8, 0($sp)
-	addi $t8, $zero, 16
+	addi $t8, $zero, 20
 	addi $sp, $sp, -4
 	sw $t8, 0($sp)
 	jal create_platform_a_b
@@ -836,13 +836,13 @@ can_jump:
 
 	lw $t4, 4($t2) 	# retrieves index of player
 	
-	addi $t4, $t4, -640
+	addi $t4, $t4, -768
 	ble $t4, 320, key_no_clicked # jumps if index is less than 320
 	sw $t4, 4($t2)
 	
 	jal clear_player
 	lw $t4, 0($t2) 	# retrieves position address of player
-	addi $t4, $t4, -2560
+	addi $t4, $t4, -3072
 	sw $t4, 0($t2)
 	jal draw_player
 	j key_no_clicked
@@ -1101,8 +1101,8 @@ IF1:	j grounded
 ##### simulates gravity ##### 
 gravity:
 	# the 2 is a timing thing. The higher the value, the slower the player falls
-	bgt $t5, 2, do_grav
-	j end_iteration
+	#bgt $t5, 2, do_grav
+	#j end_iteration
 	
 do_grav:
 

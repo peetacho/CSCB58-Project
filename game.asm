@@ -40,6 +40,7 @@ jump_count: .word 0
 num_player_bullets: .word 0
 player_bullet_array: .space 240 	# each bullet has space of 12, so the array only allows 20 bullets
 enemy_array: .word 8296, 0, 13968, 0, 4532, 0
+total_num_enemy: .word 3
 num_enemy_array: .word 3, 4, 5		# each element at index i represents the number of enemies at level i
 current_level: .word 1
 
@@ -63,7 +64,7 @@ current_level: .word 1
 .eqv  PEACH4  0xff73a1
 .eqv  PEACH5  0xf0366f
 .eqv  PEACH6  0x289ddb
-.eqv  PEACH_BULLET 0xf5c635
+.eqv  PEACH_BULLET 0xf0366e
 
 # mario colours
 .eqv  MARIO1  0xfa3838
@@ -501,9 +502,9 @@ u_delete_l:
 	
 
 u_delete_if:
-	addi $s3, $s3, -512	
+	addi $s3, $s3, -520	
 	blt $t1, $s3, u_delete_else	# if bullet is above the enemy
-	addi $s3, $s3, 1280
+	addi $s3, $s3, 1284
 	bgt $t1, $s3, u_delete_else	# if bullet is below the enemy
 	
 	# deletes the goomba
@@ -783,8 +784,40 @@ key_clicked:
 	beq $t6, 0x73, s_clicked	# s clicked
 	beq $t6, 0x64, d_clicked	# d clicked
 	beq $t6, 0x6b, k_clicked	# k clicked
-	beq $t6, 0x70, main		# p clicked
+	beq $t6, 0x70, p_clicked	# p clicked
 	j key_no_clicked
+
+##### do code below if the 'p' key is clicked ##### 
+p_clicked:
+	# reset values
+	la $t4, num_player_bullets
+	sw $zero, 0($t4)
+	la $t4, jump_count
+	sw $zero, 0($t4)
+	li $t3, 1
+	la $t4, current_level
+	sw $t3, 0($t4)
+	
+	# reset goomba delete values
+p_restore_goom:
+	la $s5, enemy_array
+	la $s4, total_num_enemy
+	lw $s4, 0($s4)
+	
+	li $s0, 0
+p_restore_goom_l:
+	bge $s0, $s4, p_restore_goom_end
+	
+	# restores the goomba
+	li $s2, 0
+	sw $s2, 4($s5)		# save deleted = 0 to enemy
+	
+	addi $s5, $s5, 8
+	addi $s0, $s0, 1
+	j p_restore_goom_l
+
+p_restore_goom_end:
+	j main
 	
 ##### do code below if the 'w' key is clicked ##### 
 w_clicked: 
@@ -1051,7 +1084,15 @@ no_key_if1:
 	beq $t1, $t3, IF1
 	lw $t3, 1028($t4)
 	beq $t1, $t3, IF1
+	
+	lw $s4, 8($t2)		# retrives direction of player
+	beq $s4, 1, check_left
 	lw $t3, 1012($t4)
+	j check_if_end
+check_left:	
+	lw $t3, 1036($t4)
+	
+check_if_end:
 	bne $t1, $t3, gravity
 
 IF1:	j grounded

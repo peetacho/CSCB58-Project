@@ -38,7 +38,10 @@
 player: .space 12
 jump_count: .word 0
 num_player_bullets: .word 0
-player_bullet_array: .space 240 # each bullet has space of 12, so the array only allows 20 bullets
+player_bullet_array: .space 240 	# each bullet has space of 12, so the array only allows 20 bullets
+enemy_array: .word 8296, 0, 13968, 0, 4532, 0
+num_enemy_array: .word 3, 4, 5		# each element at index i represents the number of enemies at level i
+current_level: .word 1
 
 .eqv  BASE_ADDRESS  0x10008000
 .eqv  KEY_ADDRESS  0xffff0000
@@ -84,42 +87,80 @@ player_bullet_array: .space 240 # each bullet has space of 12, so the array only
 .globl main
 
 ###### DRAW_GOOMBA ######
-# function draw_player(int a):
+# function draw_goomba(int a):
 # a is the starting offset of the goomba
 # this function draws a goomba at a given offset
 draw_goomba_a:
 
-	lw $t4, 0($sp)		# pop a
-	add $t3, $t0, $t4	#la $t3, a($t0)
+	lw $s4, 0($sp)		# pop a
+	add $s3, $t0, $s4	# la $s3, a($t0)
 	li $t1, GOOM1
-	sw $t1, -516($t3)
-	sw $t1, -512($t3)
-	sw $t1, -264($t3)
-	sw $t1, -256($t3)
-	sw $t1, -12($t3)
-	sw $t1, -8($t3)
-	sw $t1, 0($t3)
-	sw $t1, 8($t3)
-	sw $t1, 244($t3)
-	sw $t1, 248($t3)
-	sw $t1, 252($t3)
-	sw $t1, 256($t3)
-	sw $t1, 260($t3)
-	sw $t1, 264($t3)
+	sw $t1, -516($s3)
+	sw $t1, -512($s3)
+	sw $t1, -264($s3)
+	sw $t1, -256($s3)
+	sw $t1, -12($s3)
+	sw $t1, -8($s3)
+	sw $t1, 0($s3)
+	sw $t1, 8($s3)
+	sw $t1, 244($s3)
+	sw $t1, 248($s3)
+	sw $t1, 252($s3)
+	sw $t1, 256($s3)
+	sw $t1, 260($s3)
+	sw $t1, 264($s3)
 	li $t1, BLACK
-	sw $t1, -520($t3)
-	sw $t1, -504($t3)
-	sw $t1, -260($t3)
-	sw $t1, -252($t3)
-	sw $t1, 764($t3)
-	sw $t1, 772($t3)
+	sw $t1, -520($s3)
+	sw $t1, -504($s3)
+	sw $t1, -260($s3)
+	sw $t1, -252($s3)
+	sw $t1, 764($s3)
+	sw $t1, 772($s3)
 	li $t1, WHITE
-	sw $t1, -4($t3)
-	sw $t1, 4($t3)
+	sw $t1, -4($s3)
+	sw $t1, 4($s3)
 	li $t1, GOOM2
-	sw $t1, 508($t3)
-	sw $t1, 512($t3)
-	sw $t1, 768($t3)
+	sw $t1, 508($s3)
+	sw $t1, 512($s3)
+	sw $t1, 768($s3)
+	
+	addi $sp, $sp, 4
+	jr $ra
+	
+###### clear_GOOMBA ######
+# function clear_goomba(int a):
+# a is the starting offset of the goomba
+# this function clears a goomba at a given offset
+clear_goomba_a:
+
+	lw $s4, 0($sp)		# pop a
+	add $s3, $t0, $s4	# la $s3, a($t0)
+	li $t1, BLUE_SKY
+	sw $t1, -516($s3)
+	sw $t1, -512($s3)
+	sw $t1, -264($s3)
+	sw $t1, -256($s3)
+	sw $t1, -12($s3)
+	sw $t1, -8($s3)
+	sw $t1, 0($s3)
+	sw $t1, 8($s3)
+	sw $t1, 244($s3)
+	sw $t1, 248($s3)
+	sw $t1, 252($s3)
+	sw $t1, 256($s3)
+	sw $t1, 260($s3)
+	sw $t1, 264($s3)
+	sw $t1, -520($s3)
+	sw $t1, -504($s3)
+	sw $t1, -260($s3)
+	sw $t1, -252($s3)
+	sw $t1, 764($s3)
+	sw $t1, 772($s3)
+	sw $t1, -4($s3)
+	sw $t1, 4($s3)
+	sw $t1, 508($s3)
+	sw $t1, 512($s3)
+	sw $t1, 768($s3)
 	
 	addi $sp, $sp, 4
 	jr $ra
@@ -375,6 +416,7 @@ create_end:
 ##### UPDATE PLAYER BULLETS #####
 # function update_player_bullets()
 # moves the player bullets
+# if bullet collides with an object, perform action depending on the object
 update_player_bullets:
 	la $t3, player_bullet_array
 	la $s1, num_player_bullets
@@ -391,10 +433,10 @@ u_l1:	bge $t8, $s1, u_el1
 	
 	# check color at address 
 u_right1:
-	lw $s2, 4($t4)		# load color into $t2 at the address + 4 in $t4 (checks the right pixel)
+	lw $s2, 4($t4)		# load color into $s2 at the address + 4 in $t4 (checks the right pixel)
 	j u_else1
 u_left1: 
-	lw $s2, -4($t4)		# load color into $t2 at the address - 4 in $t4 (checks the left pixel)
+	lw $s2, -4($t4)		# load color into $s2 at the address - 4 in $t4 (checks the left pixel)
 
 	# branch depending on the color
 u_else1:	
@@ -417,7 +459,7 @@ u_else1:
 	j u_cont
 	
 u_wall:	
-	# deletes it
+	# deletes bullet
 	li $t1, 1
 	sw $t1, 8($t3)		# change value of deleted in bullet to be 1
 	
@@ -426,12 +468,13 @@ u_wall:
 	lw $t4, 0($t3)		# load address of bullet
 	sw $t1, 0($t4)
 	
+	# increment loop variables
 	addi $t3, $t3, 12
 	addi $t8, $t8, 1
 	j u_l1
 	
 u_goom:	
-	# deletes it
+	# deletes bullet
 	li $t1, 1
 	sw $t1, 8($t3)		# change value of deleted in bullet to be 1
 	
@@ -440,12 +483,77 @@ u_goom:
 	lw $t4, 0($t3)		# load address of bullet
 	sw $t1, 0($t4)
 	
+	# deletes goomba
+u_delete_goom:
+	la $s5, enemy_array
+	la $s6, num_enemy_array
+	lw $s6, 0($s6)
+	
+	lw $t4, 0($t3)		# load address of bullet
+	# calculate offset of bullet
+	sub $t1, $t4, $t0	# $t1 is the offset
+	
+	li $s0, 0
+u_delete_l:
+	bge $s0, $s6, u_delete_l_end
+	
+	lw $s3, 0($s5)		# load offset of enemy to $s1
+	
+
+u_delete_if:
+	addi $s3, $s3, -512	
+	blt $t1, $s3, u_delete_else	# if bullet is above the enemy
+	addi $s3, $s3, 1280
+	bgt $t1, $s3, u_delete_else	# if bullet is below the enemy
+	
+	# deletes the goomba
+	li $s2, 1
+	sw $s2, 4($s5)		# save deleted = 1 to enemy
+	
+	# deletes goomba
+	lw $s4, 0($s5)		# load offset of enemy to $s4
+	add $s3, $t0, $s4	# la $s3, $s4($t0)
+	li $t1, BLUE_SKY
+	sw $t1, -516($s3)
+	sw $t1, -512($s3)
+	sw $t1, -264($s3)
+	sw $t1, -256($s3)
+	sw $t1, -12($s3)
+	sw $t1, -8($s3)
+	sw $t1, 0($s3)
+	sw $t1, 8($s3)
+	sw $t1, 244($s3)
+	sw $t1, 248($s3)
+	sw $t1, 252($s3)
+	sw $t1, 256($s3)
+	sw $t1, 260($s3)
+	sw $t1, 264($s3)
+	sw $t1, -520($s3)
+	sw $t1, -504($s3)
+	sw $t1, -260($s3)
+	sw $t1, -252($s3)
+	sw $t1, 764($s3)
+	sw $t1, 772($s3)
+	sw $t1, -4($s3)
+	sw $t1, 4($s3)
+	sw $t1, 508($s3)
+	sw $t1, 512($s3)
+	sw $t1, 768($s3)
+
+u_delete_else:	
+	addi $s5, $s5, 8
+	addi $s0, $s0, 1
+	j u_delete_l
+	
+u_delete_l_end:
+
+	# increment loop variables
 	addi $t3, $t3, 12
 	addi $t8, $t8, 1
 	j u_l1
 	
 u_platform:
-	# deletes it
+	# deletes bullet
 	li $t1, 1
 	sw $t1, 8($t3)		# change value of deleted in bullet to be 1
 	
@@ -454,6 +562,7 @@ u_platform:
 	lw $t4, 0($t3)		# load address of bullet
 	sw $t1, 0($t4)
 	
+	# increment loop variables
 	addi $t3, $t3, 12
 	addi $t8, $t8, 1
 	j u_l1
@@ -582,19 +691,33 @@ ELOOP3:
 	li $t9, KEY_ADDRESS
 MAIN_L:	beq $t5, $zero, END
 
-#### PAINTING CHARACTERS ####
-
-	# paint goomba 1
-	addi $t8, $zero, 8296
+##### PAINTING CHARACTERS #####
+	
+##### Draw goombas according to the enemy_array and num_enemy_array #####
+draw_goombas:
+	la $t3, enemy_array
+	la $s1, num_enemy_array
+	lw $s1, 0($s1)
+	
+	add $t8, $zero, $zero
+draw_goom_l:	
+	bge $t8, $s1, draw_goom_l_end
+	
+	lw $t4, 0($t3)		# load offset of enemy
+	lw $s4, 4($t3)		# load deleted of enemy
+	
+	beq $s4, 1, draw_goom_cont # doesn't draw the goomba if deleted == 1
+	# paint goomba
 	addi $sp, $sp, -4
-	sw $t8, 0($sp)
+	sw $t4, 0($sp)
 	jal draw_goomba_a
 	
-	# paint goomba 2
-	addi $t8, $zero, 13968
-	addi $sp, $sp, -4
-	sw $t8, 0($sp)
-	jal draw_goomba_a
+draw_goom_cont:	
+	addi $t3, $t3, 8
+	addi $t8, $t8, 1
+	
+	j draw_goom_l
+draw_goom_l_end:
 
 	# paint mario
 	addi $t8, $zero, 3376
@@ -848,6 +971,11 @@ check_wall_collision_d:
 	
 ##### do code below if the 'k' key is clicked ##### 
 k_clicked:
+
+	la $t4, num_player_bullets
+	lw $t4, 0($t4)
+	bge $t4, 20, key_no_clicked	# can't shoot anymore after 20 bullets
+
 	li $t1, PEACH_BULLET
 	lw $t4, 0($t2) 		# retrieves position address of player
 	lw $t3, 8($t2) 		# retrieves direction of player

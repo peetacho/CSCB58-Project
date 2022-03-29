@@ -108,3506 +108,679 @@ draw_you_win_l:
 	j draw_you_win_l
 	
 draw_you_win_end:
-	addi $t3, $t0, 2632
+	li $v0, 32
+	li $a0, 30
 	li $t1, 0xf99cb7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2636
+	sw $t1, 2632($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2640
+	sw $t1, 2636($t0)
 	li $t1, 0xffebf3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2648
+	sw $t1, 2640($t0)
 	li $t1, 0xfed4e0
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2652
+	sw $t1, 2648($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2656
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2660
+	sw $t1, 2652($t0)
+	sw $t1, 2656($t0)
 	li $t1, 0xffe5ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2672
+	sw $t1, 2660($t0)
 	li $t1, 0xffeaf3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2676
+	sw $t1, 2672($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2680
+	sw $t1, 2676($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2684
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2688
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2700
+	sw $t1, 2680($t0)
+	sw $t1, 2684($t0)
+	sw $t1, 2688($t0)
+	sw $t1, 2692($t0)
+	sw $t1, 2696($t0)
 	li $t1, 0xf9d8e1
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2720
+	sw $t1, 2700($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2728
+	sw $t1, 2720($t0)
+	sw $t1, 2724($t0)
 	li $t1, 0xfad6e0
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2736
+	sw $t1, 2728($t0)
 	li $t1, 0xffd3e5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2740
+	sw $t1, 2736($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2744
+	sw $t1, 2740($t0)
 	li $t1, 0xfc94b5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2884
+	sw $t1, 2744($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2888
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2892
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2896
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2900
+	sw $t1, 2884($t0)
+	sw $t1, 2888($t0)
+	sw $t1, 2892($t0)
+	sw $t1, 2896($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2904
+	sw $t1, 2900($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2908
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2912
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2916
+	sw $t1, 2904($t0)
+	sw $t1, 2908($t0)
+	sw $t1, 2912($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2924
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2928
+	sw $t1, 2916($t0)
+	sw $t1, 2924($t0)
 	li $t1, 0xffe4f0
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2932
+	sw $t1, 2928($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2936
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2940
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2944
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2948
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2952
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2956
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2968
+	sw $t1, 2932($t0)
+	sw $t1, 2936($t0)
+	sw $t1, 2940($t0)
+	sw $t1, 2944($t0)
+	sw $t1, 2948($t0)
+	sw $t1, 2952($t0)
+	sw $t1, 2956($t0)
 	li $t1, 0xf897b6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2972
+	sw $t1, 2968($t0)
 	li $t1, 0xf2adc2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2976
+	sw $t1, 2972($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2980
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2992
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2996
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3140
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3144
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3148
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3152
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3156
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3160
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3164
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3168
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3172
+	sw $t1, 2976($t0)
+	sw $t1, 2980($t0)
+	sw $t1, 2984($t0)
+	sw $t1, 2992($t0)
+	sw $t1, 2996($t0)
+	sw $t1, 3000($t0)
+	syscall
+	sw $t1, 3140($t0)
+	sw $t1, 3144($t0)
+	sw $t1, 3148($t0)
+	sw $t1, 3152($t0)
+	sw $t1, 3156($t0)
+	sw $t1, 3160($t0)
+	sw $t1, 3164($t0)
+	sw $t1, 3168($t0)
 	li $t1, 0xf399b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3180
+	sw $t1, 3172($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3184
+	sw $t1, 3180($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3188
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3196
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3212
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3224
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3228
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3232
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3236
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3240
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3248
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3252
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3256
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3400
+	sw $t1, 3184($t0)
+	sw $t1, 3188($t0)
+	sw $t1, 3192($t0)
+	sw $t1, 3196($t0)
+	sw $t1, 3208($t0)
+	sw $t1, 3212($t0)
+	sw $t1, 3224($t0)
+	sw $t1, 3228($t0)
+	sw $t1, 3232($t0)
+	sw $t1, 3236($t0)
+	sw $t1, 3240($t0)
+	sw $t1, 3248($t0)
+	sw $t1, 3252($t0)
+	sw $t1, 3256($t0)
 	li $t1, 0xf898b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3404
+	sw $t1, 3400($t0)
+	syscall
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3408
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3412
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3416
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3420
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3436
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3440
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3444
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3448
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3452
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3464
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3480
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3484
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3488
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3496
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3504
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3508
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3512
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3660
+	sw $t1, 3404($t0)
+	sw $t1, 3408($t0)
+	sw $t1, 3412($t0)
+	sw $t1, 3416($t0)
+	sw $t1, 3420($t0)
+	sw $t1, 3436($t0)
+	sw $t1, 3440($t0)
+	sw $t1, 3444($t0)
+	sw $t1, 3448($t0)
+	sw $t1, 3452($t0)
+	sw $t1, 3464($t0)
+	sw $t1, 3468($t0)
+	sw $t1, 3480($t0)
+	sw $t1, 3484($t0)
+	sw $t1, 3488($t0)
+	sw $t1, 3492($t0)
+	sw $t1, 3496($t0)
+	sw $t1, 3504($t0)
+	sw $t1, 3508($t0)
+	sw $t1, 3512($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3664
+	sw $t1, 3660($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3668
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3672
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3676
+	sw $t1, 3664($t0)
+	sw $t1, 3668($t0)
+	sw $t1, 3672($t0)
 	li $t1, 0xffd7e3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3692
+	sw $t1, 3676($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3696
+	sw $t1, 3692($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3700
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3704
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3708
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3720
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3736
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3740
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3744
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3760
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3764
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3768
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3916
+	sw $t1, 3696($t0)
+	sw $t1, 3700($t0)
+	sw $t1, 3704($t0)
+	sw $t1, 3708($t0)
+	sw $t1, 3720($t0)
+	sw $t1, 3724($t0)
+	sw $t1, 3736($t0)
+	sw $t1, 3740($t0)
+	sw $t1, 3744($t0)
+	sw $t1, 3748($t0)
+	sw $t1, 3752($t0)
+	sw $t1, 3760($t0)
+	sw $t1, 3764($t0)
+	sw $t1, 3768($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3920
+	sw $t1, 3916($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3924
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3928
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3932
+	sw $t1, 3920($t0)
+	sw $t1, 3924($t0)
+	sw $t1, 3928($t0)
 	li $t1, 0xfbdae3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3948
+	sw $t1, 3932($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3952
+	sw $t1, 3948($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3956
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3960
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3964
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3976
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3980
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3992
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3996
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4004
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4016
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4020
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4172
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4176
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4180
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4184
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4188
+	sw $t1, 3952($t0)
+	sw $t1, 3956($t0)
+	sw $t1, 3960($t0)
+	sw $t1, 3964($t0)
+	sw $t1, 3976($t0)
+	sw $t1, 3980($t0)
+	sw $t1, 3992($t0)
+	sw $t1, 3996($t0)
+	sw $t1, 4000($t0)
+	syscall
+	sw $t1, 4004($t0)
+	sw $t1, 4008($t0)
+	sw $t1, 4016($t0)
+	sw $t1, 4020($t0)
+	sw $t1, 4024($t0)
+	sw $t1, 4172($t0)
+	sw $t1, 4176($t0)
+	sw $t1, 4180($t0)
+	sw $t1, 4184($t0)
 	li $t1, 0xfbdae3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4204
+	sw $t1, 4188($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4212
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4216
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4220
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4232
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4236
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4248
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4252
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4256
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4260
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4272
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4276
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4428
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4432
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4436
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4440
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4444
+	sw $t1, 4204($t0)
+	sw $t1, 4208($t0)
+	sw $t1, 4212($t0)
+	sw $t1, 4216($t0)
+	sw $t1, 4220($t0)
+	sw $t1, 4232($t0)
+	sw $t1, 4236($t0)
+	sw $t1, 4248($t0)
+	sw $t1, 4252($t0)
+	sw $t1, 4256($t0)
+	sw $t1, 4260($t0)
+	sw $t1, 4264($t0)
+	sw $t1, 4272($t0)
+	sw $t1, 4276($t0)
+	sw $t1, 4280($t0)
+	sw $t1, 4428($t0)
+	sw $t1, 4432($t0)
+	sw $t1, 4436($t0)
+	sw $t1, 4440($t0)
 	li $t1, 0xffe9f2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4460
+	sw $t1, 4444($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4464
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4472
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4476
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4480
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4484
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4488
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4504
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4508
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4512
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4516
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4528
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4532
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4536
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4684
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4688
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4700
+	sw $t1, 4460($t0)
+	sw $t1, 4464($t0)
+	sw $t1, 4468($t0)
+	sw $t1, 4472($t0)
+	sw $t1, 4476($t0)
+	sw $t1, 4480($t0)
+	sw $t1, 4484($t0)
+	sw $t1, 4488($t0)
+	sw $t1, 4492($t0)
+	sw $t1, 4504($t0)
+	sw $t1, 4508($t0)
+	sw $t1, 4512($t0)
+	sw $t1, 4516($t0)
+	sw $t1, 4520($t0)
+	sw $t1, 4524($t0)
+	sw $t1, 4528($t0)
+	sw $t1, 4532($t0)
+	sw $t1, 4536($t0)
+	sw $t1, 4684($t0)
+	sw $t1, 4688($t0)
+	sw $t1, 4692($t0)
+	sw $t1, 4696($t0)
 	li $t1, 0xffe9f2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4716
+	sw $t1, 4700($t0)
 	li $t1, 0xf59bb5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4720
+	sw $t1, 4716($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4728
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4732
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4736
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4740
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4744
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4760
+	sw $t1, 4720($t0)
+	sw $t1, 4724($t0)
+	sw $t1, 4728($t0)
+	sw $t1, 4732($t0)
+	sw $t1, 4736($t0)
+	sw $t1, 4740($t0)
+	sw $t1, 4744($t0)
+	sw $t1, 4748($t0)
 	li $t1, 0xf79ab5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4764
+	sw $t1, 4760($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4768
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4772
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4784
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4788
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4792
+	sw $t1, 4764($t0)
+	sw $t1, 4768($t0)
+	sw $t1, 4772($t0)
+	sw $t1, 4776($t0)
+	sw $t1, 4780($t0)
+	sw $t1, 4784($t0)
+	sw $t1, 4788($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4940
+	sw $t1, 4792($t0)
 	li $t1, 0xfefcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4944
+	sw $t1, 4940($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4948
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4952
+	sw $t1, 4944($t0)
+	sw $t1, 4948($t0)
 	li $t1, 0xf796b5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4976
+	sw $t1, 4952($t0)
 	li $t1, 0xffe2ef
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4980
+	sw $t1, 4976($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4988
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4992
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4996
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5020
+	sw $t1, 4980($t0)
+	sw $t1, 4984($t0)
+	sw $t1, 4988($t0)
+	sw $t1, 4992($t0)
+	sw $t1, 4996($t0)
+	sw $t1, 5000($t0)
+	syscall
 	li $t1, 0xf4acc2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5024
+	sw $t1, 5020($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5036
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5040
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5044
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6464
+	sw $t1, 5024($t0)
+	sw $t1, 5028($t0)
+	sw $t1, 5032($t0)
+	sw $t1, 5036($t0)
+	sw $t1, 5040($t0)
+	sw $t1, 5044($t0)
 	li $t1, 0xffe5ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6468
+	sw $t1, 6464($t0)
 	li $t1, 0xffe4ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6472
+	sw $t1, 6468($t0)
 	li $t1, 0xf898b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6492
+	sw $t1, 6472($t0)
 	li $t1, 0xffc2d5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6496
+	sw $t1, 6492($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6500
+	sw $t1, 6496($t0)
 	li $t1, 0xf897b6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6512
+	sw $t1, 6500($t0)
 	li $t1, 0xf8c5d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6520
+	sw $t1, 6512($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6536
+	sw $t1, 6520($t0)
+	sw $t1, 6524($t0)
 	li $t1, 0xf2b5c7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6540
+	sw $t1, 6536($t0)
 	li $t1, 0xffe4ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6544
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6564
+	sw $t1, 6540($t0)
+	sw $t1, 6544($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6568
+	sw $t1, 6564($t0)
 	li $t1, 0xffcadb
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6584
+	sw $t1, 6568($t0)
 	li $t1, 0xf9abc1
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6588
+	sw $t1, 6584($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6592
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6720
+	sw $t1, 6588($t0)
+	sw $t1, 6592($t0)
 	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6724
+	sw $t1, 6720($t0)
 	li $t1, 0xffc2d5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6728
+	sw $t1, 6724($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6756
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6768
+	sw $t1, 6728($t0)
+	sw $t1, 6748($t0)
+	sw $t1, 6752($t0)
+	sw $t1, 6756($t0)
 	li $t1, 0xfcc3d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6772
+	sw $t1, 6768($t0)
 	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6776
+	sw $t1, 6772($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6792
+	sw $t1, 6776($t0)
+	sw $t1, 6780($t0)
 	li $t1, 0xffecf7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6796
+	sw $t1, 6792($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6800
+	sw $t1, 6796($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6820
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6824
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6840
+	sw $t1, 6800($t0)
+	syscall
+	sw $t1, 6820($t0)
+	sw $t1, 6824($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6844
+	sw $t1, 6840($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6848
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6976
+	sw $t1, 6844($t0)
+	sw $t1, 6848($t0)
 	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6980
+	sw $t1, 6976($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6992
+	sw $t1, 6980($t0)
+	sw $t1, 6984($t0)
 	li $t1, 0xffe4ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6996
+	sw $t1, 6992($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7004
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7012
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7036
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7048
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7052
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7056
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7076
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7080
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7092
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7096
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7100
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7104
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7232
+	sw $t1, 6996($t0)
+	sw $t1, 7004($t0)
+	sw $t1, 7008($t0)
+	sw $t1, 7012($t0)
+	sw $t1, 7024($t0)
+	sw $t1, 7028($t0)
+	sw $t1, 7032($t0)
+	sw $t1, 7036($t0)
+	sw $t1, 7048($t0)
+	sw $t1, 7052($t0)
+	sw $t1, 7056($t0)
+	sw $t1, 7076($t0)
+	sw $t1, 7080($t0)
+	sw $t1, 7092($t0)
+	sw $t1, 7096($t0)
+	sw $t1, 7100($t0)
+	sw $t1, 7104($t0)
 	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7236
+	sw $t1, 7232($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7240
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7248
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7252
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7260
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7268
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7284
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7288
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7292
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7304
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7308
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7312
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7316
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7332
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7348
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7352
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7356
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7360
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7488
+	sw $t1, 7236($t0)
+	sw $t1, 7240($t0)
+	sw $t1, 7248($t0)
+	sw $t1, 7252($t0)
+	sw $t1, 7260($t0)
+	sw $t1, 7264($t0)
+	sw $t1, 7268($t0)
+	sw $t1, 7280($t0)
+	sw $t1, 7284($t0)
+	sw $t1, 7288($t0)
+	sw $t1, 7292($t0)
+	sw $t1, 7304($t0)
+	sw $t1, 7308($t0)
+	sw $t1, 7312($t0)
+	sw $t1, 7316($t0)
+	sw $t1, 7332($t0)
+	sw $t1, 7336($t0)
+	sw $t1, 7348($t0)
+	sw $t1, 7352($t0)
+	sw $t1, 7356($t0)
+	sw $t1, 7360($t0)
 	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7492
+	sw $t1, 7488($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7496
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7500
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7504
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7508
+	sw $t1, 7492($t0)
+	sw $t1, 7496($t0)
+	sw $t1, 7500($t0)
+	sw $t1, 7504($t0)
 	li $t1, 0xf898b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7512
+	sw $t1, 7508($t0)
 	li $t1, 0xf799b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7516
+	sw $t1, 7512($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7536
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7540
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7544
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7560
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7564
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7568
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7572
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7576
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7584
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7588
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7592
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7604
+	sw $t1, 7516($t0)
+	sw $t1, 7520($t0)
+	sw $t1, 7524($t0)
+	sw $t1, 7536($t0)
+	sw $t1, 7540($t0)
+	sw $t1, 7544($t0)
+	sw $t1, 7548($t0)
+	sw $t1, 7560($t0)
+	sw $t1, 7564($t0)
+	sw $t1, 7568($t0)
+	sw $t1, 7572($t0)
+	sw $t1, 7576($t0)
+	sw $t1, 7584($t0)
+	sw $t1, 7588($t0)
+	sw $t1, 7592($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7608
+	sw $t1, 7604($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7612
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7616
+	sw $t1, 7608($t0)
+	sw $t1, 7612($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7744
+	sw $t1, 7616($t0)
 	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7748
+	sw $t1, 7744($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7756
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7760
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7764
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7768
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7772
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7792
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7796
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7800
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7804
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7816
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7820
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7824
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7828
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7832
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7836
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7840
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7844
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7848
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7864
+	sw $t1, 7748($t0)
+	sw $t1, 7752($t0)
+	sw $t1, 7756($t0)
+	sw $t1, 7760($t0)
+	sw $t1, 7764($t0)
+	sw $t1, 7768($t0)
+	sw $t1, 7772($t0)
+	sw $t1, 7776($t0)
+	sw $t1, 7780($t0)
+	sw $t1, 7792($t0)
+	sw $t1, 7796($t0)
+	sw $t1, 7800($t0)
+	syscall
+	sw $t1, 7804($t0)
+	sw $t1, 7816($t0)
+	sw $t1, 7820($t0)
+	sw $t1, 7824($t0)
+	sw $t1, 7828($t0)
+	sw $t1, 7832($t0)
+	sw $t1, 7836($t0)
+	sw $t1, 7840($t0)
+	sw $t1, 7844($t0)
+	sw $t1, 7848($t0)
 	li $t1, 0xfa95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7868
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8000
+	sw $t1, 7864($t0)
+	sw $t1, 7868($t0)
 	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8004
+	sw $t1, 8000($t0)
+	syscall
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8012
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8016
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8020
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8036
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8048
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8052
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8056
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8060
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8072
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8076
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8080
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8084
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8088
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8092
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8096
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8100
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8104
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8120
+	sw $t1, 8004($t0)
+	sw $t1, 8008($t0)
+	sw $t1, 8012($t0)
+	sw $t1, 8016($t0)
+	sw $t1, 8020($t0)
+	sw $t1, 8024($t0)
+	sw $t1, 8028($t0)
+	sw $t1, 8032($t0)
+	sw $t1, 8036($t0)
+	sw $t1, 8048($t0)
+	sw $t1, 8052($t0)
+	sw $t1, 8056($t0)
+	sw $t1, 8060($t0)
+	sw $t1, 8072($t0)
+	sw $t1, 8076($t0)
+	sw $t1, 8080($t0)
+	sw $t1, 8084($t0)
+	sw $t1, 8088($t0)
+	sw $t1, 8092($t0)
+	sw $t1, 8096($t0)
+	sw $t1, 8100($t0)
+	sw $t1, 8104($t0)
 	li $t1, 0xeeb8c8
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8124
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8256
+	sw $t1, 8120($t0)
+	sw $t1, 8124($t0)
 	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8260
+	sw $t1, 8256($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8268
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8272
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8276
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8284
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8288
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8292
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8304
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8308
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8312
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8316
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8328
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8332
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8348
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8352
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8356
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8360
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8372
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8376
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8380
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8384
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8512
+	sw $t1, 8260($t0)
+	sw $t1, 8264($t0)
+	sw $t1, 8268($t0)
+	sw $t1, 8272($t0)
+	sw $t1, 8276($t0)
+	sw $t1, 8280($t0)
+	sw $t1, 8284($t0)
+	sw $t1, 8288($t0)
+	sw $t1, 8292($t0)
+	sw $t1, 8304($t0)
+	sw $t1, 8308($t0)
+	sw $t1, 8312($t0)
+	sw $t1, 8316($t0)
+	sw $t1, 8328($t0)
+	sw $t1, 8332($t0)
+	sw $t1, 8336($t0)
+	sw $t1, 8348($t0)
+	sw $t1, 8352($t0)
+	sw $t1, 8356($t0)
+	sw $t1, 8360($t0)
+	sw $t1, 8372($t0)
+	sw $t1, 8376($t0)
+	sw $t1, 8380($t0)
+	sw $t1, 8384($t0)
 	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8516
+	sw $t1, 8512($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8528
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8532
+	sw $t1, 8516($t0)
+	sw $t1, 8520($t0)
+	sw $t1, 8524($t0)
+	sw $t1, 8528($t0)
 	li $t1, 0xf59bb5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8536
+	sw $t1, 8532($t0)
 	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8540
+	sw $t1, 8536($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8544
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8560
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8564
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8568
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8572
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8584
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8588
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8608
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8612
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8616
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8628
+	sw $t1, 8540($t0)
+	sw $t1, 8544($t0)
+	sw $t1, 8548($t0)
+	sw $t1, 8560($t0)
+	sw $t1, 8564($t0)
+	sw $t1, 8568($t0)
+	sw $t1, 8572($t0)
+	sw $t1, 8584($t0)
+	sw $t1, 8588($t0)
+	sw $t1, 8608($t0)
+	sw $t1, 8612($t0)
+	sw $t1, 8616($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8632
+	sw $t1, 8628($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8636
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8640
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8772
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8784
+	sw $t1, 8632($t0)
+	sw $t1, 8636($t0)
+	sw $t1, 8640($t0)
+	sw $t1, 8772($t0)
+	sw $t1, 8776($t0)
+	sw $t1, 8780($t0)
 	li $t1, 0xfcc3d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8796
+	sw $t1, 8784($t0)
 	li $t1, 0xfad0de
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8800
+	sw $t1, 8796($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8804
+	sw $t1, 8800($t0)
+	syscall
 	li $t1, 0xf699b6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8816
+	sw $t1, 8804($t0)
 	li $t1, 0xf8c5d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8820
+	sw $t1, 8816($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8824
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8828
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8840
+	sw $t1, 8820($t0)
+	sw $t1, 8824($t0)
+	sw $t1, 8828($t0)
 	li $t1, 0xf0a5bc
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8844
+	sw $t1, 8840($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8864
+	sw $t1, 8844($t0)
 	li $t1, 0xfefcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8868
+	sw $t1, 8864($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8872
+	sw $t1, 8868($t0)
 	li $t1, 0xfcdbe6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8888
+	sw $t1, 8872($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8892
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8896
+	sw $t1, 8888($t0)
+	sw $t1, 8892($t0)
 	li $t1, 0xfefcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10620
+	sw $t1, 8896($t0)
 	li $t1, 0xff0003
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10624
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10632
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10636
+	sw $t1, 10620($t0)
+	sw $t1, 10624($t0)
+	sw $t1, 10632($t0)
 	li $t1, 0xc20235
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10876
+	sw $t1, 10636($t0)
 	li $t1, 0xff0003
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10880
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10884
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10888
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10892
+	sw $t1, 10876($t0)
+	sw $t1, 10880($t0)
+	sw $t1, 10884($t0)
+	sw $t1, 10888($t0)
 	li $t1, 0xc20235
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11136
+	sw $t1, 10892($t0)
 	li $t1, 0xff0003
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11140
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11144
+	sw $t1, 11136($t0)
+	sw $t1, 11140($t0)
 	li $t1, 0xc20235
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11396
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11668
+	sw $t1, 11144($t0)
+	sw $t1, 11396($t0)
 	li $t1, 0xe4a449
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11672
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11924
+	sw $t1, 11668($t0)
+	sw $t1, 11672($t0)
 	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11928
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11932
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12136
+	sw $t1, 11924($t0)
+	sw $t1, 11928($t0)
+	sw $t1, 11932($t0)
 	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12140
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12144
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12148
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12176
+	sw $t1, 12136($t0)
+	sw $t1, 12140($t0)
+	sw $t1, 12144($t0)
+	sw $t1, 12148($t0)
 	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12180
+	sw $t1, 12176($t0)
 	li $t1, 0xffebb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12184
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12188
+	sw $t1, 12180($t0)
+	sw $t1, 12184($t0)
 	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12392
+	sw $t1, 12188($t0)
+	sw $t1, 12192($t0)
 	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12396
+	sw $t1, 12392($t0)
 	li $t1, 0x795548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12400
+	sw $t1, 12396($t0)
 	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12404
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12408
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12436
+	sw $t1, 12400($t0)
+	syscall
+	sw $t1, 12404($t0)
+	sw $t1, 12408($t0)
 	li $t1, 0xffebb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12440
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12444
+	sw $t1, 12436($t0)
+	sw $t1, 12440($t0)
 	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12652
+	sw $t1, 12444($t0)
 	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12656
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12660
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12688
+	sw $t1, 12652($t0)
+	sw $t1, 12656($t0)
+	sw $t1, 12660($t0)
 	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12700
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12704
+	sw $t1, 12688($t0)
+	sw $t1, 12692($t0)
+	sw $t1, 12696($t0)
+	sw $t1, 12700($t0)
 	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12900
+	sw $t1, 12704($t0)
 	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12904
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12908
+	sw $t1, 12900($t0)
+	sw $t1, 12904($t0)
 	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12912
+	sw $t1, 12908($t0)
 	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12916
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12944
+	sw $t1, 12912($t0)
+	sw $t1, 12916($t0)
 	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12948
+	sw $t1, 12944($t0)
 	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12952
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12956
+	sw $t1, 12948($t0)
+	sw $t1, 12952($t0)
 	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13156
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13160
+	sw $t1, 12956($t0)
+	sw $t1, 13156($t0)
 	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13164
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13168
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13172
+	sw $t1, 13160($t0)
+	sw $t1, 13164($t0)
+	sw $t1, 13168($t0)
 	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13200
+	sw $t1, 13172($t0)
 	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13204
+	sw $t1, 13200($t0)
+	syscall
 	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13212
+	sw $t1, 13204($t0)
+	sw $t1, 13208($t0)
 	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13416
+	sw $t1, 13212($t0)
 	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13424
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13456
+	sw $t1, 13416($t0)
+	sw $t1, 13424($t0)
 	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13460
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13464
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13472
-	sw $t1, 0($t3)
-	addi $t0, $zero, BASE_ADDRESS
-	addi $t3, $t0, 2632
-	li $t1, 0xf99cb7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2636
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2640
-	li $t1, 0xffebf3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2648
-	li $t1, 0xfed4e0
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2652
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2656
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2660
-	li $t1, 0xffe5ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2672
-	li $t1, 0xffeaf3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2676
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2680
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2684
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2688
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2700
-	li $t1, 0xf9d8e1
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2720
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2728
-	li $t1, 0xfad6e0
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2736
-	li $t1, 0xffd3e5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2740
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2744
-	li $t1, 0xfc94b5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2884
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2888
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2892
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2896
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2900
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2904
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2908
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2912
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2916
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2924
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2928
-	li $t1, 0xffe4f0
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2932
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2936
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2940
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2944
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2948
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2952
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2956
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2968
-	li $t1, 0xf897b6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2972
-	li $t1, 0xf2adc2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2976
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2980
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2992
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2996
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3140
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3144
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3148
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3152
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3156
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3160
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3164
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3168
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3172
-	li $t1, 0xf399b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3180
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3184
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3188
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3196
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3212
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3224
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3228
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3232
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3236
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3240
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3248
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3252
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3256
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3400
-	li $t1, 0xf898b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3404
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3408
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3412
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3416
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3420
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3436
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3440
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3444
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3448
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3452
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3464
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3480
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3484
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3488
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3496
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3504
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3508
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3512
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3660
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3664
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3668
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3672
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3676
-	li $t1, 0xffd7e3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3692
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3696
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3700
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3704
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3708
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3720
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3736
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3740
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3744
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3760
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3764
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3768
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3916
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3920
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3924
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3928
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3932
-	li $t1, 0xfbdae3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3948
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3952
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3956
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3960
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3964
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3976
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3980
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3992
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3996
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4004
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4016
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4020
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4172
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4176
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4180
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4184
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4188
-	li $t1, 0xfbdae3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4204
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4212
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4216
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4220
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4232
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4236
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4248
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4252
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4256
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4260
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4272
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4276
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4428
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4432
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4436
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4440
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4444
-	li $t1, 0xffe9f2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4460
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4464
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4472
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4476
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4480
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4484
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4488
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4504
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4508
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4512
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4516
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4528
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4532
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4536
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4684
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4688
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4700
-	li $t1, 0xffe9f2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4716
-	li $t1, 0xf59bb5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4720
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4728
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4732
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4736
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4740
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4744
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4760
-	li $t1, 0xf79ab5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4764
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4768
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4772
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4784
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4788
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4792
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4940
-	li $t1, 0xfefcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4944
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4948
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4952
-	li $t1, 0xf796b5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4976
-	li $t1, 0xffe2ef
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4980
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4988
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4992
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4996
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5020
-	li $t1, 0xf4acc2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5024
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5036
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5040
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5044
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6464
-	li $t1, 0xffe5ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6468
-	li $t1, 0xffe4ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6472
-	li $t1, 0xf898b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6492
-	li $t1, 0xffc2d5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6496
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6500
-	li $t1, 0xf897b6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6512
-	li $t1, 0xf8c5d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6520
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6536
-	li $t1, 0xf2b5c7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6540
-	li $t1, 0xffe4ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6544
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6564
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6568
-	li $t1, 0xffcadb
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6584
-	li $t1, 0xf9abc1
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6588
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6592
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6720
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6724
-	li $t1, 0xffc2d5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6728
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6756
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6768
-	li $t1, 0xfcc3d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6772
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6776
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6792
-	li $t1, 0xffecf7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6796
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6800
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6820
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6824
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6840
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6844
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6848
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6976
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6980
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6992
-	li $t1, 0xffe4ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6996
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7004
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7012
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7036
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7048
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7052
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7056
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7076
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7080
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7092
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7096
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7100
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7104
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7232
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7236
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7240
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7248
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7252
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7260
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7268
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7284
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7288
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7292
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7304
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7308
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7312
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7316
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7332
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7348
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7352
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7356
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7360
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7488
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7492
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7496
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7500
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7504
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7508
-	li $t1, 0xf898b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7512
-	li $t1, 0xf799b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7516
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7536
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7540
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7544
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7560
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7564
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7568
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7572
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7576
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7584
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7588
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7592
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7604
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7608
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7612
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7616
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7744
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7748
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7756
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7760
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7764
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7768
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7772
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7792
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7796
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7800
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7804
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7816
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7820
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7824
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7828
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7832
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7836
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7840
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7844
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7848
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7864
-	li $t1, 0xfa95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7868
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8000
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8004
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8012
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8016
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8020
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8036
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8048
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8052
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8056
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8060
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8072
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8076
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8080
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8084
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8088
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8092
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8096
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8100
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8104
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8120
-	li $t1, 0xeeb8c8
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8124
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8256
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8260
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8268
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8272
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8276
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8284
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8288
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8292
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8304
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8308
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8312
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8316
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8328
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8332
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8348
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8352
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8356
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8360
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8372
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8376
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8380
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8384
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8512
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8516
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8528
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8532
-	li $t1, 0xf59bb5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8536
-	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8540
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8544
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8560
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8564
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8568
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8572
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8584
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8588
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8608
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8612
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8616
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8628
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8632
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8636
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8640
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8772
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8784
-	li $t1, 0xfcc3d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8796
-	li $t1, 0xfad0de
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8800
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8804
-	li $t1, 0xf699b6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8816
-	li $t1, 0xf8c5d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8820
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8824
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8828
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8840
-	li $t1, 0xf0a5bc
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8844
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8864
-	li $t1, 0xfefcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8868
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8872
-	li $t1, 0xfcdbe6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8888
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8892
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8896
-	li $t1, 0xfefcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10620
-	li $t1, 0xff0003
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10624
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10632
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10636
-	li $t1, 0xc20235
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10876
-	li $t1, 0xff0003
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10880
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10884
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10888
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10892
-	li $t1, 0xc20235
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11136
-	li $t1, 0xff0003
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11140
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11144
-	li $t1, 0xc20235
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11396
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11668
-	li $t1, 0xe4a449
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11672
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11924
-	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11928
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11932
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12136
-	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12140
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12144
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12148
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12176
-	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12180
-	li $t1, 0xffebb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12184
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12188
-	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12392
-	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12396
-	li $t1, 0x795548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12400
-	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12404
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12408
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12436
-	li $t1, 0xffebb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12440
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12444
-	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12652
-	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12656
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12660
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12688
-	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12700
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12704
-	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12900
-	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12904
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12908
-	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12912
-	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12916
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12944
-	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12948
-	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12952
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12956
-	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13156
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13160
-	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13164
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13168
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13172
-	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13200
-	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13204
-	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13212
-	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13416
-	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13424
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13456
-	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13460
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13464
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13472
-	sw $t1, 0($t3)
-	addi $t0, $zero, BASE_ADDRESS
-	addi $t3, $t0, 2632
-	li $t1, 0xf99cb7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2636
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2640
-	li $t1, 0xffebf3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2648
-	li $t1, 0xfed4e0
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2652
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2656
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2660
-	li $t1, 0xffe5ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2672
-	li $t1, 0xffeaf3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2676
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2680
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2684
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2688
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2700
-	li $t1, 0xf9d8e1
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2720
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2728
-	li $t1, 0xfad6e0
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2736
-	li $t1, 0xffd3e5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2740
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2744
-	li $t1, 0xfc94b5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2884
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2888
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2892
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2896
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2900
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2904
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2908
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2912
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2916
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2924
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2928
-	li $t1, 0xffe4f0
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2932
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2936
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2940
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2944
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2948
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2952
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2956
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2968
-	li $t1, 0xf897b6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2972
-	li $t1, 0xf2adc2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2976
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2980
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2992
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2996
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3140
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3144
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3148
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3152
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3156
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3160
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3164
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3168
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3172
-	li $t1, 0xf399b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3180
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3184
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3188
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3196
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3212
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3224
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3228
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3232
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3236
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3240
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3248
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3252
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3256
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3400
-	li $t1, 0xf898b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3404
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3408
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3412
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3416
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3420
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3436
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3440
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3444
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3448
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3452
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3464
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3480
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3484
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3488
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3496
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3504
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3508
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3512
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3660
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3664
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3668
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3672
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3676
-	li $t1, 0xffd7e3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3692
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3696
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3700
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3704
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3708
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3720
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3736
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3740
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3744
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3760
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3764
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3768
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3916
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3920
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3924
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3928
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3932
-	li $t1, 0xfbdae3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3948
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3952
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3956
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3960
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3964
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3976
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3980
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3992
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3996
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4004
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4016
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4020
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4172
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4176
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4180
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4184
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4188
-	li $t1, 0xfbdae3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4204
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4212
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4216
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4220
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4232
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4236
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4248
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4252
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4256
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4260
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4272
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4276
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4428
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4432
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4436
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4440
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4444
-	li $t1, 0xffe9f2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4460
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4464
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4472
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4476
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4480
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4484
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4488
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4504
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4508
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4512
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4516
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4528
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4532
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4536
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4684
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4688
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4700
-	li $t1, 0xffe9f2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4716
-	li $t1, 0xf59bb5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4720
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4728
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4732
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4736
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4740
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4744
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4760
-	li $t1, 0xf79ab5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4764
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4768
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4772
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4784
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4788
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4792
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4940
-	li $t1, 0xfefcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4944
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4948
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4952
-	li $t1, 0xf796b5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4976
-	li $t1, 0xffe2ef
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4980
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4988
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4992
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4996
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5020
-	li $t1, 0xf4acc2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5024
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5036
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5040
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5044
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6464
-	li $t1, 0xffe5ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6468
-	li $t1, 0xffe4ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6472
-	li $t1, 0xf898b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6492
-	li $t1, 0xffc2d5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6496
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6500
-	li $t1, 0xf897b6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6512
-	li $t1, 0xf8c5d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6520
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6536
-	li $t1, 0xf2b5c7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6540
-	li $t1, 0xffe4ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6544
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6564
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6568
-	li $t1, 0xffcadb
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6584
-	li $t1, 0xf9abc1
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6588
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6592
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6720
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6724
-	li $t1, 0xffc2d5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6728
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6756
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6768
-	li $t1, 0xfcc3d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6772
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6776
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6792
-	li $t1, 0xffecf7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6796
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6800
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6820
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6824
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6840
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6844
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6848
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6976
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6980
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6992
-	li $t1, 0xffe4ee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6996
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7004
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7012
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7036
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7048
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7052
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7056
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7076
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7080
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7092
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7096
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7100
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7104
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7232
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7236
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7240
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7248
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7252
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7260
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7268
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7284
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7288
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7292
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7304
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7308
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7312
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7316
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7332
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7348
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7352
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7356
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7360
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7488
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7492
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7496
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7500
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7504
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7508
-	li $t1, 0xf898b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7512
-	li $t1, 0xf799b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7516
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7536
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7540
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7544
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7560
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7564
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7568
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7572
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7576
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7584
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7588
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7592
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7604
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7608
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7612
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7616
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7744
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7748
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7756
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7760
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7764
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7768
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7772
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7792
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7796
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7800
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7804
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7816
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7820
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7824
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7828
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7832
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7836
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7840
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7844
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7848
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7864
-	li $t1, 0xfa95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7868
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8000
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8004
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8012
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8016
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8020
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8036
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8048
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8052
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8056
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8060
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8072
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8076
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8080
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8084
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8088
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8092
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8096
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8100
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8104
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8120
-	li $t1, 0xeeb8c8
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8124
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8256
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8260
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8268
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8272
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8276
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8284
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8288
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8292
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8304
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8308
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8312
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8316
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8328
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8332
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8348
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8352
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8356
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8360
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8372
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8376
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8380
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8384
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8512
-	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8516
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8528
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8532
-	li $t1, 0xf59bb5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8536
-	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8540
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8544
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8560
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8564
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8568
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8572
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8584
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8588
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8608
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8612
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8616
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8628
-	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8632
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8636
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8640
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8772
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8784
-	li $t1, 0xfcc3d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8796
-	li $t1, 0xfad0de
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8800
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8804
-	li $t1, 0xf699b6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8816
-	li $t1, 0xf8c5d4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8820
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8824
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8828
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8840
-	li $t1, 0xf0a5bc
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8844
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8864
-	li $t1, 0xfefcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8868
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8872
-	li $t1, 0xfcdbe6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8888
-	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8892
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8896
-	li $t1, 0xfefcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10620
-	li $t1, 0xff0003
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10624
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10632
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10636
-	li $t1, 0xc20235
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10876
-	li $t1, 0xff0003
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10880
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10884
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10888
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10892
-	li $t1, 0xc20235
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11136
-	li $t1, 0xff0003
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11140
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11144
-	li $t1, 0xc20235
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11396
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11668
-	li $t1, 0xe4a449
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11672
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11924
-	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11928
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11932
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12136
-	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12140
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12144
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12148
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12176
-	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12180
-	li $t1, 0xffebb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12184
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12188
-	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12392
-	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12396
-	li $t1, 0x795548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12400
-	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12404
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12408
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12436
-	li $t1, 0xffebb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12440
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12444
-	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12652
-	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12656
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12660
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12688
-	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12700
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12704
-	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12900
-	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12904
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12908
-	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12912
-	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12916
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12944
-	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12948
-	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12952
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12956
-	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13156
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13160
-	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13164
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13168
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13172
-	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13200
-	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13204
-	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13212
-	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13416
-	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13424
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13456
-	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13460
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13464
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13472
-	sw $t1, 0($t3)
+	sw $t1, 13456($t0)
+	sw $t1, 13460($t0)
+	sw $t1, 13464($t0)
+	sw $t1, 13468($t0)
+	sw $t1, 13472($t0)
 
 	jr $ra
 
@@ -3629,1867 +802,1073 @@ draw_go_l:
 draw_go_l_end:
 	li $v0, 32
 	li $a0, 30
-	addi $t3, $t0, 2100
 	li $t1, 0xf7b8cb
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2104
+	sw $t1, 2100($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2108
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2112
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2116
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2120
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2124
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2128
+	sw $t1, 2104($t0)
+	sw $t1, 2108($t0)
+	sw $t1, 2112($t0)
+	sw $t1, 2116($t0)
+	sw $t1, 2120($t0)
+	sw $t1, 2124($t0)
 	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2144
+	sw $t1, 2128($t0)
 	li $t1, 0xf898b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2148
+	sw $t1, 2144($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2152
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2156
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2160
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2164
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2188
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2196
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2204
+	sw $t1, 2148($t0)
+	sw $t1, 2152($t0)
+	sw $t1, 2156($t0)
+	sw $t1, 2160($t0)
+	sw $t1, 2164($t0)
+	sw $t1, 2188($t0)
+	sw $t1, 2192($t0)
+	sw $t1, 2196($t0)
 	li $t1, 0xffe7f2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2208
+	sw $t1, 2204($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2212
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2216
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2232
+	sw $t1, 2208($t0)
+	sw $t1, 2212($t0)
+	sw $t1, 2216($t0)
 	li $t1, 0xfff7fd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2236
+	sw $t1, 2232($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2240
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2244
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2248
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2252
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2256
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2260
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2348
+	sw $t1, 2236($t0)
+	sw $t1, 2240($t0)
+	sw $t1, 2244($t0)
+	sw $t1, 2248($t0)
+	sw $t1, 2252($t0)
+	sw $t1, 2256($t0)
+	sw $t1, 2260($t0)
 	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2352
+	sw $t1, 2348($t0)
 	li $t1, 0xfffcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2356
+	sw $t1, 2352($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2360
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2364
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2368
+	sw $t1, 2356($t0)
+	sw $t1, 2360($t0)
+	sw $t1, 2364($t0)
 	li $t1, 0xff94b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2372
+	sw $t1, 2368($t0)
 	li $t1, 0xfe95b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2376
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2380
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2392
+	sw $t1, 2372($t0)
+	sw $t1, 2376($t0)
+	sw $t1, 2380($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2396
+	sw $t1, 2392($t0)
 	li $t1, 0xffe3ef
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2400
+	sw $t1, 2396($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
+	sw $t1, 2400($t0)
 	syscall
-	addi $t3, $t0, 2404
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2408
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2412
+	sw $t1, 2404($t0)
+	sw $t1, 2408($t0)
 	li $t1, 0xfe95b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2416
+	sw $t1, 2412($t0)
 	li $t1, 0xff94b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2420
+	sw $t1, 2416($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2424
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2436
+	sw $t1, 2420($t0)
+	sw $t1, 2424($t0)
 	li $t1, 0xf996b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2440
+	sw $t1, 2436($t0)
 	li $t1, 0xf4acc2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2444
+	sw $t1, 2440($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2448
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2452
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2460
+	sw $t1, 2444($t0)
+	sw $t1, 2448($t0)
+	sw $t1, 2452($t0)
 	li $t1, 0xfbdae5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2464
+	sw $t1, 2460($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2472
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2484
+	sw $t1, 2464($t0)
+	sw $t1, 2468($t0)
+	sw $t1, 2472($t0)
 	li $t1, 0xfffcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2488
+	sw $t1, 2484($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2496
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2500
+	sw $t1, 2488($t0)
+	sw $t1, 2492($t0)
+	sw $t1, 2496($t0)
 	li $t1, 0xfe95b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2504
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2508
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2512
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2516
+	sw $t1, 2500($t0)
+	sw $t1, 2504($t0)
+	sw $t1, 2508($t0)
+	sw $t1, 2512($t0)
 	li $t1, 0xefedee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2604
+	sw $t1, 2516($t0)
 	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2608
+	sw $t1, 2604($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2612
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2616
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2620
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2624
+	sw $t1, 2608($t0)
+	sw $t1, 2612($t0)
+	sw $t1, 2616($t0)
+	sw $t1, 2620($t0)
 	li $t1, 0xfffbfe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2648
+	sw $t1, 2624($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2652
+	sw $t1, 2648($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2656
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2660
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2664
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2676
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2680
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2700
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2704
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2708
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2716
+	sw $t1, 2652($t0)
+	sw $t1, 2656($t0)
+	sw $t1, 2660($t0)
+	sw $t1, 2664($t0)
+	sw $t1, 2676($t0)
+	sw $t1, 2680($t0)
+	sw $t1, 2692($t0)
+	sw $t1, 2696($t0)
+	sw $t1, 2700($t0)
+	sw $t1, 2704($t0)
+	sw $t1, 2708($t0)
 	li $t1, 0xfdd9e5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2720
+	sw $t1, 2716($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2728
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2740
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2744
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2860
+	sw $t1, 2720($t0)
+	sw $t1, 2724($t0)
+	sw $t1, 2728($t0)
+	sw $t1, 2740($t0)
+	sw $t1, 2744($t0)
+	sw $t1, 2748($t0)
+	sw $t1, 2752($t0)
 	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2864
+	sw $t1, 2860($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2868
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2872
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2876
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2880
+	sw $t1, 2864($t0)
+	sw $t1, 2868($t0)
+	sw $t1, 2872($t0)
+	sw $t1, 2876($t0)
 	li $t1, 0xfffbfe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2888
+	sw $t1, 2880($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2892
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2904
+	sw $t1, 2888($t0)
+	sw $t1, 2892($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2908
+	sw $t1, 2904($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2912
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2916
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2920
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2924
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2928
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2932
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2936
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2948
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2952
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2956
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2960
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2964
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2968
+	sw $t1, 2908($t0)
+	sw $t1, 2912($t0)
+	sw $t1, 2916($t0)
+	sw $t1, 2920($t0)
+	sw $t1, 2924($t0)
+	sw $t1, 2928($t0)
+	sw $t1, 2932($t0)
+	sw $t1, 2936($t0)
+	sw $t1, 2948($t0)
+	sw $t1, 2952($t0)
+	sw $t1, 2956($t0)
+	sw $t1, 2960($t0)
+	sw $t1, 2964($t0)
 	li $t1, 0xf39ab6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2972
+	sw $t1, 2968($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2976
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2980
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 2996
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3000
-	sw $t1, 0($t3)
+	sw $t1, 2972($t0)
+	sw $t1, 2976($t0)
+	sw $t1, 2980($t0)
+	sw $t1, 2984($t0)
+	sw $t1, 2996($t0)
+	sw $t1, 3000($t0)
 	syscall
-	addi $t3, $t0, 3004
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3012
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3016
+	sw $t1, 3004($t0)
+	sw $t1, 3008($t0)
+	sw $t1, 3012($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3020
+	sw $t1, 3016($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3116
+	sw $t1, 3020($t0)
+	sw $t1, 3024($t0)
 	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3120
+	sw $t1, 3116($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3124
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3128
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3132
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3144
+	sw $t1, 3120($t0)
+	sw $t1, 3124($t0)
+	sw $t1, 3128($t0)
+	sw $t1, 3132($t0)
 	li $t1, 0xff94b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3148
+	sw $t1, 3144($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3152
+	sw $t1, 3148($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3160
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3164
+	sw $t1, 3152($t0)
+	sw $t1, 3160($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3168
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3172
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3176
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3188
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3204
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3212
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3216
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3220
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3224
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3228
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3232
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3236
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3240
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3252
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3256
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3260
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3268
+	sw $t1, 3164($t0)
+	sw $t1, 3168($t0)
+	sw $t1, 3172($t0)
+	sw $t1, 3176($t0)
+	sw $t1, 3188($t0)
+	sw $t1, 3192($t0)
+	sw $t1, 3204($t0)
+	sw $t1, 3208($t0)
+	sw $t1, 3212($t0)
+	sw $t1, 3216($t0)
+	sw $t1, 3220($t0)
+	sw $t1, 3224($t0)
+	sw $t1, 3228($t0)
+	sw $t1, 3232($t0)
+	sw $t1, 3236($t0)
+	sw $t1, 3240($t0)
+	sw $t1, 3252($t0)
+	sw $t1, 3256($t0)
+	sw $t1, 3260($t0)
+	sw $t1, 3264($t0)
 	li $t1, 0xff94b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3272
+	sw $t1, 3268($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3276
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3372
+	sw $t1, 3272($t0)
+	sw $t1, 3276($t0)
+	sw $t1, 3280($t0)
 	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3376
+	sw $t1, 3372($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3380
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3384
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3388
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3400
+	sw $t1, 3376($t0)
+	sw $t1, 3380($t0)
+	sw $t1, 3384($t0)
+	sw $t1, 3388($t0)
 	li $t1, 0xf1a7be
-	sw $t1, 0($t3)
+	sw $t1, 3400($t0)
 	syscall
-	addi $t3, $t0, 3404
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3408
+	sw $t1, 3404($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3416
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3420
+	sw $t1, 3408($t0)
+	sw $t1, 3416($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3424
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3428
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3432
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3444
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3448
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3460
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3464
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3472
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3476
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3480
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3484
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3488
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3496
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3508
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3512
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3516
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3628
+	sw $t1, 3420($t0)
+	sw $t1, 3424($t0)
+	sw $t1, 3428($t0)
+	sw $t1, 3432($t0)
+	sw $t1, 3444($t0)
+	sw $t1, 3448($t0)
+	sw $t1, 3460($t0)
+	sw $t1, 3464($t0)
+	sw $t1, 3468($t0)
+	sw $t1, 3472($t0)
+	sw $t1, 3476($t0)
+	sw $t1, 3480($t0)
+	sw $t1, 3484($t0)
+	sw $t1, 3488($t0)
+	sw $t1, 3492($t0)
+	sw $t1, 3496($t0)
+	sw $t1, 3508($t0)
+	sw $t1, 3512($t0)
+	sw $t1, 3516($t0)
+	sw $t1, 3520($t0)
 	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3632
+	sw $t1, 3628($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3636
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3640
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3644
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3648
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3652
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3656
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3660
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3664
+	sw $t1, 3632($t0)
+	sw $t1, 3636($t0)
+	sw $t1, 3640($t0)
+	sw $t1, 3644($t0)
+	sw $t1, 3648($t0)
+	sw $t1, 3652($t0)
+	sw $t1, 3656($t0)
+	sw $t1, 3660($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3672
+	sw $t1, 3664($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3676
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3680
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3684
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3688
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3700
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3704
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3716
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3720
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3728
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3732
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3736
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3740
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3744
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3764
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3768
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3772
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3884
+	sw $t1, 3672($t0)
+	sw $t1, 3676($t0)
+	sw $t1, 3680($t0)
+	sw $t1, 3684($t0)
+	sw $t1, 3688($t0)
+	sw $t1, 3700($t0)
+	sw $t1, 3704($t0)
+	sw $t1, 3716($t0)
+	sw $t1, 3720($t0)
+	sw $t1, 3724($t0)
+	sw $t1, 3728($t0)
+	sw $t1, 3732($t0)
+	sw $t1, 3736($t0)
+	sw $t1, 3740($t0)
+	sw $t1, 3744($t0)
+	sw $t1, 3748($t0)
+	sw $t1, 3752($t0)
+	sw $t1, 3764($t0)
+	sw $t1, 3768($t0)
+	sw $t1, 3772($t0)
+	sw $t1, 3776($t0)
 	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3888
+	sw $t1, 3884($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3892
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3896
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3900
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3904
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3908
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3912
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3916
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3920
+	sw $t1, 3888($t0)
+	sw $t1, 3892($t0)
+	sw $t1, 3896($t0)
+	sw $t1, 3900($t0)
+	sw $t1, 3904($t0)
+	sw $t1, 3908($t0)
+	sw $t1, 3912($t0)
+	sw $t1, 3916($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3928
+	sw $t1, 3920($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3932
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3936
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3940
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3944
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3956
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3960
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3972
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3976
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3980
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3988
-	sw $t1, 0($t3)
-	addi $t3, $t0, 3996
+	sw $t1, 3928($t0)
+	sw $t1, 3932($t0)
+	sw $t1, 3936($t0)
+	sw $t1, 3940($t0)
+	sw $t1, 3944($t0)
+	sw $t1, 3956($t0)
+	sw $t1, 3960($t0)
+	sw $t1, 3972($t0)
+	sw $t1, 3976($t0)
+	sw $t1, 3980($t0)
+	sw $t1, 3984($t0)
+	sw $t1, 3988($t0)
 	li $t1, 0xfbdae5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4000
+	sw $t1, 3996($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
+	sw $t1, 4000($t0)
 	syscall
-	addi $t3, $t0, 4004
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4020
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4036
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4040
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4044
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4048
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4052
+	sw $t1, 4004($t0)
+	sw $t1, 4008($t0)
+	sw $t1, 4020($t0)
+	sw $t1, 4024($t0)
+	sw $t1, 4028($t0)
+	sw $t1, 4032($t0)
+	sw $t1, 4036($t0)
+	sw $t1, 4040($t0)
+	sw $t1, 4044($t0)
+	sw $t1, 4048($t0)
 	li $t1, 0xffdbe7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4140
+	sw $t1, 4052($t0)
 	li $t1, 0xf5eaee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4144
+	sw $t1, 4140($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4148
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4152
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4156
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4160
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4164
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4168
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4172
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4184
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4188
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4196
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4200
-	sw $t1, 0($t3)
+	sw $t1, 4144($t0)
+	sw $t1, 4148($t0)
+	sw $t1, 4152($t0)
+	sw $t1, 4156($t0)
+	sw $t1, 4160($t0)
+	sw $t1, 4164($t0)
+	sw $t1, 4168($t0)
+	sw $t1, 4172($t0)
+	sw $t1, 4184($t0)
+	sw $t1, 4188($t0)
+	sw $t1, 4192($t0)
+	sw $t1, 4196($t0)
+	sw $t1, 4200($t0)
 	syscall
-	addi $t3, $t0, 4212
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4216
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4228
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4232
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4236
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4240
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4244
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4252
+	sw $t1, 4212($t0)
+	sw $t1, 4216($t0)
+	sw $t1, 4228($t0)
+	sw $t1, 4232($t0)
+	sw $t1, 4236($t0)
+	sw $t1, 4240($t0)
+	sw $t1, 4244($t0)
 	li $t1, 0xffe7f2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4256
+	sw $t1, 4252($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4260
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4264
+	sw $t1, 4256($t0)
+	sw $t1, 4260($t0)
 	li $t1, 0xff94b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4276
+	sw $t1, 4264($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4284
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4288
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4292
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4296
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4300
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4304
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4308
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4404
+	sw $t1, 4276($t0)
+	sw $t1, 4280($t0)
+	sw $t1, 4284($t0)
+	sw $t1, 4288($t0)
+	sw $t1, 4292($t0)
+	sw $t1, 4296($t0)
+	sw $t1, 4300($t0)
+	sw $t1, 4304($t0)
+	sw $t1, 4308($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4408
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4412
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4416
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4420
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4424
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4428
+	sw $t1, 4404($t0)
+	sw $t1, 4408($t0)
+	sw $t1, 4412($t0)
+	sw $t1, 4416($t0)
+	sw $t1, 4420($t0)
+	sw $t1, 4424($t0)
 	li $t1, 0xfff7fd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4444
+	sw $t1, 4428($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4448
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4452
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4456
+	sw $t1, 4444($t0)
+	sw $t1, 4448($t0)
+	sw $t1, 4452($t0)
 	li $t1, 0xfbdae3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4468
+	sw $t1, 4456($t0)
 	li $t1, 0xf8bbcd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4472
+	sw $t1, 4468($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4488
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4496
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4512
+	sw $t1, 4472($t0)
+	sw $t1, 4488($t0)
+	sw $t1, 4492($t0)
+	sw $t1, 4496($t0)
 	li $t1, 0xf799b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4516
+	sw $t1, 4512($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4520
+	sw $t1, 4516($t0)
 	li $t1, 0xffe4f0
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4532
+	sw $t1, 4520($t0)
 	li $t1, 0xfc95b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4536
+	sw $t1, 4532($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4540
+	sw $t1, 4536($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4544
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4552
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4556
-	sw $t1, 0($t3)
-	addi $t3, $t0, 4560
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5680
+	sw $t1, 4540($t0)
+	sw $t1, 4544($t0)
+	sw $t1, 4548($t0)
+	sw $t1, 4552($t0)
+	sw $t1, 4556($t0)
+	sw $t1, 4560($t0)
 	li $t1, 0xfefefc
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5684
+	sw $t1, 5680($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5688
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5700
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5704
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5708
+	sw $t1, 5684($t0)
+	sw $t1, 5688($t0)
+	sw $t1, 5692($t0)
+	sw $t1, 5696($t0)
+	sw $t1, 5700($t0)
+	sw $t1, 5704($t0)
 	li $t1, 0xf5bacc
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5720
+	sw $t1, 5708($t0)
 	li $t1, 0xf09db7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5724
+	sw $t1, 5720($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5728
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5732
+	sw $t1, 5724($t0)
+	sw $t1, 5728($t0)
 	li $t1, 0xfcdce7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5744
+	sw $t1, 5732($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5748
+	sw $t1, 5744($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5768
+	sw $t1, 5748($t0)
 	li $t1, 0xfff0f8
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5772
+	sw $t1, 5768($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5784
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5788
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5792
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5796
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5808
+	sw $t1, 5772($t0)
+	sw $t1, 5776($t0)
+	sw $t1, 5780($t0)
+	sw $t1, 5784($t0)
+	sw $t1, 5788($t0)
+	sw $t1, 5792($t0)
+	sw $t1, 5796($t0)
 	li $t1, 0xf39bb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5816
+	sw $t1, 5808($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5820
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5824
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5828
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5832
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5836
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5840
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5932
+	sw $t1, 5816($t0)
+	sw $t1, 5820($t0)
+	sw $t1, 5824($t0)
+	sw $t1, 5828($t0)
+	sw $t1, 5832($t0)
+	sw $t1, 5836($t0)
+	sw $t1, 5840($t0)
 	li $t1, 0xfbc2d3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5936
+	sw $t1, 5932($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5940
+	sw $t1, 5936($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5944
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5948
+	sw $t1, 5940($t0)
+	sw $t1, 5944($t0)
 	li $t1, 0xfe95b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5952
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5956
+	sw $t1, 5948($t0)
+	sw $t1, 5952($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5960
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5964
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5988
-	sw $t1, 0($t3)
-	addi $t3, $t0, 5996
+	sw $t1, 5956($t0)
+	sw $t1, 5960($t0)
+	sw $t1, 5964($t0)
+	sw $t1, 5984($t0)
+	sw $t1, 5988($t0)
 	li $t1, 0xf8c8d6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6000
+	sw $t1, 5996($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
+	sw $t1, 6000($t0)
 	syscall
-	addi $t3, $t0, 6004
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6024
+	sw $t1, 6004($t0)
+	sw $t1, 6008($t0)
 	li $t1, 0xff94b2
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6028
+	sw $t1, 6024($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6036
+	sw $t1, 6028($t0)
+	sw $t1, 6032($t0)
 	li $t1, 0xfe95b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6040
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6044
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6048
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6064
+	sw $t1, 6036($t0)
+	sw $t1, 6040($t0)
+	sw $t1, 6044($t0)
+	sw $t1, 6048($t0)
 	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6068
+	sw $t1, 6064($t0)
 	li $t1, 0xfefcfd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6072
+	sw $t1, 6068($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6076
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6080
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6084
+	sw $t1, 6072($t0)
+	sw $t1, 6076($t0)
+	sw $t1, 6080($t0)
 	li $t1, 0xfe95b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6088
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6092
+	sw $t1, 6084($t0)
+	sw $t1, 6088($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6096
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6100
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6188
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6196
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6200
-	sw $t1, 0($t3)
+	sw $t1, 6092($t0)
+	sw $t1, 6096($t0)
+	sw $t1, 6100($t0)
+	sw $t1, 6188($t0)
+	sw $t1, 6192($t0)
+	sw $t1, 6196($t0)
+	sw $t1, 6200($t0)
 	syscall
-	addi $t3, $t0, 6212
 	li $t1, 0xefa4bb
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6216
+	sw $t1, 6212($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6220
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6232
+	sw $t1, 6216($t0)
+	sw $t1, 6220($t0)
 	li $t1, 0xfc97b5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6236
+	sw $t1, 6232($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6240
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6244
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6252
+	sw $t1, 6236($t0)
+	sw $t1, 6240($t0)
+	sw $t1, 6244($t0)
 	li $t1, 0xf8c8d6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6256
+	sw $t1, 6252($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6260
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6276
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6284
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6288
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6320
+	sw $t1, 6256($t0)
+	sw $t1, 6260($t0)
+	sw $t1, 6264($t0)
+	sw $t1, 6276($t0)
+	sw $t1, 6280($t0)
+	sw $t1, 6284($t0)
+	sw $t1, 6288($t0)
 	li $t1, 0xf39bb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6324
+	sw $t1, 6320($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6328
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6332
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6348
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6352
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6356
+	sw $t1, 6324($t0)
+	sw $t1, 6328($t0)
+	sw $t1, 6332($t0)
+	sw $t1, 6336($t0)
+	sw $t1, 6348($t0)
+	sw $t1, 6352($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6444
+	sw $t1, 6356($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6448
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6452
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6456
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6468
+	sw $t1, 6444($t0)
+	sw $t1, 6448($t0)
+	sw $t1, 6452($t0)
+	sw $t1, 6456($t0)
 	li $t1, 0xefa4bb
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6472
+	sw $t1, 6468($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6476
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6488
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6496
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6500
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6508
+	sw $t1, 6472($t0)
+	sw $t1, 6476($t0)
+	sw $t1, 6488($t0)
+	sw $t1, 6492($t0)
+	sw $t1, 6496($t0)
+	sw $t1, 6500($t0)
 	li $t1, 0xf8c8d6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6512
+	sw $t1, 6508($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6516
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6532
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6536
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6540
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6544
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6552
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6556
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6560
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6576
+	sw $t1, 6512($t0)
+	sw $t1, 6516($t0)
+	sw $t1, 6520($t0)
+	sw $t1, 6532($t0)
+	sw $t1, 6536($t0)
+	sw $t1, 6540($t0)
+	sw $t1, 6544($t0)
+	sw $t1, 6548($t0)
+	sw $t1, 6552($t0)
+	sw $t1, 6556($t0)
+	sw $t1, 6560($t0)
 	li $t1, 0xf39bb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6580
+	sw $t1, 6576($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6584
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6588
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6592
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6596
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6600
+	sw $t1, 6580($t0)
+	sw $t1, 6584($t0)
+	sw $t1, 6588($t0)
+	sw $t1, 6592($t0)
+	sw $t1, 6596($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
+	sw $t1, 6600($t0)
 	syscall
-	addi $t3, $t0, 6604
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6608
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6612
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6700
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6704
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6708
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6712
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6724
+	sw $t1, 6604($t0)
+	sw $t1, 6608($t0)
+	sw $t1, 6612($t0)
+	sw $t1, 6700($t0)
+	sw $t1, 6704($t0)
+	sw $t1, 6708($t0)
+	sw $t1, 6712($t0)
 	li $t1, 0xf0a5bc
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6728
+	sw $t1, 6724($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6732
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6744
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6756
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6764
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6768
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6772
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6788
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6792
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6796
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6800
-	sw $t1, 0($t3)
+	sw $t1, 6728($t0)
+	sw $t1, 6732($t0)
+	sw $t1, 6744($t0)
+	sw $t1, 6748($t0)
+	sw $t1, 6752($t0)
+	sw $t1, 6756($t0)
+	sw $t1, 6764($t0)
+	sw $t1, 6768($t0)
+	sw $t1, 6772($t0)
+	sw $t1, 6776($t0)
+	sw $t1, 6788($t0)
+	sw $t1, 6792($t0)
+	sw $t1, 6796($t0)
+	sw $t1, 6800($t0)
 	syscall
-	addi $t3, $t0, 6804
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6808
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6812
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6816
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6832
+	sw $t1, 6804($t0)
+	sw $t1, 6808($t0)
+	sw $t1, 6812($t0)
+	sw $t1, 6816($t0)
 	li $t1, 0xf39bb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6836
+	sw $t1, 6832($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6840
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6844
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6848
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6852
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6856
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6860
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6864
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6956
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6960
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6964
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6968
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6980
+	sw $t1, 6836($t0)
+	sw $t1, 6840($t0)
+	sw $t1, 6844($t0)
+	sw $t1, 6848($t0)
+	sw $t1, 6852($t0)
+	sw $t1, 6856($t0)
+	sw $t1, 6860($t0)
+	sw $t1, 6864($t0)
+	sw $t1, 6956($t0)
+	sw $t1, 6960($t0)
+	sw $t1, 6964($t0)
+	sw $t1, 6968($t0)
 	li $t1, 0xf0a5bc
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6984
+	sw $t1, 6980($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 6988
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7000
-	sw $t1, 0($t3)
+	sw $t1, 6984($t0)
+	sw $t1, 6988($t0)
+	sw $t1, 7000($t0)
 	syscall
-	addi $t3, $t0, 7004
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7012
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7016
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7020
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7024
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7032
+	sw $t1, 7004($t0)
+	sw $t1, 7008($t0)
+	sw $t1, 7012($t0)
+	sw $t1, 7016($t0)
+	sw $t1, 7020($t0)
+	sw $t1, 7024($t0)
+	sw $t1, 7028($t0)
 	li $t1, 0xffcfdd
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7044
+	sw $t1, 7032($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7048
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7052
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7056
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7088
+	sw $t1, 7044($t0)
+	sw $t1, 7048($t0)
+	sw $t1, 7052($t0)
+	sw $t1, 7056($t0)
 	li $t1, 0xf39bb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7092
+	sw $t1, 7088($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7096
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7100
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7104
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7108
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7112
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7116
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7120
+	sw $t1, 7092($t0)
+	sw $t1, 7096($t0)
+	sw $t1, 7100($t0)
+	sw $t1, 7104($t0)
+	sw $t1, 7108($t0)
+	sw $t1, 7112($t0)
+	sw $t1, 7116($t0)
 	li $t1, 0xffacc6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7212
+	sw $t1, 7120($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7216
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7220
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7224
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7236
+	sw $t1, 7212($t0)
+	sw $t1, 7216($t0)
+	sw $t1, 7220($t0)
+	sw $t1, 7224($t0)
 	li $t1, 0xefa4bb
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7240
+	sw $t1, 7236($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7244
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7256
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7260
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7264
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7268
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7272
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7276
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7280
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7284
+	sw $t1, 7240($t0)
+	sw $t1, 7244($t0)
+	sw $t1, 7256($t0)
+	sw $t1, 7260($t0)
+	sw $t1, 7264($t0)
+	sw $t1, 7268($t0)
+	sw $t1, 7272($t0)
+	sw $t1, 7276($t0)
+	sw $t1, 7280($t0)
 	li $t1, 0xf19bb6
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7300
+	sw $t1, 7284($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7304
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7308
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7312
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7344
+	sw $t1, 7300($t0)
+	sw $t1, 7304($t0)
+	sw $t1, 7308($t0)
+	sw $t1, 7312($t0)
 	li $t1, 0xf49ab4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7348
+	sw $t1, 7344($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7352
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7356
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7360
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7364
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7368
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7372
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7376
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7380
+	sw $t1, 7348($t0)
+	sw $t1, 7352($t0)
+	sw $t1, 7356($t0)
+	sw $t1, 7360($t0)
+	sw $t1, 7364($t0)
+	sw $t1, 7368($t0)
+	sw $t1, 7372($t0)
+	sw $t1, 7376($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7468
+	sw $t1, 7380($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7472
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7476
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7480
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7484
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7488
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7496
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7500
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7512
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7516
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7520
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7524
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7528
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7532
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7536
+	sw $t1, 7468($t0)
+	sw $t1, 7472($t0)
+	sw $t1, 7476($t0)
+	sw $t1, 7480($t0)
+	sw $t1, 7484($t0)
+	sw $t1, 7488($t0)
+	sw $t1, 7492($t0)
+	sw $t1, 7496($t0)
+	sw $t1, 7500($t0)
+	sw $t1, 7512($t0)
+	sw $t1, 7516($t0)
+	sw $t1, 7520($t0)
+	sw $t1, 7524($t0)
+	sw $t1, 7528($t0)
+	sw $t1, 7532($t0)
 	li $t1, 0xf0a5bc
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7556
+	sw $t1, 7536($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7560
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7564
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7568
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7572
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7576
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7580
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7584
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7588
+	sw $t1, 7556($t0)
+	sw $t1, 7560($t0)
+	sw $t1, 7564($t0)
+	sw $t1, 7568($t0)
+	sw $t1, 7572($t0)
+	sw $t1, 7576($t0)
+	sw $t1, 7580($t0)
+	sw $t1, 7584($t0)
 	li $t1, 0xfcdce7
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7600
+	sw $t1, 7588($t0)
 	li $t1, 0xf39bb4
-	sw $t1, 0($t3)
+	sw $t1, 7600($t0)
 	syscall
-	addi $t3, $t0, 7604
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7608
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7612
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7616
+	sw $t1, 7604($t0)
+	sw $t1, 7608($t0)
+	sw $t1, 7612($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7620
+	sw $t1, 7616($t0)
 	li $t1, 0xf7d1dc
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7624
+	sw $t1, 7620($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7628
+	sw $t1, 7624($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7632
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7636
+	sw $t1, 7628($t0)
+	sw $t1, 7632($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7728
+	sw $t1, 7636($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7732
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7736
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7740
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7744
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7748
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7752
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7756
+	sw $t1, 7728($t0)
+	sw $t1, 7732($t0)
+	sw $t1, 7736($t0)
+	sw $t1, 7740($t0)
+	sw $t1, 7744($t0)
+	sw $t1, 7748($t0)
+	sw $t1, 7752($t0)
 	li $t1, 0xf8b9cc
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7764
+	sw $t1, 7756($t0)
 	li $t1, 0xefedee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7768
+	sw $t1, 7764($t0)
 	li $t1, 0xf29cb5
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7772
+	sw $t1, 7768($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7776
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7780
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7784
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7788
+	sw $t1, 7772($t0)
+	sw $t1, 7776($t0)
+	sw $t1, 7780($t0)
+	sw $t1, 7784($t0)
 	li $t1, 0xfdbed1
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7812
+	sw $t1, 7788($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7816
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7820
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7824
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7828
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7832
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7836
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7840
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7844
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7856
+	sw $t1, 7812($t0)
+	sw $t1, 7816($t0)
+	sw $t1, 7820($t0)
+	sw $t1, 7824($t0)
+	sw $t1, 7828($t0)
+	sw $t1, 7832($t0)
+	sw $t1, 7836($t0)
+	sw $t1, 7840($t0)
+	sw $t1, 7844($t0)
 	li $t1, 0xf39bb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7860
+	sw $t1, 7856($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7864
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7868
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7872
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7880
+	sw $t1, 7860($t0)
+	sw $t1, 7864($t0)
+	sw $t1, 7868($t0)
+	sw $t1, 7872($t0)
 	li $t1, 0xf5eaee
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7884
+	sw $t1, 7880($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7888
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7892
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7984
+	sw $t1, 7884($t0)
+	sw $t1, 7888($t0)
+	sw $t1, 7892($t0)
 	li $t1, 0xfd94b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7988
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7992
-	sw $t1, 0($t3)
-	addi $t3, $t0, 7996
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8000
-	sw $t1, 0($t3)
+	sw $t1, 7984($t0)
+	sw $t1, 7988($t0)
+	sw $t1, 7992($t0)
+	sw $t1, 7996($t0)
+	sw $t1, 8000($t0)
 	syscall
-	addi $t3, $t0, 8004
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8008
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8028
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8032
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8036
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8040
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8068
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8072
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8076
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8080
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8084
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8088
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8092
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8096
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8116
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8120
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8124
+	sw $t1, 8004($t0)
+	sw $t1, 8008($t0)
+	sw $t1, 8028($t0)
+	sw $t1, 8032($t0)
+	sw $t1, 8036($t0)
+	sw $t1, 8040($t0)
+	sw $t1, 8068($t0)
+	sw $t1, 8072($t0)
+	sw $t1, 8076($t0)
+	sw $t1, 8080($t0)
+	sw $t1, 8084($t0)
+	sw $t1, 8088($t0)
+	sw $t1, 8092($t0)
+	sw $t1, 8096($t0)
+	sw $t1, 8116($t0)
+	sw $t1, 8120($t0)
 	li $t1, 0xff93b3
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8140
+	sw $t1, 8124($t0)
 	li $t1, 0xfff3fc
-	sw $t1, 0($t3)
-	addi $t3, $t0, 8144
+	sw $t1, 8140($t0)
 	li $t1, 0xfe95b4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10296
+	sw $t1, 8144($t0)
 	li $t1, 0x000000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10300
+	sw $t1, 10296($t0)
 	li $t1, 0x71360b
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10304
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10312
+	sw $t1, 10300($t0)
+	sw $t1, 10304($t0)
 	li $t1, 0x000000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10424
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10432
+	sw $t1, 10312($t0)
+	sw $t1, 10424($t0)
 	li $t1, 0x71360b
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10436
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10440
+	sw $t1, 10432($t0)
+	sw $t1, 10436($t0)
 	li $t1, 0x000000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10552
+	sw $t1, 10440($t0)
 	li $t1, 0x71360b
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10556
+	sw $t1, 10552($t0)
 	li $t1, 0x000000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10560
+	sw $t1, 10556($t0)
 	li $t1, 0x71360b
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10564
+	sw $t1, 10560($t0)
 	li $t1, 0x000000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10684
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10688
+	sw $t1, 10564($t0)
+	sw $t1, 10684($t0)
 	li $t1, 0x71360b
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10692
+	sw $t1, 10688($t0)
 	li $t1, 0x000000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10696
+	sw $t1, 10692($t0)
 	li $t1, 0x71360b
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10804
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10808
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10812
+	sw $t1, 10696($t0)
+	sw $t1, 10804($t0)
+	sw $t1, 10808($t0)
 	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10816
+	sw $t1, 10812($t0)
 	li $t1, 0x71360b
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10820
+	sw $t1, 10816($t0)
 	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10824
+	sw $t1, 10820($t0)
 	li $t1, 0x71360b
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10936
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10940
+	sw $t1, 10824($t0)
+	sw $t1, 10936($t0)
 	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10944
+	sw $t1, 10940($t0)
 	li $t1, 0x71360b
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10948
+	sw $t1, 10944($t0)
 	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10952
+	sw $t1, 10948($t0)
 	li $t1, 0x71360b
-	sw $t1, 0($t3)
-	addi $t3, $t0, 10956
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11060
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11064
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11068
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11072
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11076
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11080
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11196
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11200
-	sw $t1, 0($t3)
+	sw $t1, 10952($t0)
+	sw $t1, 10956($t0)
+	sw $t1, 11060($t0)
+	sw $t1, 11064($t0)
+	sw $t1, 11068($t0)
+	sw $t1, 11072($t0)
+	sw $t1, 11076($t0)
+	sw $t1, 11080($t0)
+	sw $t1, 11192($t0)
+	sw $t1, 11196($t0)
+	sw $t1, 11200($t0)
 	syscall
-	addi $t3, $t0, 11204
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11212
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11324
+	sw $t1, 11204($t0)
+	sw $t1, 11208($t0)
+	sw $t1, 11212($t0)
 	li $t1, 0xc88b5f
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11328
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11456
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11460
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11580
+	sw $t1, 11324($t0)
+	sw $t1, 11328($t0)
+	sw $t1, 11456($t0)
+	sw $t1, 11460($t0)
 	li $t1, 0x000000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11584
+	sw $t1, 11580($t0)
 	li $t1, 0xc88b5f
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11588
+	sw $t1, 11584($t0)
 	li $t1, 0x000000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11616
+	sw $t1, 11588($t0)
 	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11624
+	sw $t1, 11616($t0)
 	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11628
+	sw $t1, 11624($t0)
 	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11664
+	sw $t1, 11628($t0)
 	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11672
+	sw $t1, 11664($t0)
 	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11676
+	sw $t1, 11672($t0)
 	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11680
+	sw $t1, 11676($t0)
 	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11684
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11708
+	sw $t1, 11680($t0)
+	sw $t1, 11684($t0)
 	li $t1, 0x000000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11712
+	sw $t1, 11708($t0)
 	li $t1, 0xc88b5f
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11716
+	sw $t1, 11712($t0)
 	li $t1, 0x000000
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11868
+	sw $t1, 11716($t0)
 	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11872
+	sw $t1, 11868($t0)
 	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11876
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11880
+	sw $t1, 11872($t0)
+	sw $t1, 11876($t0)
 	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11884
+	sw $t1, 11880($t0)
 	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11888
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11912
+	sw $t1, 11884($t0)
+	sw $t1, 11888($t0)
 	li $t1, 0xe4a449
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11916
+	sw $t1, 11912($t0)
 	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11920
+	sw $t1, 11916($t0)
 	li $t1, 0xf85050
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11924
+	sw $t1, 11920($t0)
 	li $t1, 0xffebb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11928
+	sw $t1, 11924($t0)
 	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11932
+	sw $t1, 11928($t0)
 	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11936
+	sw $t1, 11932($t0)
 	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 11940
+	sw $t1, 11936($t0)
 	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12124
+	sw $t1, 11940($t0)
 	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12128
+	sw $t1, 12124($t0)
 	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12132
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12136
+	sw $t1, 12128($t0)
+	sw $t1, 12132($t0)
 	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12140
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12168
+	sw $t1, 12136($t0)
+	sw $t1, 12140($t0)
 	li $t1, 0xe4a449
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12172
+	sw $t1, 12168($t0)
 	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12176
+	sw $t1, 12172($t0)
 	li $t1, 0xffebb4
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12180
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12184
+	sw $t1, 12176($t0)
+	sw $t1, 12180($t0)
 	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12188
+	sw $t1, 12184($t0)
 	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12192
+	sw $t1, 12188($t0)
 	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12196
+	sw $t1, 12192($t0)
 	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12380
+	sw $t1, 12196($t0)
 	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12384
+	sw $t1, 12380($t0)
 	li $t1, 0x795548
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12388
+	sw $t1, 12384($t0)
 	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12392
+	sw $t1, 12388($t0)
 	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12396
+	sw $t1, 12392($t0)
 	li $t1, 0x304ffe
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12400
-	sw $t1, 0($t3)
+	sw $t1, 12396($t0)
+	sw $t1, 12400($t0)
 	syscall
-	addi $t3, $t0, 12428
 	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12432
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12436
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12440
+	sw $t1, 12428($t0)
+	sw $t1, 12432($t0)
+	sw $t1, 12436($t0)
 	li $t1, 0xff80ab
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12444
+	sw $t1, 12440($t0)
 	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12448
+	sw $t1, 12444($t0)
 	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12452
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12636
+	sw $t1, 12448($t0)
+	sw $t1, 12452($t0)
 	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12640
+	sw $t1, 12636($t0)
 	li $t1, 0xffcc80
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12648
+	sw $t1, 12640($t0)
 	li $t1, 0xf44336
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12652
+	sw $t1, 12648($t0)
 	li $t1, 0xffffff
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12680
+	sw $t1, 12652($t0)
 	li $t1, 0xf85050
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12684
+	sw $t1, 12680($t0)
 	li $t1, 0xc0c0c0
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12688
+	sw $t1, 12684($t0)
 	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12692
+	sw $t1, 12688($t0)
 	li $t1, 0xf85050
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12696
+	sw $t1, 12692($t0)
 	li $t1, 0xf3cd0e
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12708
+	sw $t1, 12696($t0)
 	li $t1, 0xec407a
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12928
+	sw $t1, 12708($t0)
 	li $t1, 0xf85050
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12936
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12940
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12944
-	sw $t1, 0($t3)
-	addi $t3, $t0, 12948
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13180
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13184
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13188
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13192
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13196
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13200
-	sw $t1, 0($t3)
+	sw $t1, 12928($t0)
+	sw $t1, 12936($t0)
+	sw $t1, 12940($t0)
+	sw $t1, 12944($t0)
+	sw $t1, 12948($t0)
+	sw $t1, 13180($t0)
+	sw $t1, 13184($t0)
+	sw $t1, 13188($t0)
+	sw $t1, 13192($t0)
+	sw $t1, 13196($t0)
+	sw $t1, 13200($t0)
 	syscall
-	addi $t3, $t0, 13440
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13444
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13448
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13452
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13456
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13460
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13688
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13692
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13696
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13700
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13704
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13708
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13712
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13716
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13720
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13728
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13940
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13944
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13948
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13952
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13956
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13960
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13964
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13968
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13972
-	sw $t1, 0($t3)
-	addi $t3, $t0, 13976
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14196
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14200
-	sw $t1, 0($t3)
+	sw $t1, 13440($t0)
+	sw $t1, 13444($t0)
+	sw $t1, 13448($t0)
+	sw $t1, 13452($t0)
+	sw $t1, 13456($t0)
+	sw $t1, 13460($t0)
+	sw $t1, 13688($t0)
+	sw $t1, 13692($t0)
+	sw $t1, 13696($t0)
+	sw $t1, 13700($t0)
+	sw $t1, 13704($t0)
+	sw $t1, 13708($t0)
+	sw $t1, 13712($t0)
+	sw $t1, 13716($t0)
+	sw $t1, 13720($t0)
+	sw $t1, 13724($t0)
+	sw $t1, 13728($t0)
+	sw $t1, 13940($t0)
+	sw $t1, 13944($t0)
+	sw $t1, 13948($t0)
+	sw $t1, 13952($t0)
+	sw $t1, 13956($t0)
+	sw $t1, 13960($t0)
+	sw $t1, 13964($t0)
+	sw $t1, 13968($t0)
+	sw $t1, 13972($t0)
+	sw $t1, 13976($t0)
+	sw $t1, 14196($t0)
+	sw $t1, 14200($t0)
 	syscall
-	addi $t3, $t0, 14204
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14208
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14212
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14216
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14220
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14224
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14228
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14232
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14456
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14460
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14464
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14468
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14472
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14476
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14480
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14484
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14488
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14492
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14716
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14724
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14728
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14732
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14740
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14980
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14984
-	sw $t1, 0($t3)
-	addi $t3, $t0, 14988
-	sw $t1, 0($t3)
-	addi $t3, $t0, 15232
-	sw $t1, 0($t3)
-	addi $t3, $t0, 15236
-	sw $t1, 0($t3)
+	sw $t1, 14204($t0)
+	sw $t1, 14208($t0)
+	sw $t1, 14212($t0)
+	sw $t1, 14216($t0)
+	sw $t1, 14220($t0)
+	sw $t1, 14224($t0)
+	sw $t1, 14228($t0)
+	sw $t1, 14232($t0)
+	sw $t1, 14456($t0)
+	sw $t1, 14460($t0)
+	sw $t1, 14464($t0)
+	sw $t1, 14468($t0)
+	sw $t1, 14472($t0)
+	sw $t1, 14476($t0)
+	sw $t1, 14480($t0)
+	sw $t1, 14484($t0)
+	sw $t1, 14488($t0)
+	sw $t1, 14492($t0)
+	sw $t1, 14716($t0)
+	sw $t1, 14724($t0)
+	sw $t1, 14728($t0)
+	sw $t1, 14732($t0)
+	sw $t1, 14740($t0)
+	sw $t1, 14980($t0)
+	sw $t1, 14984($t0)
+	sw $t1, 14988($t0)
+	sw $t1, 15232($t0)
+	sw $t1, 15236($t0)
+
 	jr $ra
 
 

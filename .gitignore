@@ -1,3 +1,7 @@
 psuedocode.c
 display_starter.asm
 test.asm
+*.py
+*.png
+*.txt
+venv

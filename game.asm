@@ -39,8 +39,8 @@ player: .space 12
 jump_count: .word 0
 num_player_bullets: .word 0
 player_bullet_array: .space 240 	# each bullet has space of 12, so the array only allows 20 bullets
-enemy_array: .word 8296, 0, 13968, 0, 4532, 0
-total_num_enemy: .word 3
+enemy_array: .word 8296, 0, 1, 13968, 0, 1, 4532, 0, 1, 10424, 0, 2, 8296, 0, 2, 13968, 0, 2, 4532, 0, 2
+total_num_enemy: .word 7
 num_enemy_array: .word 3, 4, 5		# each element at index i represents the number of enemies at level i
 current_level: .word 1
 num_hearts: .word 4			# player starts with 4 hearts
@@ -2192,7 +2192,7 @@ draw_heart_a:
 	sw $t1, 8($t3)
 	sw $t1, 252($t3)
 	sw $t1, 256($t3)
-	li $t1, WHITE
+	#li $t1, WHITE
 	sw $t1, -264($t3)
 	li $t1, HEART2
 	sw $t1, -248($t3)
@@ -2329,9 +2329,11 @@ u_goom:
 	# deletes goomba
 u_delete_goom:
 	la $s5, enemy_array
-	la $s6, num_enemy_array
+	la $s6, total_num_enemy
 	lw $s6, 0($s6)
-	
+	la $s7, current_level
+	lw $s7, 0($s7)
+
 	lw $t4, 0($t3)		# load address of bullet
 	# calculate offset of bullet
 	sub $t1, $t4, $t0	# $t1 is the offset
@@ -2339,8 +2341,12 @@ u_delete_goom:
 	li $s0, 0
 u_delete_l:
 	bge $s0, $s6, u_delete_l_end
+
+	lw $s3, 8($s5)		# load level of enemy to $s3
+
+	bne $s3, $s7, u_delete_else		# skip if current_level != enemy level
 	
-	lw $s3, 0($s5)		# load offset of enemy to $s1
+	lw $s3, 0($s5)		# load offset of enemy to $s3
 	
 
 u_delete_if:
@@ -2384,7 +2390,7 @@ u_delete_if:
 	sw $t1, 768($s3)
 
 u_delete_else:	
-	addi $s5, $s5, 8
+	addi $s5, $s5, 12
 	addi $s0, $s0, 1
 	j u_delete_l
 	
@@ -2536,15 +2542,19 @@ MAIN_L:	beq $t5, $zero, END
 
 ##### PAINTING CHARACTERS #####
 	
-##### Draw goombas according to the enemy_array and num_enemy_array #####
+##### Draw goombas according to the enemy_array and their level #####
 draw_goombas:
 	la $t3, enemy_array
-	la $s1, num_enemy_array
+	la $s1, total_num_enemy
 	lw $s1, 0($s1)
+	la $s0, current_level
+	lw $s0, 0($s0)
 	
 	add $t8, $zero, $zero
 draw_goom_l:	
 	bge $t8, $s1, draw_goom_l_end
+	lw $s3, 8($t3)		# load level of enemy
+	bne $s3, $s0, draw_goom_l_end		# if enemy level != current_level, dont draw goomba
 	
 	lw $t4, 0($t3)		# load offset of enemy
 	lw $s4, 4($t3)		# load deleted of enemy
@@ -2556,7 +2566,7 @@ draw_goom_l:
 	jal draw_goomba_a
 	
 draw_goom_cont:	
-	addi $t3, $t3, 8
+	addi $t3, $t3, 12
 	addi $t8, $t8, 1
 	
 	j draw_goom_l
@@ -2694,7 +2704,7 @@ p_restore_goom_l:
 	li $s2, 0
 	sw $s2, 4($s5)		# save deleted = 0 to enemy
 	
-	addi $s5, $s5, 8
+	addi $s5, $s5, 12
 	addi $s0, $s0, 1
 	j p_restore_goom_l
 
@@ -2735,6 +2745,8 @@ a_clicked:
 ##### checks collisions #####
 check_object_collision_a:
 	lw $t4, 0($t2) 	# retrives address of player
+	
+	# check if goomba
 	li $t1, GOOM1	# checks if moving left will collide with goomba
 	
 	lw $t3, -16($t4)
@@ -2762,6 +2774,31 @@ a_goom_hit:
 	j key_no_clicked	
 
 a_if1:	
+
+	# check if mario
+	li $t1, MARIO1	# checks if moving left will collide with mario
+	
+	lw $t3, -16($t4)
+	beq $t1, $t3, a_mario_hit
+	lw $t3, -20($t4)
+	beq $t1, $t3, a_mario_hit
+	lw $t3, -528($t4)
+	beq $t1, $t3, a_mario_hit
+	lw $t3, -532($t4)
+	beq $t1, $t3, a_mario_hit
+	lw $t3, 496($t4)
+	beq $t1, $t3, a_mario_hit
+	lw $t3, 492($t4)
+	beq $t1, $t3, a_mario_hit
+	lw $t3, 1008($t4)
+	beq $t1, $t3, a_mario_hit
+	lw $t3, 1004($t4)
+	bne $t1, $t3, a_if2
+	
+a_mario_hit:
+	j limbo	
+
+a_if2:	
 
 ##### makes the player face left #####
 	addi $t8, $zero, 1
@@ -2869,6 +2906,29 @@ d_goom_hit:
 	j key_no_clicked
 	
 d_if1:	
+
+	li $t1, MARIO1	# checks if moving right will collide with mario
+	
+	lw $t3, 16($t4)
+	beq $t1, $t3, d_mario_hit
+	lw $t3, 20($t4)
+	beq $t1, $t3, d_mario_hit
+	lw $t3, 528($t4)
+	beq $t1, $t3, d_mario_hit
+	lw $t3, 532($t4)
+	beq $t1, $t3, d_mario_hit
+	lw $t3, -496($t4)
+	beq $t1, $t3, d_mario_hit
+	lw $t3, -492($t4)
+	beq $t1, $t3, d_mario_hit
+	lw $t3, 1040($t4)
+	beq $t1, $t3, d_mario_hit
+	lw $t3, 1044($t4)
+	bne $t1, $t3, d_if2
+d_mario_hit:
+	j limbo	
+
+d_if2:	
 	
 ##### makes the player face right #####
 	addi $t8, $zero, 2
@@ -2967,12 +3027,12 @@ check_object_collision_no_key:
 	lw $t3, 1012($t4)
 	beq $t1, $t3, grounded
 	lw $t3, 1268($t4)
-	beq $t1, $t3, grounded
-	lw $t3, 1276($t4)
-	beq $t1, $t3, grounded
-	lw $t3, 1284($t4)
-	beq $t1, $t3, grounded
-	lw $t3, 1292($t4)
+	#beq $t1, $t3, grounded
+	#lw $t3, 1276($t4)
+	#beq $t1, $t3, grounded
+	#lw $t3, 1284($t4)
+	#beq $t1, $t3, grounded
+	#lw $t3, 1292($t4)
 	bne $t1, $t3, no_key_if1	
 
 no_key_if1:	
@@ -3051,8 +3111,16 @@ end_iteration:
 limbo:
 	li $t9, KEY_ADDRESS
 	addi $t5,$zero, 1
-	
+
+	# if num_hearts <0 , game is over
+	la $s3, num_hearts
+	lw $s3, 0($s3)
+	bgt $s3, 0, limbo_yw
 	jal draw_game_over
+	j limbo_l
+
+limbo_yw:
+	jal draw_you_win
 
 limbo_l:
 	beq $t5, $zero, END

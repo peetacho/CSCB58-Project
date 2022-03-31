@@ -13,24 +13,26 @@
 # - Base Address for Display: 0x10008000 ($gp) 
 # 
 # Which milestones have been reached in this submission? 
-# (See the assignment handout for descriptions of the milestones) 
-# - Milestone 1/2/3 (choose the one the applies) 
+# - Milestone 3
 # 
 # Which approved features have been implemented for milestone 3? 
-# (See the assignment handout for the list of additional features) 
-# 1. (fill in the feature, if any) 
-# 2. (fill in the feature, if any) 
-# 3. (fill in the feature, if any) 
-# ... (add more if necessary) 
+# 1. Health/Score (2 marks)
+# 2. Fail Condition (1 mark)
+# 3. Win Condition (1 mark)
+# 4. Shoot Enemies (2 marks)
+# 5. Double Jump (1 mark)
+# 6. Different Levels (2 marks)
 # 
 # Link to video demonstration for final submission: 
-# - (insert YouTube / MyMedia / other URL here). Make sure we can view it! 
+# - (insert YouTube / MyMedia / other URL here)
 # 
 # Are you OK with us sharing the video with people outside course staff? 
-# - yes, and please share this project github link as well! 
+# - yes, and please share this project github link as well. 
 # 
 # Any additional information that the TA needs to know: 
-# - (write here, if any) 
+# - Name of the game: Mario, but Princess Peach Saves Him
+# - There can be at most 20 bullets on the screen (trying to do more than 20 is impossible since
+# 	the game does't allow it)
 # 
 ##################################################################### 
 
@@ -39,11 +41,14 @@ player: .space 12
 jump_count: .word 0
 num_player_bullets: .word 0
 player_bullet_array: .space 240 	# each bullet has space of 12, so the array only allows 20 bullets
-enemy_array: .word 8296, 0, 1, 13968, 0, 1, 4532, 0, 1, 10424, 0, 2, 8296, 0, 2, 13968, 0, 2, 4532, 0, 2
+enemy_array: .word 8296, 0, 1, 13968, 0, 1, 4532, 0, 1, 3508, 0, 2, 6864, 0, 2, 13924, 0, 2, 10040, 0, 2
 total_num_enemy: .word 7
+platform_array: .word 11400, 24, 1, 9296, 8, 1, 5500, 16, 1, 4360, 20, 1, 4504, 10, 2, 7860, 10, 2, 11036, 15, 2, 7700, 15, 2
+total_platforms: .word 8
 num_enemy_array: .word 3, 4, 5		# each element at index i represents the number of enemies at level i
+num_enemy_killed: .word 0
 current_level: .word 1
-num_hearts: .word 4			# player starts with 4 hearts
+num_hearts: .word 3			# player starts with 3 hearts
 
 .eqv  BASE_ADDRESS  0x10008000
 .eqv  KEY_ADDRESS  0xffff0000
@@ -73,6 +78,7 @@ num_hearts: .word 4			# player starts with 4 hearts
 .eqv  MARIO2  0x704b41
 .eqv  MARIO3  0xffc57d
 .eqv  MARIO4  0x1d46f6
+.eqv  MARIO5  0xffff00
 
 # goomba colours
 .eqv  GOOM1  0x6a3917
@@ -82,12 +88,17 @@ num_hearts: .word 4			# player starts with 4 hearts
 .eqv  HEART1  0xff334b
 .eqv  HEART2  0xcd335b
 
+# sign colours
+.eqv  SIGN1  0x2ed56a
+.eqv  SIGN2  0x31c665
+
 ####### RESERVED REGISTERS #######
 # $t0 stores the BASE_ADDRESS
 # $t1 is ocassionally used to store color
 # $t2 stores player position at all times (has a beginning position)
 # $t5, $t6, $t7, $t9 is used inside the main loop
 # $t4, $t3, $t8 can be used for other stuff
+# $s0-$s7 can be used for computations inside functions
 #################################
 
 .text 
@@ -1912,41 +1923,26 @@ draw_goomba_a:
 	
 	addi $sp, $sp, 4
 	jr $ra
-	
-###### clear_GOOMBA ######
-# function clear_goomba(int a):
-# a is the starting offset of the goomba
-# this function clears a goomba at a given offset
-clear_goomba_a:
+
+###### DRAW_SIGN ######
+# function draw_sign(int a):
+# a is the starting offset of the sign
+# this function draws a sign at a given offset
+draw_sign_a:
 
 	lw $s4, 0($sp)		# pop a
 	add $s3, $t0, $s4	# la $s3, a($t0)
-	li $t1, BLUE_SKY
+	li $t1, SIGN1
 	sw $t1, -516($s3)
-	sw $t1, -512($s3)
-	sw $t1, -264($s3)
-	sw $t1, -256($s3)
-	sw $t1, -12($s3)
-	sw $t1, -8($s3)
-	sw $t1, 0($s3)
-	sw $t1, 8($s3)
-	sw $t1, 244($s3)
-	sw $t1, 248($s3)
-	sw $t1, 252($s3)
-	sw $t1, 256($s3)
-	sw $t1, 260($s3)
-	sw $t1, 264($s3)
-	sw $t1, -520($s3)
-	sw $t1, -504($s3)
 	sw $t1, -260($s3)
-	sw $t1, -252($s3)
-	sw $t1, 764($s3)
-	sw $t1, 772($s3)
+	sw $t1, -256($s3)
 	sw $t1, -4($s3)
+	sw $t1, 0($s3)
+	sw $t1, 252($s3)
+	li $t1, SIGN2
 	sw $t1, 4($s3)
+	sw $t1, 256($s3)
 	sw $t1, 508($s3)
-	sw $t1, 512($s3)
-	sw $t1, 768($s3)
 	
 	addi $sp, $sp, 4
 	jr $ra
@@ -1961,17 +1957,17 @@ draw_mario_a:
 	add $t3, $t0, $t4	#la $t3, a($t0)
 	li $t1, MARIO3
 	sw $t1, 0($t3)
-	sw $t1, 4($t3)
-	sw $t1, 8($t3)
+	sw $t1, -4($t3)
+	sw $t1, -8($t3)
 	sw $t1, -260($t3)
 	sw $t1, -252($t3)
-	sw $t1, -248($t3)
-	sw $t1, -244($t3)
+	sw $t1, -264($t3)
+	sw $t1, -268($t3)
 	li $t1, MARIO1
+	sw $t1, -520($t3)
 	sw $t1, -512($t3)
 	sw $t1, -516($t3)
 	sw $t1, -508($t3)
-	sw $t1, -504($t3)
 	sw $t1, 248($t3)
 	sw $t1, 252($t3)
 	sw $t1, 260($t3)
@@ -1985,6 +1981,10 @@ draw_mario_a:
 	sw $t1, 516($t3)
 	sw $t1, 764($t3)
 	sw $t1, 772($t3)
+	li $t1, MARIO5
+	sw $t1, -1024($t3)
+	sw $t1, -1536($t3)
+	sw $t1, -1792($t3)
 	
 	addi $sp, $sp, 4
 	jr $ra
@@ -2237,18 +2237,18 @@ clear_heart_a:
 # b is the length of the platform
 create_platform_a_b:
  	li $t1, BROWN_PLATFORM
- 	lw $t8, 0($sp)	# pop b
- 	lw $t4, 4($sp)	# pop a
+ 	lw $s6, 0($sp)	# pop b
+ 	lw $s4, 4($sp)	# pop a
  	
-	add $t4, $t0, $t4
-	addi $t3, $zero, 0
+	add $s4, $t0, $s4
+	addi $s3, $zero, 0
 	
 create_loop1:
-	bgt $t3, $t8, create_end
-	addi $t4, $t4, 4
-	sw $t1, 0($t4)
-	sw $t1, 256($t4)
-	addi $t3, $t3, 1
+	bgt $s3, $s6, create_end
+	addi $s4, $s4, 4
+	sw $t1, 0($s4)
+	sw $t1, 256($s4)
+	addi $s3, $s3, 1
 	j create_loop1
 
 create_end:
@@ -2321,6 +2321,12 @@ u_goom:
 	li $t1, 1
 	sw $t1, 8($t3)		# change value of deleted in bullet to be 1
 	
+	# increment num_enemy_killed
+	la $t1, num_enemy_killed
+	lw $t4, 0($t1)
+	addi $t4, $t4, 1
+	sw $t4, 0($t1)
+
 	# removes it from screen
 	li $t1, BLUE_SKY
 	lw $t4, 0($t3)		# load address of bullet
@@ -2479,6 +2485,24 @@ dpb_end:
 	sw $s0, 0($s1)
 	jr $ra
 
+###### PAINT SKY BLUE #####
+# function paint_sky()
+# this function paints the sky
+paint_sky:
+   	li $t1, BLUE_SKY   	# $t1 stores the blue colour code 
+	li $t3, 3712
+	add $s6, $zero, $zero
+	la, $s7, ($t0)
+	
+paint_sky_l: 	bge $s6, $t3, paint_sky_end
+	sw $t1, 0($s7)
+	addi $s7, $s7, 4
+	addi $s6, $s6, 1
+	j paint_sky_l
+paint_sky_end:
+
+	jr $ra
+
 ##### MAIN #####
 
 main:
@@ -2495,17 +2519,7 @@ main:
 	sw $t3, 8($t2)
 
 ###### paints sky blue #####
-   	li $t1, BLUE_SKY   	# $t1 stores the blue colour code 
-	li $t5, 3712
-	add $t6, $zero, $zero
-	la, $t7, ($t0)
-	
-LOOP: 	bge $t6, $t5, ELOOP
-	sw $t1, 0($t7)
-	addi $t7, $t7, 4
-	addi $t6, $t6, 1
-	j LOOP
-ELOOP:
+   	jal paint_sky
 
 ##### paints ground green #####
  	li $t1, GREEN_GROUND   	# $t1 stores the green colour code 
@@ -2554,7 +2568,8 @@ draw_goombas:
 draw_goom_l:	
 	bge $t8, $s1, draw_goom_l_end
 	lw $s3, 8($t3)		# load level of enemy
-	bne $s3, $s0, draw_goom_l_end		# if enemy level != current_level, dont draw goomba
+
+	bne $s3, $s0, draw_goom_cont		# if enemy level != current_level, dont draw goomba
 	
 	lw $t4, 0($t3)		# load offset of enemy
 	lw $s4, 4($t3)		# load deleted of enemy
@@ -2572,19 +2587,28 @@ draw_goom_cont:
 	j draw_goom_l
 draw_goom_l_end:
 
+##### draw mario #####
+
+	la $t3, current_level
+	lw $t3, 0($t3)
+
+	bne $t3, 3, draw_mario_else		# draws mario if current_level == 3
 	# paint mario
-	addi $t8, $zero, 3376
+	addi $t8, $zero, 14056
 	addi $sp, $sp, -4
 	sw $t8, 0($sp)
 	jal draw_mario_a
+
+draw_mario_else:
 	
+##### draw player #####
 	# paint player
 	jal draw_player
 	
 ##### DRAW HEARTS #####
 
-	li $t4, 1432
-	li $s3, 4
+	li $t4, 1460
+	li $s3, 3
 	li $s2, 28
 	mult $s3, $s2
 	mflo $s3 
@@ -2600,7 +2624,7 @@ clear_hearts_l:
 
 clear_hearts_end:
 
-	li $t4, 1432
+	li $t4, 1460
 	la $s3, num_hearts
 	lw $s3, 0($s3) 
 	li $s2, 28
@@ -2618,40 +2642,58 @@ draw_hearts_l:
 
 draw_hearts_end:
 
-##### PLATFORM CREATE #####
+##### Draw platforms according to the platform_array and their level #####
 
-	addi $t8, $zero, 11400
-	addi $sp, $sp, -4
-	sw $t8, 0($sp)
-	addi $t8, $zero, 24
-	addi $sp, $sp, -4
-	sw $t8, 0($sp)
-	jal create_platform_a_b
+draw_platforms:
+	la $t3, platform_array
+	la $s1, total_platforms
+	lw $s1, 0($s1)
+	la $s0, current_level
+	lw $s0, 0($s0)
+	
+	add $t8, $zero, $zero
+draw_platform_l:	
+	bge $t8, $s1, draw_platform_l_end
+	lw $s3, 8($t3)		# load level of platform
 
-	addi $t8, $zero, 9296
-	addi $sp, $sp, -4
-	sw $t8, 0($sp)
-	addi $t8, $zero, 8
-	addi $sp, $sp, -4
-	sw $t8, 0($sp)
-	jal create_platform_a_b
+	bne $s3, $s0, draw_platform_cont		# if platform level != current_level, dont draw platform
 	
-	addi $t8, $zero, 5500
-	addi $sp, $sp, -4
-	sw $t8, 0($sp)
-	addi $t8, $zero, 16
-	addi $sp, $sp, -4
-	sw $t8, 0($sp)
-	jal create_platform_a_b
+	lw $t4, 0($t3)		# load offset of platform
+	lw $s4, 4($t3)		# load length of platform
 	
-	addi $t8, $zero, 4360
 	addi $sp, $sp, -4
-	sw $t8, 0($sp)
-	addi $t8, $zero, 20
+	sw $t4, 0($sp)
 	addi $sp, $sp, -4
-	sw $t8, 0($sp)
-	jal create_platform_a_b
+	sw $s4, 0($sp)
+	jal create_platform_a_b	
+draw_platform_cont:	
+	addi $t3, $t3, 12
+	addi $t8, $t8, 1
 	
+	j draw_platform_l
+draw_platform_l_end:
+
+##### Draw sign if all enemies die in the current level #####
+
+	la $t8, num_enemy_killed
+	la $t3, current_level
+	lw $t3, 0($t3)
+	lw $t8, 0($t8)
+	add $t8, $t8, $t3
+
+draw_sign_if:
+	beq $t8, 4, draw_sign		# draws the sign if 3 enemies are killed so far (first level finished) && current_level == 1
+	beq $t8, 9, draw_sign
+	j draw_sign_else
+
+draw_sign:
+	addi $t8, $zero, 13796
+	addi $sp, $sp, -4
+	sw $t8, 0($sp)
+	jal draw_sign_a
+
+draw_sign_else:
+
 ##### update bullets #####
 	
 	jal update_player_bullets
@@ -2687,8 +2729,10 @@ p_clicked:
 	la $t4, current_level
 	sw $t3, 0($t4)
 	la $t4, num_hearts
-	li $t3, 4
+	li $t3, 3
 	sw $t3, 0($t4)
+	la $t4, num_enemy_killed
+	sw $zero, 0($t4)
 	
 	# reset goomba delete values
 p_restore_goom:
@@ -2926,10 +2970,51 @@ d_if1:
 	lw $t3, 1044($t4)
 	bne $t1, $t3, d_if2
 d_mario_hit:
-	j limbo	
+	j limbo
+	# j key_no_clicked (should say this, but since we j limbo, we dont need this line)
 
 d_if2:	
 	
+	li $t1, SIGN1	# checks if moving right will collide with sign
+	
+	lw $t3, 16($t4)
+	beq $t1, $t3, d_sign_hit
+	lw $t3, 20($t4)
+	beq $t1, $t3, d_sign_hit
+	lw $t3, 528($t4)
+	beq $t1, $t3, d_sign_hit
+	lw $t3, 532($t4)
+	beq $t1, $t3, d_sign_hit
+	lw $t3, -496($t4)
+	beq $t1, $t3, d_sign_hit
+	lw $t3, -492($t4)
+	beq $t1, $t3, d_sign_hit
+	lw $t3, 1040($t4)
+	beq $t1, $t3, d_sign_hit
+	lw $t3, 1044($t4)
+	bne $t1, $t3, d_if3
+d_sign_hit:
+	# increment to current_level
+	la $t3, current_level
+	lw $t1, 0($t3)
+	addi $t1, $t1, 1
+	sw $t1, 0($t3)
+
+	# move player back to original beginning position
+	la $t2, player
+ 	la $t3, 13840($t0)	# Player beginning position
+	sw $t3, 0($t2)		# stores position address into player struct
+	addi $t3, $zero, 3460
+	sw $t3, 4($t2)
+
+	jal clear_player
+	jal draw_player
+	jal paint_sky
+	j key_no_clicked
+
+d_if3:
+
+
 ##### makes the player face right #####
 	addi $t8, $zero, 2
 	sw $t8, 8($t2)		# look right

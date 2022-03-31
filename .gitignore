@@ -4,4 +4,5 @@ test.asm
 *.py
 *.png
 *.txt
+.DS_Store
 venv

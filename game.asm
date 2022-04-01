@@ -36,19 +36,50 @@
 # 
 ##################################################################### 
 
+# bowser colours
+.eqv  BOWSER1  0x780f0f
+.eqv  BOWSER2  0xb71c1c
+.eqv  BOWSER3  0x757575
+.eqv  BOWSER4  0x1b5e20
+.eqv  BOWSER5  0x558b2f
+.eqv  BOWSER6  0xa66c07
+.eqv  BOWSER7  0x999999
+.eqv  BOWSER8  0xffb300
+.eqv  BOWSER9  0x6b3900
+.eqv  BOWSER10 0x996600
+.eqv  BOWSER11 0x995400
+
 .data
 player: .space 12
 jump_count: .word 0
 num_player_bullets: .word 0
 player_bullet_array: .space 240 	# each bullet has space of 12, so the array only allows 20 bullets
-enemy_array: .word 8296, 0, 1, 13968, 0, 1, 4532, 0, 1, 3508, 0, 2, 6864, 0, 2, 13924, 0, 2, 10040, 0, 2
+enemy_array: .word 
+	8296, 0, 1, 
+	13968, 0, 1, 
+	4532, 0, 1, 
+	3508, 0, 2, 
+	6864, 0, 2, 
+	13924, 0, 2, 
+	10040, 0, 2
 total_num_enemy: .word 7
-platform_array: .word 11400, 24, 1, 9296, 8, 1, 5500, 16, 1, 4360, 20, 1, 4504, 10, 2, 7860, 10, 2, 11036, 15, 2, 7700, 15, 2
+platform_array: .word 
+	11400, 24, 1, 
+	9296, 8, 1, 
+	5500, 16, 1, 
+	4360, 20, 1, 
+	4504, 10, 2, 
+	7860, 10, 2, 
+	11036, 15, 2, 
+	7700, 15, 2
 total_platforms: .word 8
 num_enemy_array: .word 3, 4, 5		# each element at index i represents the number of enemies at level i
 num_enemy_killed: .word 0
 current_level: .word 1
-num_hearts: .word 3			# player starts with 3 hearts
+num_hearts: .word 3					# player starts with 3 hearts
+bowser_colors: .word BOWSER1, BOWSER2, BOWSER3, BOWSER4, BOWSER5, BOWSER6, BOWSER7, BOWSER8, BOWSER9, BOWSER10, BOWSER11
+bowser_health: .word 20				# bowser requires 20 bullets to kill him
+
 
 .eqv  BASE_ADDRESS  0x10008000
 .eqv  KEY_ADDRESS  0xffff0000
@@ -1883,6 +1914,652 @@ draw_go_l_end:
 	jr $ra
 
 
+#### DRAW BOWSER ####
+# function draw_bowser():
+# this function draws bowser onto the screen	
+draw_bowser:
+	la $s3, 8820($t0)
+    li $t1, 0x780f0f
+    sw $t1, 32($s3)
+    sw $t1, 284($s3)
+    li $t1, 0xb71c1c
+    sw $t1, 288($s3)
+    li $t1, 0x780f0f
+    sw $t1, 292($s3)
+    sw $t1, 296($s3)
+    li $t1, 0xe6e3e6
+    sw $t1, 312($s3)
+    li $t1, 0xffffff
+    sw $t1, 324($s3)
+    li $t1, 0xb71c1c
+    sw $t1, 540($s3)
+    sw $t1, 544($s3)
+    sw $t1, 548($s3)
+    li $t1, 0x780f0f
+    sw $t1, 552($s3)
+    li $t1, 0xbdbdbd
+    sw $t1, 564($s3)
+    sw $t1, 568($s3)
+    sw $t1, 576($s3)
+    li $t1, 0xffffff
+    sw $t1, 580($s3)
+    li $t1, 0x757575
+    sw $t1, 784($s3)
+    li $t1, 0x3d2700
+    sw $t1, 788($s3)
+    li $t1, 0x780f0f
+    sw $t1, 792($s3)
+    sw $t1, 796($s3)
+    li $t1, 0x3d2700
+    sw $t1, 800($s3)
+    li $t1, 0x780f0f
+    sw $t1, 804($s3)
+    sw $t1, 808($s3)
+    li $t1, 0xe6e3e6
+    sw $t1, 812($s3)
+    li $t1, 0x1b5e20
+    sw $t1, 820($s3)
+    li $t1, 0x558b2f
+    sw $t1, 824($s3)
+    sw $t1, 828($s3)
+    li $t1, 0xffab00
+    sw $t1, 832($s3)
+    li $t1, 0xffffff
+    sw $t1, 844($s3)
+    li $t1, 0xbdbdbd
+    sw $t1, 848($s3)
+    li $t1, 0x1b5e20
+    sw $t1, 1044($s3)
+    li $t1, 0x780f0f
+    sw $t1, 1048($s3)
+    li $t1, 0x558b2f
+    sw $t1, 1052($s3)
+    li $t1, 0x780f0f
+    sw $t1, 1056($s3)
+    sw $t1, 1060($s3)
+    li $t1, 0xe6e3e6
+    sw $t1, 1064($s3)
+    li $t1, 0x999999
+    sw $t1, 1068($s3)
+    li $t1, 0x5c5c5c
+    sw $t1, 1072($s3)
+    li $t1, 0x33691e
+    sw $t1, 1076($s3)
+    sw $t1, 1080($s3)
+    sw $t1, 1084($s3)
+    sw $t1, 1088($s3)
+    li $t1, 0x558b2f
+    sw $t1, 1092($s3)
+    li $t1, 0xbdbdbd
+    sw $t1, 1096($s3)
+    sw $t1, 1100($s3)
+    li $t1, 0x999999
+    sw $t1, 1104($s3)
+    li $t1, 0x558b2f
+    sw $t1, 1300($s3)
+    li $t1, 0x64dd17
+    sw $t1, 1304($s3)
+    li $t1, 0x780f0f
+    sw $t1, 1308($s3)
+    li $t1, 0xb71c1c
+    sw $t1, 1312($s3)
+    li $t1, 0x780f0f
+    sw $t1, 1316($s3)
+    li $t1, 0x33691e
+    sw $t1, 1320($s3)
+    li $t1, 0x5c5c5c
+    sw $t1, 1324($s3)
+    li $t1, 0x202020
+    sw $t1, 1328($s3)
+    li $t1, 0xbdbdbd
+    sw $t1, 1332($s3)
+    sw $t1, 1336($s3)
+    li $t1, 0x33691e
+    sw $t1, 1340($s3)
+    sw $t1, 1344($s3)
+    li $t1, 0x64dd17
+    sw $t1, 1348($s3)
+    li $t1, 0x558b2f
+    sw $t1, 1352($s3)
+    li $t1, 0xffab00
+    sw $t1, 1356($s3)
+    li $t1, 0xff6f00
+    sw $t1, 1360($s3)
+    li $t1, 0xa66c07
+    sw $t1, 1552($s3)
+    sw $t1, 1556($s3)
+    li $t1, 0x33691e
+    sw $t1, 1560($s3)
+    li $t1, 0x780f0f
+    sw $t1, 1564($s3)
+    li $t1, 0xffffff
+    sw $t1, 1568($s3)
+    li $t1, 0x558b2f
+    sw $t1, 1572($s3)
+    li $t1, 0x33691e
+    sw $t1, 1576($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 1580($s3)
+    sw $t1, 1584($s3)
+    li $t1, 0xbdbdbd
+    sw $t1, 1588($s3)
+    sw $t1, 1592($s3)
+    li $t1, 0xe6e3e6
+    sw $t1, 1596($s3)
+    li $t1, 0xffffff
+    sw $t1, 1600($s3)
+    li $t1, 0xe6e3e6
+    sw $t1, 1604($s3)
+    li $t1, 0x558b2f
+    sw $t1, 1608($s3)
+    li $t1, 0x33691e
+    sw $t1, 1612($s3)
+    li $t1, 0x1b5e20
+    sw $t1, 1616($s3)
+    li $t1, 0xa66c07
+    sw $t1, 1800($s3)
+    li $t1, 0xffd180
+    sw $t1, 1804($s3)
+    li $t1, 0xa66c07
+    sw $t1, 1808($s3)
+    li $t1, 0xffd180
+    sw $t1, 1812($s3)
+    sw $t1, 1816($s3)
+    li $t1, 0xa66c07
+    sw $t1, 1820($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 1824($s3)
+    li $t1, 0xffd180
+    sw $t1, 1828($s3)
+    sw $t1, 1832($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 1836($s3)
+    sw $t1, 1840($s3)
+    sw $t1, 1844($s3)
+    li $t1, 0x000000
+    sw $t1, 1848($s3)
+    li $t1, 0x6b3900
+    sw $t1, 1852($s3)
+    sw $t1, 1856($s3)
+    li $t1, 0xbdbdbd
+    sw $t1, 1860($s3)
+    li $t1, 0xffffff
+    sw $t1, 1864($s3)
+    li $t1, 0x33691e
+    sw $t1, 1868($s3)
+    sw $t1, 1872($s3)
+    li $t1, 0xbdbdbd
+    sw $t1, 1876($s3)
+    li $t1, 0x999999
+    sw $t1, 1880($s3)
+    li $t1, 0xa66c07
+    sw $t1, 2056($s3)
+    li $t1, 0xffd180
+    sw $t1, 2060($s3)
+    sw $t1, 2064($s3)
+    sw $t1, 2068($s3)
+    sw $t1, 2072($s3)
+    sw $t1, 2076($s3)
+    sw $t1, 2080($s3)
+    sw $t1, 2084($s3)
+    sw $t1, 2088($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 2092($s3)
+    sw $t1, 2096($s3)
+    sw $t1, 2100($s3)
+    li $t1, 0x000000
+    sw $t1, 2104($s3)
+    li $t1, 0x6b3900
+    sw $t1, 2108($s3)
+    li $t1, 0x000000
+    sw $t1, 2112($s3)
+    sw $t1, 2116($s3)
+    li $t1, 0x757575
+    sw $t1, 2120($s3)
+    li $t1, 0xffffff
+    sw $t1, 2124($s3)
+    li $t1, 0x558b2f
+    sw $t1, 2128($s3)
+    li $t1, 0xff6f00
+    sw $t1, 2132($s3)
+    li $t1, 0xbdbdbd
+    sw $t1, 2136($s3)
+    li $t1, 0xa66c07
+    sw $t1, 2316($s3)
+    li $t1, 0xffd180
+    sw $t1, 2320($s3)
+    sw $t1, 2324($s3)
+    sw $t1, 2328($s3)
+    sw $t1, 2332($s3)
+    sw $t1, 2336($s3)
+    sw $t1, 2340($s3)
+    sw $t1, 2344($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 2348($s3)
+    sw $t1, 2352($s3)
+    li $t1, 0x000000
+    sw $t1, 2356($s3)
+    li $t1, 0x6b3900
+    sw $t1, 2360($s3)
+    li $t1, 0x402200
+    sw $t1, 2364($s3)
+    li $t1, 0x000000
+    sw $t1, 2368($s3)
+    li $t1, 0xffb300
+    sw $t1, 2372($s3)
+    sw $t1, 2376($s3)
+    li $t1, 0x202020
+    sw $t1, 2380($s3)
+    li $t1, 0xffffff
+    sw $t1, 2384($s3)
+    li $t1, 0x1b5e20
+    sw $t1, 2388($s3)
+    li $t1, 0x999999
+    sw $t1, 2392($s3)
+    li $t1, 0xffffff
+    sw $t1, 2396($s3)
+    li $t1, 0x999999
+    sw $t1, 2572($s3)
+    li $t1, 0x3d2700
+    sw $t1, 2576($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 2580($s3)
+    sw $t1, 2584($s3)
+    li $t1, 0xa66c07
+    sw $t1, 2588($s3)
+    li $t1, 0x3d2700
+    sw $t1, 2592($s3)
+    sw $t1, 2596($s3)
+    li $t1, 0xffd180
+    sw $t1, 2600($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 2604($s3)
+    sw $t1, 2608($s3)
+    li $t1, 0x000000
+    sw $t1, 2612($s3)
+    li $t1, 0x6b3900
+    sw $t1, 2616($s3)
+    li $t1, 0x000000
+    sw $t1, 2620($s3)
+    sw $t1, 2624($s3)
+    li $t1, 0xffb300
+    sw $t1, 2628($s3)
+    sw $t1, 2632($s3)
+    li $t1, 0xff8c00
+    sw $t1, 2636($s3)
+    li $t1, 0x000000
+    sw $t1, 2640($s3)
+    li $t1, 0x33691e
+    sw $t1, 2644($s3)
+    li $t1, 0x999999
+    sw $t1, 2836($s3)
+    sw $t1, 2840($s3)
+    li $t1, 0xd32f2f
+    sw $t1, 2844($s3)
+    sw $t1, 2848($s3)
+    li $t1, 0x999999
+    sw $t1, 2852($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 2856($s3)
+    li $t1, 0x3d2700
+    sw $t1, 2860($s3)
+    li $t1, 0x000000
+    sw $t1, 2864($s3)
+    sw $t1, 2868($s3)
+    li $t1, 0xffb300
+    sw $t1, 2872($s3)
+    li $t1, 0x999999
+    sw $t1, 2876($s3)
+    li $t1, 0xff8c00
+    sw $t1, 2880($s3)
+    sw $t1, 2884($s3)
+    li $t1, 0xffb300
+    sw $t1, 2888($s3)
+    sw $t1, 2892($s3)
+    sw $t1, 2896($s3)
+    li $t1, 0x000000
+    sw $t1, 2900($s3)
+    li $t1, 0xffab00
+    sw $t1, 2904($s3)
+    li $t1, 0xffffff
+    sw $t1, 2908($s3)
+    li $t1, 0xffb300
+    sw $t1, 3076($s3)
+    li $t1, 0x6b3900
+    sw $t1, 3080($s3)
+    sw $t1, 3084($s3)
+    li $t1, 0xffb300
+    sw $t1, 3088($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 3092($s3)
+    li $t1, 0xffd180
+    sw $t1, 3096($s3)
+    li $t1, 0x5c5c5c
+    sw $t1, 3100($s3)
+    li $t1, 0x999999
+    sw $t1, 3104($s3)
+    li $t1, 0xffd180
+    sw $t1, 3108($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 3112($s3)
+    li $t1, 0x000000
+    sw $t1, 3116($s3)
+    sw $t1, 3120($s3)
+    li $t1, 0xffb300
+    sw $t1, 3124($s3)
+    sw $t1, 3128($s3)
+    li $t1, 0x000000
+    sw $t1, 3132($s3)
+    li $t1, 0x995400
+    sw $t1, 3136($s3)
+    li $t1, 0xffb300
+    sw $t1, 3140($s3)
+    sw $t1, 3144($s3)
+    sw $t1, 3148($s3)
+    sw $t1, 3152($s3)
+    li $t1, 0x000000
+    sw $t1, 3156($s3)
+    li $t1, 0xff6f00
+    sw $t1, 3160($s3)
+    li $t1, 0x6b3900
+    sw $t1, 3328($s3)
+    li $t1, 0xffb300
+    sw $t1, 3332($s3)
+    sw $t1, 3336($s3)
+    li $t1, 0x402200
+    sw $t1, 3340($s3)
+    li $t1, 0xffb300
+    sw $t1, 3344($s3)
+    li $t1, 0xf2ad35
+    sw $t1, 3348($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 3352($s3)
+    sw $t1, 3356($s3)
+    li $t1, 0xffd180
+    sw $t1, 3360($s3)
+    sw $t1, 3364($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 3368($s3)
+    li $t1, 0x000000
+    sw $t1, 3372($s3)
+    li $t1, 0xffd180
+    sw $t1, 3376($s3)
+    li $t1, 0x3b2602
+    sw $t1, 3380($s3)
+    li $t1, 0x996b00
+    sw $t1, 3384($s3)
+    li $t1, 0xffb300
+    sw $t1, 3388($s3)
+    li $t1, 0x000000
+    sw $t1, 3392($s3)
+    li $t1, 0xff8c00
+    sw $t1, 3396($s3)
+    li $t1, 0xffb300
+    sw $t1, 3400($s3)
+    sw $t1, 3404($s3)
+    sw $t1, 3408($s3)
+    li $t1, 0x000000
+    sw $t1, 3412($s3)
+    li $t1, 0xffb300
+    sw $t1, 3584($s3)
+    li $t1, 0x996b00
+    sw $t1, 3588($s3)
+    li $t1, 0x5c4000
+    sw $t1, 3592($s3)
+    li $t1, 0x402200
+    sw $t1, 3596($s3)
+    li $t1, 0x5c4000
+    sw $t1, 3600($s3)
+    li $t1, 0x000000
+    sw $t1, 3604($s3)
+    sw $t1, 3608($s3)
+    li $t1, 0x80683f
+    sw $t1, 3612($s3)
+    li $t1, 0x000000
+    sw $t1, 3616($s3)
+    sw $t1, 3620($s3)
+    sw $t1, 3624($s3)
+    li $t1, 0x997d4d
+    sw $t1, 3628($s3)
+    li $t1, 0xffd180
+    sw $t1, 3632($s3)
+    li $t1, 0xa66c07
+    sw $t1, 3636($s3)
+    li $t1, 0x231601
+    sw $t1, 3640($s3)
+    li $t1, 0x000000
+    sw $t1, 3644($s3)
+    li $t1, 0xffffff
+    sw $t1, 3648($s3)
+    li $t1, 0x000000
+    sw $t1, 3652($s3)
+    sw $t1, 3656($s3)
+    li $t1, 0xffb300
+    sw $t1, 3660($s3)
+    sw $t1, 3664($s3)
+    li $t1, 0x000000
+    sw $t1, 3668($s3)
+    li $t1, 0x996b00
+    sw $t1, 3840($s3)
+    li $t1, 0xffb300
+    sw $t1, 3844($s3)
+    li $t1, 0x996b00
+    sw $t1, 3848($s3)
+    li $t1, 0x261400
+    sw $t1, 3852($s3)
+    li $t1, 0x5c5c5c
+    sw $t1, 3856($s3)
+    li $t1, 0x000000
+    sw $t1, 3860($s3)
+    sw $t1, 3864($s3)
+    li $t1, 0x3d2700
+    sw $t1, 3868($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 3872($s3)
+    sw $t1, 3876($s3)
+    sw $t1, 3880($s3)
+    li $t1, 0xa66c07
+    sw $t1, 3884($s3)
+    li $t1, 0xffd180
+    sw $t1, 3888($s3)
+    li $t1, 0x000000
+    sw $t1, 3892($s3)
+    li $t1, 0x6b3900
+    sw $t1, 3896($s3)
+    li $t1, 0xffb300
+    sw $t1, 3900($s3)
+    sw $t1, 3904($s3)
+    li $t1, 0xff8c00
+    sw $t1, 3908($s3)
+    li $t1, 0x000000
+    sw $t1, 3912($s3)
+    sw $t1, 3916($s3)
+    li $t1, 0xffb300
+    sw $t1, 3920($s3)
+    li $t1, 0x999999
+    sw $t1, 3924($s3)
+    li $t1, 0x6b3900
+    sw $t1, 4096($s3)
+    li $t1, 0x996b00
+    sw $t1, 4100($s3)
+    sw $t1, 4104($s3)
+    li $t1, 0x402200
+    sw $t1, 4108($s3)
+    li $t1, 0x261400
+    sw $t1, 4112($s3)
+    li $t1, 0xa66c07
+    sw $t1, 4128($s3)
+    li $t1, 0xffd180
+    sw $t1, 4132($s3)
+    sw $t1, 4136($s3)
+    sw $t1, 4140($s3)
+    sw $t1, 4144($s3)
+    li $t1, 0xff8c00
+    sw $t1, 4148($s3)
+    sw $t1, 4152($s3)
+    li $t1, 0xffb300
+    sw $t1, 4156($s3)
+    sw $t1, 4160($s3)
+    sw $t1, 4164($s3)
+    sw $t1, 4168($s3)
+    li $t1, 0x000000
+    sw $t1, 4172($s3)
+    sw $t1, 4176($s3)
+    li $t1, 0xffb300
+    sw $t1, 4356($s3)
+    sw $t1, 4360($s3)
+    li $t1, 0x402200
+    sw $t1, 4364($s3)
+    li $t1, 0x995400
+    sw $t1, 4384($s3)
+    li $t1, 0xa66c07
+    sw $t1, 4388($s3)
+    li $t1, 0xd6ae69
+    sw $t1, 4392($s3)
+    sw $t1, 4396($s3)
+    li $t1, 0xa66c07
+    sw $t1, 4400($s3)
+    li $t1, 0xffb300
+    sw $t1, 4404($s3)
+    sw $t1, 4408($s3)
+    li $t1, 0x6b3900
+    sw $t1, 4412($s3)
+    li $t1, 0xffb300
+    sw $t1, 4416($s3)
+    sw $t1, 4420($s3)
+    sw $t1, 4424($s3)
+    li $t1, 0xff8c00
+    sw $t1, 4428($s3)
+    li $t1, 0x000000
+    sw $t1, 4432($s3)
+    sw $t1, 4436($s3)
+    li $t1, 0xffb300
+    sw $t1, 4440($s3)
+    li $t1, 0x6b3900
+    sw $t1, 4636($s3)
+    li $t1, 0xff8c00
+    sw $t1, 4640($s3)
+    li $t1, 0x995400
+    sw $t1, 4644($s3)
+    li $t1, 0xa66c07
+    sw $t1, 4648($s3)
+    li $t1, 0xffd180
+    sw $t1, 4652($s3)
+    sw $t1, 4656($s3)
+    li $t1, 0x999999
+    sw $t1, 4660($s3)
+    li $t1, 0x402200
+    sw $t1, 4664($s3)
+    li $t1, 0xff8c00
+    sw $t1, 4668($s3)
+    li $t1, 0xffb300
+    sw $t1, 4672($s3)
+    sw $t1, 4676($s3)
+    sw $t1, 4680($s3)
+    li $t1, 0x995400
+    sw $t1, 4684($s3)
+    li $t1, 0x000000
+    sw $t1, 4688($s3)
+    li $t1, 0xffb300
+    sw $t1, 4692($s3)
+    li $t1, 0xff8c00
+    sw $t1, 4696($s3)
+    sw $t1, 4700($s3)
+    li $t1, 0x995400
+    sw $t1, 4892($s3)
+    li $t1, 0xff8c00
+    sw $t1, 4896($s3)
+    sw $t1, 4900($s3)
+    li $t1, 0x995400
+    sw $t1, 4904($s3)
+    li $t1, 0x3d2700
+    sw $t1, 4908($s3)
+    li $t1, 0xa66c07
+    sw $t1, 4912($s3)
+    sw $t1, 4916($s3)
+    li $t1, 0x000000
+    sw $t1, 4920($s3)
+    sw $t1, 4924($s3)
+    li $t1, 0x6b3900
+    sw $t1, 4928($s3)
+    li $t1, 0x402200
+    sw $t1, 4932($s3)
+    li $t1, 0x996b00
+    sw $t1, 4936($s3)
+    li $t1, 0xff8c00
+    sw $t1, 4940($s3)
+    li $t1, 0x212121
+    sw $t1, 4944($s3)
+    li $t1, 0x6b3900
+    sw $t1, 4948($s3)
+    sw $t1, 5152($s3)
+    li $t1, 0xff8c00
+    sw $t1, 5156($s3)
+    sw $t1, 5160($s3)
+    sw $t1, 5164($s3)
+    li $t1, 0x995400
+    sw $t1, 5168($s3)
+    li $t1, 0xffb300
+    sw $t1, 5180($s3)
+    li $t1, 0x995400
+    sw $t1, 5184($s3)
+    li $t1, 0xffb300
+    sw $t1, 5188($s3)
+    sw $t1, 5192($s3)
+    li $t1, 0xff8c00
+    sw $t1, 5196($s3)
+    li $t1, 0x6b3900
+    sw $t1, 5404($s3)
+    li $t1, 0xffb300
+    sw $t1, 5408($s3)
+    li $t1, 0x5c4000
+    sw $t1, 5412($s3)
+    li $t1, 0x995400
+    sw $t1, 5416($s3)
+    li $t1, 0xff8c00
+    sw $t1, 5420($s3)
+    sw $t1, 5424($s3)
+    sw $t1, 5436($s3)
+    li $t1, 0xffb300
+    sw $t1, 5440($s3)
+    sw $t1, 5444($s3)
+    sw $t1, 5448($s3)
+    sw $t1, 5452($s3)
+    li $t1, 0xff8c00
+    sw $t1, 5456($s3)
+    li $t1, 0x373737
+    sw $t1, 5660($s3)
+    li $t1, 0xff8c00
+    sw $t1, 5664($s3)
+    li $t1, 0xffb300
+    sw $t1, 5668($s3)
+    sw $t1, 5672($s3)
+    sw $t1, 5676($s3)
+    li $t1, 0x995400
+    sw $t1, 5680($s3)
+    li $t1, 0xffb300
+    sw $t1, 5692($s3)
+    sw $t1, 5696($s3)
+    sw $t1, 5700($s3)
+    sw $t1, 5704($s3)
+    sw $t1, 5708($s3)
+    li $t1, 0xff8c00
+    sw $t1, 5712($s3)
+    li $t1, 0x999999
+    sw $t1, 5920($s3)
+    li $t1, 0xff8c00
+    sw $t1, 5924($s3)
+    sw $t1, 5928($s3)
+    li $t1, 0x999999
+    sw $t1, 5948($s3)
+    li $t1, 0x5c5c5c
+    sw $t1, 5952($s3)
+    li $t1, 0xffffff
+    sw $t1, 5956($s3)
+    li $t1, 0xff8c00
+    sw $t1, 5960($s3)
+	jr $ra
+
 ###### DRAW_GOOMBA ######
 # function draw_goomba(int a):
 # a is the starting offset of the goomba
@@ -2287,6 +2964,19 @@ u_else1:
 	beq $s2, GOOM2, u_goom
 	beq $s2, BROWN_PLATFORM, u_platform
 	
+	# check bowser colors (could also use loop instead)
+	beq $s2, BOWSER6, u_bowser
+	beq $s2, BOWSER8, u_bowser
+	beq $s2, BOWSER3, u_bowser
+	beq $s2, BOWSER9, u_bowser
+	beq $s2, BOWSER7, u_bowser
+	beq $s2, BOWSER10, u_bowser
+	beq $s2, BOWSER5, u_bowser
+	beq $s2, BOWSER4, u_bowser
+	beq $s2, BOWSER2, u_bowser
+	beq $s2, BOWSER1, u_bowser
+	beq $s2, BOWSER11, u_bowser
+
 	# check if bullet hits edges
 	lw $s2, 0($t3)		# load address of bullet
 	sub $s2, $s2, $t0	# gets index of bullet
@@ -2423,6 +3113,28 @@ u_platform:
 	j u_l1
 	
 	# next pixel the bullet is going to is not special, thus bullet continues flying (i.e. no collisions)
+
+u_bowser:
+	# deletes bullet
+	li $t1, 1
+	sw $t1, 8($t3)		# change value of deleted in bullet to be 1
+	
+	# removes it from screen
+	li $t1, BLUE_SKY
+	lw $t4, 0($t3)		# load address of bullet
+	sw $t1, 0($t4)
+
+	# decrement bowser health
+	la $t1, bowser_health
+	lw $t4, 0($t1)
+	addi $t4, $t4, -1
+	sw $t4, 0($t1)
+
+	# increment loop variables
+	addi $t3, $t3, 12
+	addi $t8, $t8, 1
+	j u_l1
+
 u_cont:	
 	li $t1, BLUE_SKY
 	sw $t1, 0($t4)
@@ -2592,12 +3304,30 @@ draw_goom_l_end:
 	la $t3, current_level
 	lw $t3, 0($t3)
 
-	bne $t3, 3, draw_mario_else		# draws mario if current_level == 3
+	bne $t3, 3, draw_mario_else		# skips if current_level != 3
+
+	##### does the following if current_level == 3
+
 	# paint mario
 	addi $t8, $zero, 14056
 	addi $sp, $sp, -4
 	sw $t8, 0($sp)
 	jal draw_mario_a
+
+	la $t3, bowser_health
+	lw $t3, 0($t3)
+	beq $t3, 0, bowser_clear		# clear bowser if bowser health <= 0
+	j possibly_draw_bowser
+bowser_clear:
+	jal paint_sky
+	la $t1, bowser_health
+	li $t3, -1
+	sw $t3, 0($t1)
+	j draw_mario_else
+
+possibly_draw_bowser:
+	ble $t3, 0, draw_mario_else		# skips if bowser health <= 0
+	jal draw_bowser
 
 draw_mario_else:
 	
@@ -2733,6 +3463,9 @@ p_clicked:
 	sw $t3, 0($t4)
 	la $t4, num_enemy_killed
 	sw $zero, 0($t4)
+	la $t4, bowser_health
+	li $t3, 20
+	sw $t3, 0($t4)
 	
 	# reset goomba delete values
 p_restore_goom:
@@ -2993,6 +3726,7 @@ d_if2:
 	beq $t1, $t3, d_sign_hit
 	lw $t3, 1044($t4)
 	bne $t1, $t3, d_if3
+
 d_sign_hit:
 	# increment to current_level
 	la $t3, current_level
@@ -3013,6 +3747,42 @@ d_sign_hit:
 	j key_no_clicked
 
 d_if3:
+
+	la $s4, bowser_colors
+	li $t8, 1
+
+d_bowser_l:
+	bge $t8, 11, d_if4
+
+	lw $t1, 0($s4)				# checks if moving right will collide with bowser
+	
+	lw $t3, 16($t4)
+	beq $t1, $t3, d_bowser_hit
+	lw $t3, 20($t4)
+	beq $t1, $t3, d_bowser_hit
+	lw $t3, 528($t4)
+	beq $t1, $t3, d_bowser_hit
+	lw $t3, 532($t4)
+	beq $t1, $t3, d_bowser_hit
+	lw $t3, -496($t4)
+	beq $t1, $t3, d_bowser_hit
+	lw $t3, -492($t4)
+	beq $t1, $t3, d_bowser_hit
+	lw $t3, 1040($t4)
+	beq $t1, $t3, d_bowser_hit
+	lw $t3, 1044($t4)
+	addi $s4, $s4, 4			# move to next word
+	addi $t8, $t8, 1
+	bne $t1, $t3, d_bowser_l
+	
+d_bowser_hit:
+	la $t1, num_hearts
+	lw $s4, 0($t1)
+	addi $s4, $s4, -2
+	sw $s4, 0($t1)
+	j key_no_clicked
+	
+d_if4:	
 
 
 ##### makes the player face right #####

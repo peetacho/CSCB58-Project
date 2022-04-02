@@ -48,6 +48,7 @@
 .eqv  BOWSER9  0x6b3900
 .eqv  BOWSER10 0x996600
 .eqv  BOWSER11 0x995400
+.eqv  BOWSER_BULLET 0xff0000
 
 .data
 player: .space 12
@@ -78,7 +79,9 @@ num_enemy_killed: .word 0
 current_level: .word 1
 num_hearts: .word 3					# player starts with 3 hearts
 bowser_colors: .word BOWSER1, BOWSER2, BOWSER3, BOWSER4, BOWSER5, BOWSER6, BOWSER7, BOWSER8, BOWSER9, BOWSER10, BOWSER11
-bowser_health: .word 20				# bowser requires 20 bullets to kill him
+bowser_health: .word 40				# bowser requires 20 bullets to kill him
+num_enemy_bullets: .word 0
+enemy_bullet_array: .space 80 	# each bullet has space of 8, so the array only allows 10 bullets
 
 
 .eqv  BASE_ADDRESS  0x10008000
@@ -102,7 +105,7 @@ bowser_health: .word 20				# bowser requires 20 bullets to kill him
 .eqv  PEACH4  0xff73a1
 .eqv  PEACH5  0xf0366f
 .eqv  PEACH6  0x289ddb
-.eqv  PEACH_BULLET 0xf0366e
+.eqv  PEACH_BULLET 0xf5c638
 
 # mario colours
 .eqv  MARIO1  0xfa3838
@@ -3197,6 +3200,137 @@ dpb_end:
 	sw $s0, 0($s1)
 	jr $ra
 
+##### UPDATE ENEMY BULLETS #####
+# function update_enemy_bullets()
+# moves the enemy bullets
+# if bullet collides with an object, perform action depending on the object
+update_enemy_bullets:
+	la $t3, enemy_bullet_array
+	la $s1, num_enemy_bullets
+	lw $s1, 0($s1)
+	
+	add $t8, $zero, $zero
+ue_l1:	bge $t8, $s1, ue_el1
+	
+	lw $t4, 0($t3)		# load address of bullet
+	
+	lw $s2, -4($t4)		# load color into $s2 at the address - 4 in $t4 (checks the left pixel)
+
+	# branch depending on the color
+ue_else1:	
+	
+	# check peach colors (could also use loop instead)
+	beq $s2, PEACH2, ue_peach
+	beq $s2, PEACH5, ue_peach
+	beq $s2, PEACH4, ue_peach
+	beq $s2, PEACH3, ue_peach
+	beq $s2, PEACH1, ue_peach
+
+	# check if bullet hits edges
+	lw $s2, 0($t3)		# load address of bullet
+	sub $s2, $s2, $t0	# gets index of bullet
+	li $s4, 4
+	div $s2, $s2, $s4
+	li $s4, 64
+	div $s2, $s4
+	mfhi $s2		# $s2 = $s2 mod 64
+	
+	beqz $s2, ue_wall	# far left wall
+	beq $s2, 63, ue_wall	# far right wall
+	
+	j ue_cont
+	
+ue_wall:	
+	# deletes bullet
+	li $t1, 1
+	sw $t1, 4($t3)		# change value of deleted in bullet to be 1
+	
+	# removes it from screen
+	li $t1, BLUE_SKY
+	lw $t4, 0($t3)		# load address of bullet
+	sw $t1, 0($t4)
+	
+	# increment loop variables
+	addi $t3, $t3, 8
+	addi $t8, $t8, 1
+	j ue_l1
+	
+ue_peach:
+	# deletes bullet
+	li $t1, 1
+	sw $t1, 4($t3)		# change value of deleted in bullet to be 1
+	
+	# removes it from screen
+	li $t1, BLUE_SKY
+	lw $t4, 0($t3)		# load address of bullet
+	sw $t1, 0($t4)
+
+	# decrement peach health
+	la $t1, num_hearts
+	lw $t4, 0($t1)
+	addi $t4, $t4, -1
+	sw $t4, 0($t1)
+
+	# increment loop variables
+	addi $t3, $t3, 8
+	addi $t8, $t8, 1
+	j ue_l1
+
+ue_cont:	
+	li $t1, BLUE_SKY
+	sw $t1, 0($t4)
+	addi $t4, $t4, -4
+	
+ue_else:
+	sw $t4, 0($t3)		# store address of bullet
+	
+	li $t1, BOWSER_BULLET
+	sw $t1, 0($t4)
+	
+	addi $t3, $t3, 8
+	addi $t8, $t8, 1
+	j ue_l1
+	
+ue_el1:	jr $ra
+
+##### DELETE ENEMY BULLETS #####
+# function delete_enemy_bullets()
+# deletes the enemy bullets that were deleted when update_enemy_bullets() was called.
+delete_enemy_bullets:
+	la $t3, enemy_bullet_array
+	la $s3, enemy_bullet_array	# $s3 is the address we put the non-deleted bullets into (it replaces the bullets)
+	la $s1, num_enemy_bullets
+	lw $s1, 0($s1)
+	
+	li $s0, 0		# $s0 counts the number of non-deleted bullets
+	
+	li $t8, 0
+deb_l1:	bge $t8, $s1, deb_end	# loops through the bullets in enemy_bullet_array
+	
+	lw $t4, 4($t3)		# load deleted value of bullet
+	
+	bnez $t4, deb_if1_cont 
+deb_if1_z:	
+	lw $s4, 0($t3)		# load address of bullet
+	lw $s5, 4($t3)		# load deleted value of bullet
+	
+	sw $s4, 0($s3)		# store address of bullet
+	sw $s5, 4($s3)		# store deleted value of bullet
+	
+	addi $s3, $s3, 8
+	addi $s0, $s0, 1	# increment $s0 count
+
+deb_if1_cont:
+	addi $t3, $t3, 8
+	addi $t8, $t8, 1
+	j deb_l1
+	
+deb_end:
+	la $s1, num_enemy_bullets
+	sw $s0, 0($s1)
+	jr $ra
+
+
 ###### PAINT SKY BLUE #####
 # function paint_sky()
 # this function paints the sky
@@ -3258,7 +3392,6 @@ LOOP3: 	bge $t6, $t5, ELOOP3
 	addi $t6, $t6, 1
 	j LOOP3
 ELOOP3:
-
 	
 ##### MAIN LOOP #####
 	
@@ -3314,6 +3447,7 @@ draw_goom_l_end:
 	sw $t8, 0($sp)
 	jal draw_mario_a
 
+##### draw Bowser #####
 	la $t3, bowser_health
 	lw $t3, 0($t3)
 	beq $t3, 0, bowser_clear		# clear bowser if bowser health <= 0
@@ -3424,11 +3558,69 @@ draw_sign:
 
 draw_sign_else:
 
-##### update bullets #####
+##### update player bullets #####
 	
 	jal update_player_bullets
 	jal delete_player_bullets
+
+##### shoot bowser bullets #####
+
+	bne $t5, 15, ueb_else			# timing loop, the higher the value we compare $t5 to, the longer it takes to shoot
+	li $t5, 1
+
+	la $t4, current_level
+	lw $t4, 0($t4)
+	bne $t4, 3, ueb_else			# only shoot bullets when current_level == 3
+
+	la $t4, bowser_health
+	lw $t4, 0($t4)
+	ble $t4, 0, ueb_else			# doesn't shoot if bowser_health <= 0
+
+	la $t4, num_enemy_bullets
+	lw $t4, 0($t4)
+	bgt $t4, 10, ueb_else			# doesn't shoot if num_enemy_bullets > 10
+
+	li $v0, 42			# generate psuedo random int with syscall 42 
+	li $a0, 0 
+	li $a1, 15 			# int is between 0<= $a0 <= 15
+	syscall 
+
+	move $t3, $a0
+	sll $t3, $t3, 8		# multiply value by 2^8 = 256
+
+	la $t4, 10092($t0)
+	add $t4, $t4, $t3
+
+	li $t1, BOWSER_BULLET
+	sw $t1, 0($t4)
+
+store_to_enemy_array:
+	la $t3, enemy_bullet_array
+	la $t1, num_enemy_bullets
+	lw $t1, 0($t1)
 	
+	add $t8, $zero, $zero
+ueb_l1:	bge $t8, $t1, ueb_el1
+	addi $t3, $t3, 8
+	addi $t8, $t8, 1
+	j ueb_l1
+	
+ueb_el1:
+	sw $t4, 0($t3)		# store address of bullet
+	sw $zero, 4($t3)	# store value of deleted to 0 of current bullet
+	
+	la $t1, num_enemy_bullets
+	lw $t4, 0($t1)
+	addi $t4, $t4, 1	# add 1 to total num_enemy_bullets
+	sw $t4, 0($t1)
+
+ueb_else:
+
+##### update enemy bullets #####
+	
+	jal update_enemy_bullets
+	jal delete_enemy_bullets
+
 ##### check key #####
 
 	lw $t7, 0($t9)	# 1 if there is a new keypress
@@ -3452,6 +3644,8 @@ key_clicked:
 p_clicked:
 	# reset values
 	la $t4, num_player_bullets
+	sw $zero, 0($t4)
+	la $t4, num_enemy_bullets
 	sw $zero, 0($t4)
 	la $t4, jump_count
 	sw $zero, 0($t4)

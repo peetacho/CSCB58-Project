@@ -22,6 +22,7 @@
 # 4. Shoot Enemies (2 marks)
 # 5. Double Jump (1 mark)
 # 6. Different Levels (2 marks)
+# 7. Enemies shoot back (2 marks)
 # 
 # Link to video demonstration for final submission: 
 # - (insert YouTube / MyMedia / other URL here)
@@ -62,8 +63,11 @@ enemy_array: .word
 	3508, 0, 2, 
 	6864, 0, 2, 
 	13924, 0, 2, 
-	10040, 0, 2
-total_num_enemy: .word 7
+	10040, 0, 2,
+	8296, 0, 3, 
+	13908, 0, 3,
+	4532, 0, 3,
+total_num_enemy: .word 10
 platform_array: .word 
 	11400, 24, 1, 
 	9296, 8, 1, 
@@ -73,13 +77,17 @@ platform_array: .word
 	7860, 10, 2, 
 	11036, 15, 2, 
 	7700, 15, 2
-total_platforms: .word 8
+	11400, 24, 3, 
+	9296, 8, 3, 
+	11036, 15, 3,
+	5532, 10, 3, 
+total_platforms: .word 12
 num_enemy_array: .word 3, 4, 5		# each element at index i represents the number of enemies at level i
 num_enemy_killed: .word 0
 current_level: .word 1
 num_hearts: .word 3					# player starts with 3 hearts
 bowser_colors: .word BOWSER1, BOWSER2, BOWSER3, BOWSER4, BOWSER5, BOWSER6, BOWSER7, BOWSER8, BOWSER9, BOWSER10, BOWSER11
-bowser_health: .word 40				# bowser requires 20 bullets to kill him
+bowser_health: .word 10				# bowser requires 10 bullets to kill him
 num_enemy_bullets: .word 0
 enemy_bullet_array: .space 80 	# each bullet has space of 8, so the array only allows 10 bullets
 
@@ -105,7 +113,7 @@ enemy_bullet_array: .space 80 	# each bullet has space of 8, so the array only a
 .eqv  PEACH4  0xff73a1
 .eqv  PEACH5  0xf0366f
 .eqv  PEACH6  0x289ddb
-.eqv  PEACH_BULLET 0xf5c638
+.eqv  PEACH_BULLET 0xe5994d
 
 # mario colours
 .eqv  MARIO1  0xfa3838
@@ -3437,9 +3445,9 @@ draw_goom_l_end:
 	la $t3, current_level
 	lw $t3, 0($t3)
 
-	bne $t3, 3, draw_mario_else		# skips if current_level != 3
+	bne $t3, 4, draw_mario_else		# skips if current_level != 4
 
-	##### does the following if current_level == 3
+	##### does the following if current_level == 4
 
 	# paint mario
 	addi $t8, $zero, 14056
@@ -3548,6 +3556,7 @@ draw_platform_l_end:
 draw_sign_if:
 	beq $t8, 4, draw_sign		# draws the sign if 3 enemies are killed so far (first level finished) && current_level == 1
 	beq $t8, 9, draw_sign
+	beq $t8, 13, draw_sign
 	j draw_sign_else
 
 draw_sign:
@@ -3565,12 +3574,18 @@ draw_sign_else:
 
 ##### shoot bowser bullets #####
 
-	bne $t5, 15, ueb_else			# timing loop, the higher the value we compare $t5 to, the longer it takes to shoot
-	li $t5, 1
+	li $v0, 42			# generate psuedo random int with syscall 42 
+	li $a0, 0 
+	li $a1, 20 			# int is between 0<= $a0 <= 15
+	syscall 
+
+	move $t1, $a0
+
+	bne $t1, 3, ueb_else			# timing loop, the higher the value we compare $t1 to, the longer it takes to shoot
 
 	la $t4, current_level
 	lw $t4, 0($t4)
-	bne $t4, 3, ueb_else			# only shoot bullets when current_level == 3
+	bne $t4, 4, ueb_else			# only shoot bullets when current_level == 4
 
 	la $t4, bowser_health
 	lw $t4, 0($t4)
@@ -3658,7 +3673,7 @@ p_clicked:
 	la $t4, num_enemy_killed
 	sw $zero, 0($t4)
 	la $t4, bowser_health
-	li $t3, 20
+	li $t3, 10
 	sw $t3, 0($t4)
 	
 	# reset goomba delete values
@@ -3770,6 +3785,46 @@ a_mario_hit:
 	j limbo	
 
 a_if2:	
+
+	li $t1, SIGN1	# checks if moving left will collide with sign
+	
+	lw $t3, 16($t4)
+	beq $t1, $t3, a_sign_hit
+	lw $t3, 20($t4)
+	beq $t1, $t3, a_sign_hit
+	lw $t3, 528($t4)
+	beq $t1, $t3, a_sign_hit
+	lw $t3, 532($t4)
+	beq $t1, $t3, a_sign_hit
+	lw $t3, -496($t4)
+	beq $t1, $t3, a_sign_hit
+	lw $t3, -492($t4)
+	beq $t1, $t3, a_sign_hit
+	lw $t3, 1040($t4)
+	beq $t1, $t3, a_sign_hit
+	lw $t3, 1044($t4)
+	bne $t1, $t3, a_if3
+
+a_sign_hit:
+	# increment to current_level
+	la $t3, current_level
+	lw $t1, 0($t3)
+	addi $t1, $t1, 1
+	sw $t1, 0($t3)
+
+	# move player back to original beginning position
+	la $t2, player
+ 	la $t3, 13840($t0)	# Player beginning position
+	sw $t3, 0($t2)		# stores position address into player struct
+	addi $t3, $zero, 3460
+	sw $t3, 4($t2)
+
+	jal clear_player
+	jal draw_player
+	jal paint_sky
+	j key_no_clicked
+
+a_if3:
 
 ##### makes the player face left #####
 	addi $t8, $zero, 1
@@ -4012,6 +4067,9 @@ check_wall_collision_d:
 ##### do code below if the 'k' key is clicked ##### 
 k_clicked:
 
+	blt $t5, 15, key_no_clicked			# timing loop, the higher the value we compare $t5 to, the longer it takes to shoot
+	li $t5, 1
+
 	la $t4, num_player_bullets
 	lw $t4, 0($t4)
 	bge $t4, 20, key_no_clicked	# can't shoot anymore after 20 bullets
@@ -4086,6 +4144,46 @@ check_object_collision_no_key:
 
 no_key_if1:	
 	
+	li $t1, SIGN1	# checks if moving up will collide with sign
+	
+	lw $t3, 1020($t4)
+	beq $t1, $t3, no_key_sign_hit
+	lw $t3, 1028($t4)
+	beq $t1, $t3, no_key_sign_hit
+	lw $t3, 1036($t4)
+	beq $t1, $t3, no_key_sign_hit
+	lw $t3, 1012($t4)
+	beq $t1, $t3, no_key_sign_hit
+	lw $t3, 1268($t4)
+	#beq $t1, $t3, no_key_sign_hit
+	#lw $t3, 1276($t4)
+	#beq $t1, $t3, no_key_sign_hit
+	#lw $t3, 1284($t4)
+	#beq $t1, $t3, no_key_sign_hit
+	#lw $t3, 1292($t4)
+	bne $t1, $t3, no_key_if2	
+
+no_key_sign_hit:
+	# increment to current_level
+	la $t3, current_level
+	lw $t1, 0($t3)
+	addi $t1, $t1, 1
+	sw $t1, 0($t3)
+
+	# move player back to original beginning position
+	la $t2, player
+ 	la $t3, 13840($t0)	# Player beginning position
+	sw $t3, 0($t2)		# stores position address into player struct
+	addi $t3, $zero, 3460
+	sw $t3, 4($t2)
+
+	jal clear_player
+	jal draw_player
+	jal paint_sky
+	j grounded
+
+no_key_if2:	
+	
 ##### checks if platform is below the player #####
 	li $t1, BROWN_PLATFORM
 	lw $t3, 1020($t4)
@@ -4108,9 +4206,6 @@ IF1:	j grounded
 
 ##### simulates gravity ##### 
 gravity:
-	# the 2 is a timing thing. The higher the value, the slower the player falls
-	#bgt $t5, 2, do_grav
-	#j end_iteration
 	
 do_grav:
 
@@ -4123,7 +4218,6 @@ do_grav:
 	addi $t4, $t4, 256
 	sw $t4, 0($t2)
 	jal draw_player
-	addi $t5, $zero, 1
 	j end_iteration
 	
 grounded:

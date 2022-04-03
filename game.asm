@@ -25,7 +25,7 @@
 # 7. Enemies shoot back (2 marks)
 # 
 # Link to video demonstration for final submission: 
-# - (insert YouTube / MyMedia / other URL here)
+# - https://www.youtube.com/watch?v=HW6f_FwBeGI
 # 
 # Are you OK with us sharing the video with people outside course staff? 
 # - yes, and please share this project github link as well. 
